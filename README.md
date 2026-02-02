@@ -1,6 +1,6 @@
 # flario
 
-== Windows Dev Config
+## Windows Dev Config
 
 ESP32 plugin to a local com port. (COM10)
 
@@ -9,7 +9,7 @@ A a TASkSchd task
 - Program: "C:\Program Files (x86)\com0com\hub4com.exe"
 - Args: --baud=115200 \\.\COM10 --use-driver=tcp 7000
 
-== MX Linux dev config
+## MX Linux dev config
 
 /etc/systemd/system/ttyVCOM0
 
@@ -29,11 +29,11 @@ A a TASkSchd task
    [Install]
    WantedBy=multi-user.target
 
-=== Restart Service
+### Restart Service
 sudo systemctl daemon-reload
 sudo systemctl restart ttyvcom0.service
 
-=== Test
+### Test
 
    screen /dev/ttyVCOM0
 
