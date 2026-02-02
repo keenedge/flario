@@ -1,4 +1,4 @@
-# flario
+# FLARIO
 
 ## Windows Dev Config
 
