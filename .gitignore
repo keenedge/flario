@@ -1,0 +1,58 @@
+# =========================
+# ESP-IDF build artifacts
+# =========================
+build/
+sdkconfig.old
+sdkconfig.defaults.old
+#flasher_args.json
+#partition_table/
+#bootloader/
+
+# CMake generated files
+# CMakeCache.txt
+# CMakeFiles/
+# cmake_install.cmake
+# compile_commands.json
+
+# Ninja
+# .ninja_log
+# .ninja_deps
+
+# =========================
+# ESP-IDF tools & environment
+# =========================
+# .python_env/
+# venv/
+# .env/
+# .envrc
+
+# IDF component manager
+# managed_components/
+# dependencies.lock
+
+# =========================
+# Editor / IDE files
+# =========================
+#.vscode/
+# .idea/
+#*.code-workspace
+# *.sublime-project
+# *.sublime-workspace
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Temporary files
+# =========================
+*.swp
+*.tmp
+*~
