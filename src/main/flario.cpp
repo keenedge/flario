@@ -9,7 +9,7 @@
 
 #include <cstring>
 
-static constexpr const char *TAG = "ms5611_app";
+static constexpr const char *TAG = "flario_app";
 
 extern "C" void app_main(void)
 {

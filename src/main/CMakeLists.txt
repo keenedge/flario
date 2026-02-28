@@ -1,4 +1,4 @@
 idf_component_register(
-  SRCS "ms5611a.cpp"
+  SRCS "flario.cpp"
   INCLUDE_DIRS "."
 )
