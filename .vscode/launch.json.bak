@@ -1,0 +1,55 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ESP-IDF: OpenOCD (ESP-Prog-2)",
+      "type": "gdbtarget",
+      "request": "attach",
+      "verbose": true
+    },
+    {
+      "name": "ESP32-S3 (attach, OpenOCD already running)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/${workspaceFolderBasename}.elf",
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "miDebuggerPath": "D:\\Espressif\\tools\\xtensa-esp-elf-gdb\\16.3_20250913\\xtensa-esp-elf-gdb\\bin\\xtensa-esp32s3-elf-gdb.exe",
+      "miDebuggerServerAddress": "localhost:3333",
+      "stopAtEntry": true,
+      "logging": {
+        "engineLogging": true,
+        "trace": true,
+        "traceResponse": true
+      }
+    },
+    {
+      "name": "ESP32-S3 (VS Code launches OpenOCD)",
+      "type": "cppdbg",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}\\build\\${workspaceFolderBasename}.elf",
+
+      "MIMode": "gdb",
+      "miDebuggerPath": "D:\\Espressif\\tools\\xtensa-esp-elf-gdb\\16.3_20250913\\xtensa-esp-elf-gdb\\bin\\xtensa-esp32s3-elf-gdb.exe",
+
+      "miDebuggerServerAddress": "localhost:3333",
+
+      "debugServerPath": "D:\\Espressif\\tools\\openocd-esp32\\v0.12.0-esp32-20251215\\openocd-esp32\\bin\\openocd.exe",
+      "debugServerArgs": "-f \"board/heltec-lora-v3-esp-prog2.cfg\"",
+      "serverStarted": "Listening on port 3333 for gdb connections",
+
+      "stopAtEntry": true,
+      "setupCommands": [
+        { "text": "target remote :3333" },
+        { "text": "monitor reset halt" }
+      ],
+
+      "logging": {
+        "engineLogging": true,
+        "trace": true,
+        "traceResponse": true
+      }
+    }
+  ]
+}

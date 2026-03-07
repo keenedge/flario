@@ -1,0 +1,17 @@
+{
+  "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
+  "C_Cpp.default.forcedInclude": [
+    "${workspaceFolder}/build/config/sdkconfig.h"
+  ],
+  "C_Cpp.intelliSenseEngineFallback": "Enabled",
+  "idf.currentSetup": "C:/Espressif/frameworks/esp-idf-v5.5.3/",
+  "openocd.jtag.command.force_unix_path_separator": true,
+  "idf.openOcdLaunchArgs": [
+    "-f",
+    "D:/flario/heltec-lora-v3-esp-prog2.cfg",
+    "-c",
+    "init; reset halt"
+  ],
+  "idf.openOcdDebugLevel": 2,
+  "idf.portWin": "COM3"
+}
