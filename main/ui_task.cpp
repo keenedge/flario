@@ -183,6 +183,14 @@ void UiTask::run()
     }
 }
 
+void UiTask::ClearPage( int page ) {
+
+};
+
+void UiTask::DrawPage( int page, ... ) {
+
+};
+
 void UiTask::render(const FusionSample& fusionSample)
 {
     const TickType_t now = xTaskGetTickCount();
@@ -193,9 +201,10 @@ void UiTask::render(const FusionSample& fusionSample)
 
     DrawText(oled_, 0, "Alt :%7.1f m", fusionSample.altitude_m);
     DrawText(oled_, 1, "VSpd:%6.2f m/s", fusionSample.vertical_speed_mps);
-    DrawText(oled_, 3, "P   :%7.3f bar", fusionSample.barometer.pressure);
+    DrawText(oled_, 3, "P:%7.3f bar", fusionSample.barometer.pressure);
     DrawText(oled_, 2, "Temp:%7.3f c", fusionSample.barometer.temperature);
     DrawText(oled_, 4, "time:%u", last_io_tick_);
+    DrawText(oled_, 5, "??: %7.3f", fusionSample.imu.euler.x);
 
     // char line0[24];
     // char line1[24];

@@ -29,6 +29,9 @@ protected:
     void run() override;
 
 private:
+    BNO08x imu_;
+    void processAllPendingReports();
+    void onHostInterrupt(void);
     Latest<ImuSample> latest_;
     ImuSampleListener* imuSampleListener_ = nullptr;
 };
