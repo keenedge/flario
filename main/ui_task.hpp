@@ -1,6 +1,5 @@
 #pragma once
 
-#include "task_base.hpp"
 #include "fusion_task.hpp"
 
 #include "freertos/FreeRTOS.h"
@@ -8,6 +7,8 @@
 
 #include "driver/i2c_master.h"
 #include "ssd1306.h"
+
+#include "task_base.hpp"
 
 #include "fusion_sample_listener.hpp"
 

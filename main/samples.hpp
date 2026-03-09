@@ -3,6 +3,20 @@
 #include <stdint.h>
 #include "BNO08xGlobalTypes.hpp"
 
+template <typename T>
+struct TimestampedSample
+{
+    int64_t t_us = 0;
+    bool has = false;
+    T value{};
+};
+
+using RvGameSample = TimestampedSample<bno08x_euler_angle_t>;
+using CalGyroSample = TimestampedSample<bno08x_gyro_t>;
+using GravitySample = TimestampedSample<bno08x_accel_t>;
+using AccelSample = TimestampedSample<bno08x_accel_t>;
+using LinearAccelSample = TimestampedSample<bno08x_accel_t>;
+
 struct ImuSample
 {
     int64_t t_us = 0;

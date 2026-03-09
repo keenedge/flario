@@ -6,13 +6,18 @@
 #include "esp_log.h"
 #include "esp_err.h"
 #include "esp_timer.h"
-#include "frequency_reporter.hpp"
+//#include "report_frequency_diag.hpp"
 #include "latest.hpp"
 #include "samples.hpp"
 
+#include <stdio.h>
+#include <array>
+#include <atomic>
+#include "BNO08x.hpp"
+
 // #include "fusion_task.hpp"
 // #include "ui_task.hpp"
-// #include "imu_task.hpp"
+#include "imu_task.hpp"
 // #include "barometer_task.hpp"
 
 // #define PIEZO_A GPIO_NUM_47
@@ -30,54 +35,6 @@ void initGPIO(void);
 //  void initSPI( void );
 //  void piezo_init( void );
 
-#include <stdio.h>
-#include <atomic>
-#include "BNO08x.hpp"
-
-static const constexpr char *TAG = "Main";
-static TaskHandle_t handle;
-static BNO08x imu;
-
-struct RvGameSample
-{
-    int64_t t_us = 0;
-    bool has_euler = false;
-    bno08x_euler_angle_t euler{};
-};
-
-struct CalGyroSample
-{
-    int64_t t_us = 0;
-    bool has_gyro = false;
-    bno08x_gyro_t gyro{};
-};
-
-struct GravitySample
-{
-    int64_t t_us = 0;
-    bool has_gravity = false;
-    bno08x_accel_t gravity{};
-};
-
-struct AccelSample
-{
-    int64_t t_us = 0;
-    bool has_accel = false;
-    bno08x_accel_t accel{};
-};
-
-struct LinearAccelSample
-{
-    int64_t t_us = 0;
-    bool has_linear_accel = false;
-    bno08x_accel_t linear_accel{};
-};
-
-static Latest<RvGameSample> latest_rv_game;
-static Latest<CalGyroSample> latest_cal_gyro;
-static Latest<GravitySample> latest_gravity;
-static Latest<AccelSample> latest_accel;
-static Latest<LinearAccelSample> latest_linear_accel;
 
 enum ReportNotifyBits : uint32_t
 {
@@ -88,15 +45,27 @@ enum ReportNotifyBits : uint32_t
     NOTIFY_LIN_ACCEL = (1UL << 4),
 };
 
-size_t drainSamples(uint32_t notify_bits);
-static int sampleCount;
-static int totalCount;
 
-static std::atomic<uint32_t> cb_count_rv_game{0};
-static std::atomic<uint32_t> cb_count_cal_gyro{0};
-static std::atomic<uint32_t> cb_count_gravity{0};
-static std::atomic<uint32_t> cb_count_accel{0};
-static std::atomic<uint32_t> cb_count_lin_accel{0};
+static const constexpr char *TAG = "Main";
+static TaskHandle_t handle;
+static BNO08x imu;
+
+static Latest<RvGameSample> latest_rv_game;
+static Latest<CalGyroSample> latest_cal_gyro;
+static Latest<GravitySample> latest_gravity;
+static Latest<AccelSample> latest_accel;
+static Latest<LinearAccelSample> latest_linear_accel;
+
+// static int sampleCount;
+// static int totalCount;
+
+// static std::atomic<uint32_t> cb_count_rv_game{0};
+// static std::atomic<uint32_t> cb_count_cal_gyro{0};
+// static std::atomic<uint32_t> cb_count_gravity{0};
+// static std::atomic<uint32_t> cb_count_accel{0};
+// static std::atomic<uint32_t> cb_count_lin_accel{0};
+
+// static constexpr size_t REPORT_COUNT = 5;
 
 static constexpr uint32_t RV_GAME_INTERVAL_US =  10000UL;
 static constexpr uint32_t CAL_GYRO_INTERVAL_US = 10000UL;
@@ -104,117 +73,86 @@ static constexpr uint32_t GRAVITY_INTERVAL_US =  10000UL;
 static constexpr uint32_t ACCEL_INTERVAL_US =    10000UL;
 static constexpr uint32_t LIN_ACCEL_INTERVAL_US =10000UL;
 
-static constexpr float hz_from_interval_us(uint32_t interval_us)
-{
-    return 1000000.0f / static_cast<float>(interval_us);
-}
+// static constexpr float hz_from_interval_us(uint32_t interval_us)
+// {
+//     return 1000000.0f / static_cast<float>(interval_us);
+// }
 
-static FrequencyReporter<> rv_game_freq_reporter(
-    "rv_game", cb_count_rv_game, hz_from_interval_us(RV_GAME_INTERVAL_US), 8.0f);
-static FrequencyReporter<> cal_gyro_freq_reporter(
-    "cal_gyro", cb_count_cal_gyro, hz_from_interval_us(CAL_GYRO_INTERVAL_US), 8.0f);
-static FrequencyReporter<> gravity_freq_reporter(
-    "gravity", cb_count_gravity, hz_from_interval_us(GRAVITY_INTERVAL_US), 8.0f);
-static FrequencyReporter<> accel_freq_reporter(
-    "accel", cb_count_accel, hz_from_interval_us(ACCEL_INTERVAL_US), 8.0f);
-static FrequencyReporter<> linear_accel_freq_reporter(
-    "linear_accel", cb_count_lin_accel, hz_from_interval_us(LIN_ACCEL_INTERVAL_US), 8.0f);
+// using ReportFreqDiag = ReportFrequencyDiag<REPORT_COUNT>;
+// using ReportFreqResult = ReportFreqDiag::Result;
 
-static FrequencyReporter<> *freq_reporters[] = {
-    &rv_game_freq_reporter,
-    &cal_gyro_freq_reporter,
-    &gravity_freq_reporter,
-    &accel_freq_reporter,
-    &linear_accel_freq_reporter,
-};
+// static const std::array<ReportFreqDiag::Config, REPORT_COUNT> report_freq_configs = {
+//     ReportFreqDiag::Config{"rv_game", &cb_count_rv_game, hz_from_interval_us(RV_GAME_INTERVAL_US), 8.0f},
+//     ReportFreqDiag::Config{"cal_gyro", &cb_count_cal_gyro, hz_from_interval_us(CAL_GYRO_INTERVAL_US), 8.0f},
+//     ReportFreqDiag::Config{"gravity", &cb_count_gravity, hz_from_interval_us(GRAVITY_INTERVAL_US), 8.0f},
+//     ReportFreqDiag::Config{"accel", &cb_count_accel, hz_from_interval_us(ACCEL_INTERVAL_US), 8.0f},
+//     ReportFreqDiag::Config{"linear_accel", &cb_count_lin_accel, hz_from_interval_us(LIN_ACCEL_INTERVAL_US), 8.0f},
+// };
+// static ReportFreqDiag report_freq_diag(report_freq_configs);
 
-static constexpr size_t REPORT_COUNT = sizeof(freq_reporters) / sizeof(freq_reporters[0]);
+// enum ReportDiagIndex : size_t
+// {
+//     RV_GAME_IDX = 0,
+//     CAL_GYRO_IDX = 1,
+//     GRAVITY_IDX = 2,
+//     ACCEL_IDX = 3,
+//     LIN_ACCEL_IDX = 4
+// };
 
-enum ReportDiagIndex : size_t
-{
-    RV_GAME_IDX = 0,
-    CAL_GYRO_IDX = 1,
-    GRAVITY_IDX = 2,
-    ACCEL_IDX = 3,
-    LIN_ACCEL_IDX = 4
-};
+// void initReportFrequencyDiag(void)
+// {
+//     report_freq_diag.reset();
+// }
 
-struct ReportFreqResult
-{
-    float measured_hz[REPORT_COUNT];
-    bool below_threshold[REPORT_COUNT];
-    bool any_below;
-};
-
-void initReportFrequencyDiag(void)
-{
-    const int64_t now_us = esp_timer_get_time();
-    for (size_t i = 0; i < REPORT_COUNT; ++i)
-    {
-        freq_reporters[i]->reset(now_us);
-    }
-}
-
-ReportFreqResult checkReportFrequencyDiag(void)
-{
-    const int64_t now_us = esp_timer_get_time();
-    ReportFreqResult result = {};
-
-    for (size_t i = 0; i < REPORT_COUNT; ++i)
-    {
-        const FrequencyReporter<>::Snapshot snap = freq_reporters[i]->update(now_us);
-        result.measured_hz[i] = snap.measured_hz;
-        result.below_threshold[i] = snap.below_threshold;
-        result.any_below |= result.below_threshold[i];
-    }
-
-    return result;
-}
+// ReportFreqResult checkReportFrequencyDiag(void)
+// {
+//     return report_freq_diag.update();
+// }
 
 ImuSample readLatestImuSample(void)
 {
     ImuSample sample{};
 
     const RvGameSample rv = latest_rv_game.read();
-    if (rv.has_euler)
+    if (rv.has)
     {
         sample.has_euler = true;
-        sample.euler = rv.euler;
+        sample.euler = rv.value;
         sample.t_us = rv.t_us;
     }
 
     const CalGyroSample gyro = latest_cal_gyro.read();
-    if (gyro.has_gyro)
+    if (gyro.has)
     {
         sample.has_gyro = true;
-        sample.gyro = gyro.gyro;
+        sample.gyro = gyro.value;
         if (gyro.t_us > sample.t_us)
             sample.t_us = gyro.t_us;
     }
 
     const GravitySample gravity = latest_gravity.read();
-    if (gravity.has_gravity)
+    if (gravity.has)
     {
         sample.has_gravity = true;
-        sample.gravity = gravity.gravity;
+        sample.gravity = gravity.value;
         if (gravity.t_us > sample.t_us)
             sample.t_us = gravity.t_us;
     }
 
     const AccelSample accel = latest_accel.read();
-    if (accel.has_accel)
+    if (accel.has)
     {
         sample.has_accel = true;
-        sample.accel = accel.accel;
+        sample.accel = accel.value;
         if (accel.t_us > sample.t_us)
             sample.t_us = accel.t_us;
     }
 
     const LinearAccelSample lin = latest_linear_accel.read();
-    if (lin.has_linear_accel)
+    if (lin.has)
     {
         sample.has_linear_accel = true;
-        sample.linear_accel = lin.linear_accel;
+        sample.linear_accel = lin.value;
         if (lin.t_us > sample.t_us)
             sample.t_us = lin.t_us;
     }
@@ -222,7 +160,76 @@ ImuSample readLatestImuSample(void)
     return sample;
 }
 
-void printStatusPanel(uint32_t report_bits, bool timed_out, const ImuSample &sample, const ReportFreqResult &freq)
+// void printStatusPanel(uint32_t report_bits, bool timed_out, const ImuSample &sample, const ReportFreqResult &freq)
+// {
+//     static bool panel_drawn = false;
+//     static constexpr int PANEL_LINES = 3;
+
+//     if (panel_drawn)
+//     {
+//         printf("\x1b[%dA", PANEL_LINES);
+//     }
+
+//     const char rv_mark = freq.below_threshold[RV_GAME_IDX] ? '!' : ' ';
+//     const char gyro_mark = freq.below_threshold[CAL_GYRO_IDX] ? '!' : ' ';
+//     const char gravity_mark = freq.below_threshold[GRAVITY_IDX] ? '!' : ' ';
+//     const char accel_mark = freq.below_threshold[ACCEL_IDX] ? '!' : ' ';
+//     const char lin_accel_mark = freq.below_threshold[LIN_ACCEL_IDX] ? '!' : ' ';
+
+//     printf("\r\x1b[2K[Main] bits=0x%08lx timeout=%1d sample=%6d total=%8d\n",
+//            static_cast<unsigned long>(report_bits),
+//            timed_out ? 1 : 0,
+//            sampleCount,
+//            totalCount);
+
+//     printf("\r\x1b[2K[Freq5s] rv=%7.2f/%7.2f%c gyro=%7.2f/%7.2f%c gravity=%7.2f/%7.2f%c accel=%7.2f/%7.2f%c lin=%7.2f/%7.2f%c\n",
+//            freq.measured_hz[RV_GAME_IDX], report_freq_diag.expected_hz(RV_GAME_IDX), rv_mark,
+//            freq.measured_hz[CAL_GYRO_IDX], report_freq_diag.expected_hz(CAL_GYRO_IDX), gyro_mark,
+//            freq.measured_hz[GRAVITY_IDX], report_freq_diag.expected_hz(GRAVITY_IDX), gravity_mark,
+//            freq.measured_hz[ACCEL_IDX], report_freq_diag.expected_hz(ACCEL_IDX), accel_mark,
+//            freq.measured_hz[LIN_ACCEL_IDX], report_freq_diag.expected_hz(LIN_ACCEL_IDX), lin_accel_mark);
+
+//     char sample_line[320];
+//     int pos = 0;
+//     pos += snprintf(sample_line + pos, sizeof(sample_line) - static_cast<size_t>(pos), "[Sample]");
+
+//     if (sample.has_euler)
+//     {
+//         pos += snprintf(sample_line + pos, sizeof(sample_line) - static_cast<size_t>(pos),
+//                         " euler=(%8.2f,%8.2f,%8.2f)", sample.euler.x, sample.euler.y, sample.euler.z);
+//     }
+//     if (sample.has_gyro)
+//     {
+//         pos += snprintf(sample_line + pos, sizeof(sample_line) - static_cast<size_t>(pos),
+//                         " gyro=(%8.2f,%8.2f,%8.2f)", sample.gyro.x, sample.gyro.y, sample.gyro.z);
+//     }
+//     if (sample.has_accel)
+//     {
+//         pos += snprintf(sample_line + pos, sizeof(sample_line) - static_cast<size_t>(pos),
+//                         " accel=(%8.2f,%8.2f,%8.2f)", sample.accel.x, sample.accel.y, sample.accel.z);
+//     }
+//     if (sample.has_linear_accel)
+//     {
+//         pos += snprintf(sample_line + pos, sizeof(sample_line) - static_cast<size_t>(pos),
+//                         " lin=(%8.2f,%8.2f,%8.2f)", sample.linear_accel.x, sample.linear_accel.y, sample.linear_accel.z);
+//     }
+//     if (sample.has_gravity)
+//     {
+//         pos += snprintf(sample_line + pos, sizeof(sample_line) - static_cast<size_t>(pos),
+//                         " grav=(%8.2f,%8.2f,%8.2f)", sample.gravity.x, sample.gravity.y, sample.gravity.z);
+//     }
+//     if (pos == static_cast<int>(sizeof("[Sample]") - 1))
+//     {
+//         pos += snprintf(sample_line + pos, sizeof(sample_line) - static_cast<size_t>(pos), " none");
+//     }
+
+//     printf("\r\x1b[2K%s\n", sample_line);
+
+//     fflush(stdout);
+//     panel_drawn = true;
+// }
+
+void printStatusPanel(uint32_t report_bits, bool timed_out, const ImuSample &sample )
 {
     static bool panel_drawn = false;
     static constexpr int PANEL_LINES = 3;
@@ -232,24 +239,10 @@ void printStatusPanel(uint32_t report_bits, bool timed_out, const ImuSample &sam
         printf("\x1b[%dA", PANEL_LINES);
     }
 
-    const char rv_mark = freq.below_threshold[RV_GAME_IDX] ? '!' : ' ';
-    const char gyro_mark = freq.below_threshold[CAL_GYRO_IDX] ? '!' : ' ';
-    const char gravity_mark = freq.below_threshold[GRAVITY_IDX] ? '!' : ' ';
-    const char accel_mark = freq.below_threshold[ACCEL_IDX] ? '!' : ' ';
-    const char lin_accel_mark = freq.below_threshold[LIN_ACCEL_IDX] ? '!' : ' ';
-
-    printf("\r\x1b[2K[Main] bits=0x%08lx timeout=%1d sample=%6d total=%8d\n",
+    printf("\r\x1b[2K[Main] bits=0x%08lx timeout=%1d",
            static_cast<unsigned long>(report_bits),
-           timed_out ? 1 : 0,
-           sampleCount,
-           totalCount);
-
-    printf("\r\x1b[2K[Freq5s] rv=%7.2f/%7.2f%c gyro=%7.2f/%7.2f%c gravity=%7.2f/%7.2f%c accel=%7.2f/%7.2f%c lin=%7.2f/%7.2f%c\n",
-           freq.measured_hz[RV_GAME_IDX], freq_reporters[RV_GAME_IDX]->expected_hz(), rv_mark,
-           freq.measured_hz[CAL_GYRO_IDX], freq_reporters[CAL_GYRO_IDX]->expected_hz(), gyro_mark,
-           freq.measured_hz[GRAVITY_IDX], freq_reporters[GRAVITY_IDX]->expected_hz(), gravity_mark,
-           freq.measured_hz[ACCEL_IDX], freq_reporters[ACCEL_IDX]->expected_hz(), accel_mark,
-           freq.measured_hz[LIN_ACCEL_IDX], freq_reporters[LIN_ACCEL_IDX]->expected_hz(), lin_accel_mark);
+           timed_out ? 1 : 0
+           );
 
     char sample_line[320];
     int pos = 0;
@@ -306,42 +299,42 @@ void initGPIO(void)
 
 void onHostInterrupt_rv_game(void)
 {
-    cb_count_rv_game.fetch_add(1, std::memory_order_relaxed);
+    //cb_count_rv_game.fetch_add(1, std::memory_order_relaxed);
     if (handle != nullptr)
         xTaskNotify(handle, NOTIFY_RV_GAME, eSetBits);
 }
 
 void onHostInterrupt_cal_gyro(void)
 {
-    cb_count_cal_gyro.fetch_add(1, std::memory_order_relaxed);
+    //cb_count_cal_gyro.fetch_add(1, std::memory_order_relaxed);
     if (handle != nullptr)
         xTaskNotify(handle, NOTIFY_CAL_GYRO, eSetBits);
 }
 
 void onHostInterrupt_gravity(void)
 {
-    cb_count_gravity.fetch_add(1, std::memory_order_relaxed);
+    //cb_count_gravity.fetch_add(1, std::memory_order_relaxed);
     if (handle != nullptr)
         xTaskNotify(handle, NOTIFY_GRAVITY, eSetBits);
 }
 
 void onHostInterrupt_acceleration(void)
 {
-    cb_count_accel.fetch_add(1, std::memory_order_relaxed);
+    //cb_count_accel.fetch_add(1, std::memory_order_relaxed);
     if (handle != nullptr)
         xTaskNotify(handle, NOTIFY_ACCEL, eSetBits);
 }
 
 void onHostInterrupt_linear_acceleration(void)
 {
-    cb_count_lin_accel.fetch_add(1, std::memory_order_relaxed);
+    //cb_count_lin_accel.fetch_add(1, std::memory_order_relaxed);
     if (handle != nullptr)
         xTaskNotify(handle, NOTIFY_LIN_ACCEL, eSetBits);
 }
 
 size_t drainSamples(uint32_t notify_bits)
 {
-    sampleCount = 0;
+    //sampleCount = 0;
     size_t emitted = 0;
     const TickType_t start = xTaskGetTickCount();
     TickType_t budget = pdMS_TO_TICKS(2); // prevent monopolizing CPU
@@ -355,12 +348,12 @@ size_t drainSamples(uint32_t notify_bits)
         {
             RvGameSample sample{};
             sample.t_us = esp_timer_get_time();
-            sample.euler = imu.rpt.rv_game.get_euler();
-            sample.has_euler = true;
+            sample.value = imu.rpt.rv_game.get_euler();
+            sample.has = true;
             latest_rv_game.write(sample);
             any = true;
-            sampleCount++;
-            totalCount++;
+            // sampleCount++;
+            // totalCount++;
             emitted++;
         }
 
@@ -368,12 +361,12 @@ size_t drainSamples(uint32_t notify_bits)
         {
             CalGyroSample sample{};
             sample.t_us = esp_timer_get_time();
-            sample.gyro = imu.rpt.cal_gyro.get();
-            sample.has_gyro = true;
+            sample.value = imu.rpt.cal_gyro.get();
+            sample.has = true;
             latest_cal_gyro.write(sample);
             any = true;
-            sampleCount++;
-            totalCount++;
+            // sampleCount++;
+            // totalCount++;
             emitted++;
         }
 
@@ -381,12 +374,12 @@ size_t drainSamples(uint32_t notify_bits)
         {
             GravitySample sample{};
             sample.t_us = esp_timer_get_time();
-            sample.gravity = imu.rpt.gravity.get();
-            sample.has_gravity = true;
+            sample.value = imu.rpt.gravity.get();
+            sample.has = true;
             latest_gravity.write(sample);
             any = true;
-            sampleCount++;
-            totalCount++;
+            // sampleCount++;
+            // totalCount++;
             emitted++;
         }
 
@@ -394,12 +387,12 @@ size_t drainSamples(uint32_t notify_bits)
         {
             AccelSample sample{};
             sample.t_us = esp_timer_get_time();
-            sample.accel = imu.rpt.accelerometer.get();
-            sample.has_accel = true;
+            sample.value = imu.rpt.accelerometer.get();
+            sample.has = true;
             latest_accel.write(sample);
             any = true;
-            sampleCount++;
-            totalCount++;
+            // sampleCount++;
+            // totalCount++;
             emitted++;
         }
 
@@ -407,12 +400,12 @@ size_t drainSamples(uint32_t notify_bits)
         {
             LinearAccelSample sample{};
             sample.t_us = esp_timer_get_time();
-            sample.linear_accel = imu.rpt.linear_accelerometer.get();
-            sample.has_linear_accel = true;
+            sample.value = imu.rpt.linear_accelerometer.get();
+            sample.has = true;
             latest_linear_accel.write(sample);
             any = true;
-            sampleCount++;
-            totalCount++;
+            // sampleCount++;
+            // totalCount++;
             emitted++;
         }
         if (!any)
@@ -424,112 +417,108 @@ size_t drainSamples(uint32_t notify_bits)
     return emitted;
 }
 
-void tiny_task(void *arg)
-{
-    ESP_LOGI(TAG, "tiny_task started");
-    ESP_LOGI(TAG, "Starting imu.initialize()");
-    if (!imu.initialize())
-    {
-        ESP_LOGE(TAG, "Init failure, returning from main.");
-        return;
-    }
-    ESP_LOGI(TAG, "imu.initialize() complete");
+// void tiny_task(void *arg)
+// {
+//     ESP_LOGI(TAG, "tiny_task started");
+//     ESP_LOGI(TAG, "Starting imu.initialize()");
+//     if (!imu.initialize())
+//     {
+//         ESP_LOGE(TAG, "Init failure, returning from main.");
+//         return;
+//     }
+//     ESP_LOGI(TAG, "imu.initialize() complete");
 
-    imu.rpt.rv_game.enable(RV_GAME_INTERVAL_US); // 100,000us == 100ms report interval
-    imu.rpt.cal_gyro.enable(CAL_GYRO_INTERVAL_US);
-    imu.rpt.gravity.enable(GRAVITY_INTERVAL_US);
-    imu.rpt.accelerometer.enable(ACCEL_INTERVAL_US);
-    imu.rpt.linear_accelerometer.enable(LIN_ACCEL_INTERVAL_US);
+//     imu.rpt.rv_game.enable(RV_GAME_INTERVAL_US); // 100,000us == 100ms report interval
+//     imu.rpt.cal_gyro.enable(CAL_GYRO_INTERVAL_US);
+//     imu.rpt.gravity.enable(GRAVITY_INTERVAL_US);
+//     imu.rpt.accelerometer.enable(ACCEL_INTERVAL_US);
+//     imu.rpt.linear_accelerometer.enable(LIN_ACCEL_INTERVAL_US);
 
-    bool cb_ok = true;
-    cb_ok &= imu.rpt.rv_game.register_cb(onHostInterrupt_rv_game);
-    cb_ok &= imu.rpt.cal_gyro.register_cb(onHostInterrupt_cal_gyro);
-    cb_ok &= imu.rpt.gravity.register_cb(onHostInterrupt_gravity);
-    cb_ok &= imu.rpt.accelerometer.register_cb(onHostInterrupt_acceleration);
-    cb_ok &= imu.rpt.linear_accelerometer.register_cb(onHostInterrupt_linear_acceleration);
+//     bool cb_ok = true;
+//     cb_ok &= imu.rpt.rv_game.register_cb(onHostInterrupt_rv_game);
+//     cb_ok &= imu.rpt.cal_gyro.register_cb(onHostInterrupt_cal_gyro);
+//     cb_ok &= imu.rpt.gravity.register_cb(onHostInterrupt_gravity);
+//     cb_ok &= imu.rpt.accelerometer.register_cb(onHostInterrupt_acceleration);
+//     cb_ok &= imu.rpt.linear_accelerometer.register_cb(onHostInterrupt_linear_acceleration);
 
-    if (!cb_ok)
-    {
-        ESP_LOGE(TAG, "Frequency diag: failed to register one or more report callbacks.");
-    }
+//     if (!cb_ok)
+//     {
+//         ESP_LOGE(TAG, "Frequency diag: failed to register one or more report callbacks.");
+//     }
 
-    initReportFrequencyDiag();
-    static const int64_t PANEL_REFRESH_US = 200000LL; // 5Hz panel update
-    int64_t last_panel_us = 0;
+// //    initReportFrequencyDiag();
+// //    static const int64_t PANEL_REFRESH_US = 200000LL; // 5Hz panel update
+// //    int64_t last_panel_us = 0;
 
-    for (;;)
-    {
-        uint32_t report_bits = 0U;
-        BaseType_t woke = xTaskNotifyWait(0UL, 0xFFFFFFFFUL, &report_bits, pdMS_TO_TICKS(100));
+//     for (;;)
+//     {
+//         uint32_t report_bits = 0U;
+//         BaseType_t woke = xTaskNotifyWait(0UL, 0xFFFFFFFFUL, &report_bits, pdMS_TO_TICKS(100));
 
-        // Try to drain pending report flags a few times, then yield.
-        for (int pass = 0; pass < 4; ++pass)
-        {
-            size_t drained = drainSamples(report_bits);
-            if (drained == 0)
-            {
-                break; // nothing pending now
-            }
-        }
+//         // Try to drain pending report flags a few times, then yield.
+//         for (int pass = 0; pass < 4; ++pass)
+//         {
+//             size_t drained = drainSamples(report_bits);
+//             if (drained == 0)
+//             {
+//                 break; // nothing pending now
+//             }
+//         }
 
-        ImuSample sample = readLatestImuSample();
-        ReportFreqResult freq = checkReportFrequencyDiag();
-        const int64_t now_us = esp_timer_get_time();
-        if ((last_panel_us == 0) || ((now_us - last_panel_us) >= PANEL_REFRESH_US))
-        {
-            printStatusPanel(report_bits, (woke != pdTRUE), sample, freq);
-            last_panel_us = now_us;
-        }
+//         ImuSample sample = readLatestImuSample();
+//   //      ReportFreqResult freq = checkReportFrequencyDiag();
+//   //      const int64_t now_us = esp_timer_get_time();
+//   //      if ((last_panel_us == 0) || ((now_us - last_panel_us) >= PANEL_REFRESH_US))
+//         {
+//             printStatusPanel(report_bits, (woke != pdTRUE), sample );
+//   //          last_panel_us = now_us;
+//         }
 
-        vTaskDelay(pdMS_TO_TICKS(1));
-    }
-}
+//         vTaskDelay(pdMS_TO_TICKS(1));
+//     }
+// }
 
 extern "C" void app_main(void)
 {
     initGPIO();
+    
     ESP_LOGI(TAG, "app_main creating tiny_task");
 
-    const BaseType_t created = xTaskCreate(
-        tiny_task, // task function
-        "tiny",    // name
-        8192,      // stack size (bytes in ESP-IDF)
-        NULL,      // parameter
-        1,         // priority
-        &handle    // task handle
-    );
+    // const BaseType_t created = xTaskCreate(
+    //     imu_task, // task function
+    //     "tiny",    // name
+    //     8192,      // stack size (bytes in ESP-IDF)
+    //     NULL,      // parameter
+    //     1,         // priority
+    //     &handle    // task handle
+    // );
 
-    if (created != pdPASS)
-    {
-        ESP_LOGE(TAG, "xTaskCreate failed, heap=%lu", static_cast<unsigned long>(esp_get_free_heap_size()));
-        return;
-    }
+    // if (created != pdPASS)
+    // {
+    //     ESP_LOGE(TAG, "xTaskCreate failed, heap=%lu", static_cast<unsigned long>(esp_get_free_heap_size()));
+    //     return;
+    // }
 
-    for (;;)
-    {
-        vTaskDelay(portMAX_DELAY);
-    }
-}
 
-//     initGPIO();
+
 // //    initSPI();
 //     piezo_init();
 
-//     static ImuTask imuTask;
+     static ImuTask imuTask;
 //     static BarometerTask barometerTask;
 //     static FusionTask fusionTask;
 //     static UiTask uiTask;
 
-//     configASSERT(imuTask.start());
-//     vTaskDelay(pdMS_TO_TICKS(500));
+     configASSERT(imuTask.start());
+     vTaskDelay(pdMS_TO_TICKS(500));
 //     configASSERT(barometerTask.start());
 //     configASSERT(fusionTask.start(imuTask, barometerTask));
 //     configASSERT(uiTask.start(fusionTask));
 
 //     ESP_LOGI(TAG, "Start Main Task Loop");
 //     int count = 0;
-//     while (true)
-//     {
+     while (true)
+     {
 //         // for (int freq = 1000; freq <= 5000; freq += 50) {
 
 //         //    ledc_set_freq(LEDC_MODE, LEDC_TIMER, freq);
@@ -537,10 +526,10 @@ extern "C" void app_main(void)
 //         //     vTaskDelay(pdMS_TO_TICKS(40));
 //         // }
 //         ESP_LOGI( TAG, "Main Loop: %d", count++);
-//         vTaskDelay(pdMS_TO_TICKS(5000));
+         vTaskDelay(pdMS_TO_TICKS(5000));
 
-//     }
-//}
+     }
+}
 
 // void initGPIO( void ) {
 //     gpio_config_t boot_gpio = {};
