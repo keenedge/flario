@@ -1,0 +1,2 @@
+source D:/testf/build/bootloader/gdbinit/symbols
+source D:/testf/build/bootloader/gdbinit/connect

@@ -1,0 +1,18 @@
+Command: d:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\esp\v5.5.3\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\testf\build\testf.elf D:\testf\build\bootloader\bootloader.elf --force-color -m 'd:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\esp\v5.5.3\esp-idf\tools\idf.py'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM3 instead...[0m
+[0;33m--- esp-idf-monitor 1.9.0 on \\.\COM3 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/esp/v5.5.3/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200dd9a: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/esp/v5.5.3/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x4200e1b0: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/esp/v5.5.3/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40376f0d: [0;33m_xt_lowint1[0m[0m at [0;32mD:/esp/v5.5.3/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x42009c1b: [0;33mhal_now_us[0m[0m at [0;32mD:/testf/main/bno08x_hal_spi.c[0m[0m:[1;31m42[0m
+[0m--- (inlined by) [0;33mhal_get_time_us[0m[0m at [0;32mD:/testf/main/bno08x_hal_spi.c[0m[0m:[1;31m284[0m
+[0m--- 0x4200a4b5: [0;33mopProcess[0m[0m at [0;32mD:/testf/components/sh2/sh2.c[0m[0m:[1;31m657[0m
+[0m--- 0x4200a753: [0;33msh2_getProdIds[0m[0m at [0;32mD:/testf/components/sh2/sh2.c[0m[0m:[1;31m2022[0m
+[0m--- 0x42009b4f: [0;33mapp_main[0m[0m at [0;32mD:/testf/main/testf.c[0m[0m:[1;31m80[0m
+[0m--- 0x420190f0: [0;33mmain_task[0m[0m at [0;32mD:/esp/v5.5.3/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4037b6d9: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/esp/v5.5.3/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m
