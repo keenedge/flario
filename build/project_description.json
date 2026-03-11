@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "testf",
-    "project_version":    "1",
+    "project_version":    "fe03c15-dirty",
     "project_path":       "D:/testf",
     "idf_path":           "D:/esp/v5.5.3/esp-idf",
     "build_dir":          "D:/testf/build",

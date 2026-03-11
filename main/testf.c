@@ -12,35 +12,41 @@
 #include "ms5611_spi.h"
 #include "BNO08x.hpp"
 
-#define PIN_NUM_CS_MS 4
-#define PIN_NUM_MISO 5
-#define PIN_NUM_MOSI 6
-#define PIN_NUM_SCLK 7
+#define PIN_NUM_VEXT GPIO_NUM_36
+#define PIN_NUM_CS_MS GPIO_NUM_4
+#define PIN_NUM_CS_BNO GPIO_NUM_3
+#define PIN_NUM_SCLK GPIO_NUM_5
+#define PIN_NUM_MISO GPIO_NUM_6
+#define PIN_NUM_MOSI GPIO_NUM_7
 
 static const char *TAG = "testf";
 
 static spi_device_handle_t ms5611_spi_dev __attribute__((unused));
 static ms5611_t ms5611 __attribute__((unused));
 
-extern "C" void app_main(void)
-{
 
+void init(void) {
     gpio_config_t io = {
-        .pin_bit_mask = (1ULL << 1| 1ULL << 2 | 1ULL << 3 | 1ULL << 4),
+        .pin_bit_mask = (1ULL << PIN_NUM_VEXT | 1ULL << PIN_NUM_CS_MS | 1ULL << PIN_NUM_CS_BNO ),
         .mode = GPIO_MODE_OUTPUT,
         .pull_up_en = GPIO_PULLUP_DISABLE,
         .pull_down_en = GPIO_PULLDOWN_DISABLE,
         .intr_type = GPIO_INTR_DISABLE,
     };
-
     gpio_config(&io);
 
     // deselect device (CS HIGH)
-    gpio_set_level((gpio_num_t)1, 1);
-    gpio_set_level((gpio_num_t)2, 1);
-    gpio_set_level((gpio_num_t)3, 1);
-    gpio_set_level((gpio_num_t)4, 1);
+    gpio_set_level(PIN_NUM_VEXT, 0); // turn on the VEXT RAIL
+    vTaskDelay(pdMS_TO_TICKS(100)); // wiat for the power rail to settle
 
+    gpio_set_level(PIN_NUM_CS_MS, 1); // disable MS5611
+    gpio_set_level(PIN_NUM_CS_BNO, 1);
+}
+
+extern "C" void app_main(void)
+{
+    init();
+    
     if (false)
     {
         static BNO08x imu;
