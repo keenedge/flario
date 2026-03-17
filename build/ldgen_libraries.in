@@ -164,4 +164,5 @@ $<TARGET_FILE:__idf_json>
 $<TARGET_FILE:idf::esp32_BNO08x>
 $<TARGET_FILE:__idf_cmock>
 $<TARGET_FILE:idf::main>
+$<TARGET_FILE:__idf_esp_lcd>
 $<TARGET_FILE:__idf_esp32_BNO08x>

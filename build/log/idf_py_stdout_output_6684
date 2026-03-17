@@ -1,0 +1,761 @@
+Command: d:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\esp\v5.5.3\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\testf\build\testf.elf D:\testf\build\bootloader\bootloader.elf --force-color -m 'd:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\esp\v5.5.3\esp-idf\tools\idf.py'
+���� efuse block�ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 10 2026 10:24:35[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (29) boot: efuse block revision: v1.3[0m
+[0;32mI (32) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (36) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (70) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0eeb0h ( 61104) map[0m
+[0;32mI (98) esp_image: segment 1: paddr=0001eed8 vaddr=3fc96100 size=01140h (  4416) load[0m
+[0;32mI (99) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=22100h (139520) map[0m
+[0;32mI (127) esp_image: segment 3: paddr=00042128 vaddr=3fc97240 size=0217ch (  8572) load[0m
+[0;32mI (129) esp_image: segment 4: paddr=000442ac vaddr=40374000 size=120ach ( 73900) load[0m
+[0;32mI (147) esp_image: segment 5: paddr=00056360 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (154) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (154) boot: Disabling RNG early entropy source...[0m
+[0;32mI (164) cpu_start: Multicore app[0m
+[0;32mI (173) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (174) cpu_start: Pro cpu start user code[0m
+[0;32mI (174) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (175) app_init: Application information:[0m
+[0;32mI (179) app_init: Project name:     testf[0m
+[0;32mI (183) app_init: App version:      d273d9c-dirty[0m
+[0;32mI (187) app_init: Compile time:     Mar 11 2026 16:40:53[0m
+[0;32mI (192) app_init: ELF file SHA256:  15b8dc123...[0m
+[0;32mI (196) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (201) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (205) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (209) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (213) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (219) heap_init: At 3FC9B558 len 0004E1B8 (312 KiB): RAM[0m
+[0;32mI (224) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (230) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (235) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (241) spi_flash: detected chip: gd[0m
+[0;32mI (243) spi_flash: flash io: dio[0m
+[0;33mW (246) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (259) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (265) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (272) main_task: Started on CPU0[0m
+[0;32mI (292) main_task: Calling app_main()[0m
+================IO DUMP Start================
+IO[3] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 0 (IOMUX)
+  SleepSelEn: 1
+
+IO[26] -
+  Pullup: 1, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+IO[47] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+IO[48] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+=================IO DUMP End=================
+[0;32mI (1472) BNO08x: Product ID 0 Info:                           [0m
+                ---------------------------
+                Product ID: 0x98a6b4
+                SW Version Major: 0x3
+                SW Version Minor: 0x2
+                SW Build Number:  0x6
+                SW Version Patch: 0xd
+                ---------------------------
+
+[0;32mI (1492) BNO08x: Product ID 1 Info:                           [0m
+                ---------------------------
+                Product ID: 0x98a6b4
+                SW Version Major: 0x3
+                SW Version Minor: 0x2
+                SW Build Number:  0x6
+                SW Version Patch: 0xd
+                ---------------------------
+
+[0;32mI (1532) BNO08x: Product ID 2 Info:                           [0m
+                ---------------------------
+                Product ID: 0x98a6b4
+                SW Version Major: 0x3
+                SW Version Minor: 0x2
+                SW Build Number:  0x6
+                SW Version Patch: 0xd
+                ---------------------------
+
+[0;32mI (1562) BNO08x: Product ID 3 Info:                           [0m
+                ---------------------------
+                Product ID: 0x98a6b4
+                SW Version Major: 0x3
+                SW Version Minor: 0x2
+                SW Build Number:  0x6
+                SW Version Patch: 0xd
+                ---------------------------
+
+[0;32mI (1592) BNO08x: Successfully initialized....[0m
+PROM: C0=0x0040 C1=0xC093 C2=0xBF2C C3=0x7879 C4=0x6B22 C5=0x7EE9 C6=0x6D7F 
+MS5611: P=1008.48 Pa, T=23.30 C
+[0;33mW (3022) testf: Euler Angle: (x (roll): 3.16 y (pitch): 1.69 z (yaw): 0.10)[deg][0m
+[0;33mW (3032) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3032) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3052) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3092) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3092) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (3102) testf: Euler Angle: (x (roll): 3.30 y (pitch): 1.78 z (yaw): 0.11)[deg][0m
+[0;33mW (3112) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3152) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3152) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3192) testf: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (3202) testf: Euler Angle: (x (roll): 3.37 y (pitch): 1.81 z (yaw): 0.11)[deg][0m
+[0;33mW (3212) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3212) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3252) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3272) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3292) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (3302) testf: Euler Angle: (x (roll): 3.42 y (pitch): 1.84 z (yaw): 0.11)[deg][0m
+[0;33mW (3312) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3342) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3352) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3392) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (3402) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3402) testf: Euler Angle: (x (roll): 3.48 y (pitch): 1.86 z (yaw): 0.12)[deg][0m
+[0;33mW (3412) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3452) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3462) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3492) testf: Velocity: (x: 0.00 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (3502) testf: Euler Angle: (x (roll): 3.52 y (pitch): 1.89 z (yaw): 0.12)[deg][0m
+[0;33mW (3512) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3522) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3552) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3592) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3592) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (3602) testf: Euler Angle: (x (roll): 3.56 y (pitch): 1.91 z (yaw): 0.12)[deg][0m
+[0;33mW (3612) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3652) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3652) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3692) testf: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (3702) testf: Euler Angle: (x (roll): 3.59 y (pitch): 1.93 z (yaw): 0.12)[deg][0m
+[0;33mW (3712) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3712) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3752) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3772) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3792) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (3802) testf: Euler Angle: (x (roll): 3.63 y (pitch): 1.95 z (yaw): 0.12)[deg][0m
+[0;33mW (3812) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3842) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3852) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3892) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (3902) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3902) testf: Euler Angle: (x (roll): 3.65 y (pitch): 1.96 z (yaw): 0.14)[deg][0m
+[0;33mW (3912) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3952) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3962) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (3992) testf: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (4002) testf: Euler Angle: (x (roll): 3.68 y (pitch): 1.98 z (yaw): 0.14)[deg][0m
+MS5611: P=1008.45 Pa, T=23.29 C
+[0;33mW (4092) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4092) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (4102) testf: Euler Angle: (x (roll): 3.72 y (pitch): 1.98 z (yaw): 0.15)[deg][0m
+[0;33mW (4112) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4152) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4152) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4192) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (4202) testf: Euler Angle: (x (roll): 3.72 y (pitch): 2.00 z (yaw): 0.15)[deg][0m
+[0;33mW (4212) testf: Gravity: (x: -0.36 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4212) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4252) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4272) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4292) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (4302) testf: Euler Angle: (x (roll): 3.74 y (pitch): 2.02 z (yaw): 0.15)[deg][0m
+[0;33mW (4312) testf: Gravity: (x: -0.36 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4342) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4352) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4392) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (4402) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4402) testf: Euler Angle: (x (roll): 3.75 y (pitch): 2.02 z (yaw): 0.15)[deg][0m
+[0;33mW (4412) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4452) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4462) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4492) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (4502) testf: Euler Angle: (x (roll): 3.77 y (pitch): 2.03 z (yaw): 0.16)[deg][0m
+[0;33mW (4512) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4522) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4552) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4592) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4592) testf: Velocity: (x: -0.00 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (4602) testf: Euler Angle: (x (roll): 3.77 y (pitch): 2.03 z (yaw): 0.15)[deg][0m
+[0;33mW (4612) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4652) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4652) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4692) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (4702) testf: Euler Angle: (x (roll): 3.79 y (pitch): 2.04 z (yaw): 0.15)[deg][0m
+[0;33mW (4712) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4712) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4752) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4772) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4792) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (4802) testf: Euler Angle: (x (roll): 3.79 y (pitch): 2.04 z (yaw): 0.15)[deg][0m
+[0;33mW (4812) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4842) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4852) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4892) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (4902) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.79)[m/s^2][0m
+[0;33mW (4902) testf: Euler Angle: (x (roll): 3.80 y (pitch): 2.04 z (yaw): 0.16)[deg][0m
+[0;33mW (4912) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4952) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.79)[m/s^2][0m
+[0;33mW (4962) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (4992) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (5002) testf: Euler Angle: (x (roll): 3.81 y (pitch): 2.05 z (yaw): 0.16)[deg][0m
+[0;33mW (5012) testf: Gravity: (x: -0.35 y: 0.66 z: 9.76)[m/s^2][0m
+[0;33mW (5022) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+MS5611: P=1008.47 Pa, T=23.30 C
+[0;33mW (5092) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5092) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (5102) testf: Euler Angle: (x (roll): 3.82 y (pitch): 2.05 z (yaw): 0.16)[deg][0m
+[0;33mW (5112) testf: Gravity: (x: -0.35 y: 0.66 z: 9.76)[m/s^2][0m
+[0;33mW (5152) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5152) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5192) testf: Velocity: (x: 0.00 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (5202) testf: Euler Angle: (x (roll): 3.82 y (pitch): 2.05 z (yaw): 0.16)[deg][0m
+[0;33mW (5212) testf: Gravity: (x: -0.35 y: 0.66 z: 9.76)[m/s^2][0m
+[0;33mW (5212) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5252) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5272) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5292) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (5302) testf: Euler Angle: (x (roll): 3.83 y (pitch): 2.05 z (yaw): 0.16)[deg][0m
+[0;33mW (5312) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5342) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5352) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5392) testf: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (5402) testf: Euler Angle: (x (roll): 3.84 y (pitch): 2.05 z (yaw): 0.16)[deg][0m
+[0;33mW (5402) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5412) testf: Gravity: (x: -0.35 y: 0.65 z: 9.75)[m/s^2][0m
+[0;33mW (5452) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5462) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5492) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (5502) testf: Euler Angle: (x (roll): 3.83 y (pitch): 2.05 z (yaw): 0.15)[deg][0m
+[0;33mW (5512) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5522) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5552) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5592) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5592) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (5602) testf: Euler Angle: (x (roll): 3.84 y (pitch): 2.05 z (yaw): 0.16)[deg][0m
+[0;33mW (5612) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5652) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5652) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5692) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (5702) testf: Euler Angle: (x (roll): 3.84 y (pitch): 2.06 z (yaw): 0.16)[deg][0m
+[0;33mW (5712) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5712) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5752) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5782) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5792) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (5802) testf: Euler Angle: (x (roll): 3.83 y (pitch): 2.06 z (yaw): 0.16)[deg][0m
+[0;33mW (5812) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5842) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5852) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5892) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (5902) testf: Euler Angle: (x (roll): 3.84 y (pitch): 2.05 z (yaw): 0.17)[deg][0m
+[0;33mW (5902) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5912) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5952) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5962) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (5992) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (6002) testf: Euler Angle: (x (roll): 3.83 y (pitch): 2.06 z (yaw): 0.17)[deg][0m
+[0;33mW (6012) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (6032) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+MS5611: P=1008.48 Pa, T=23.31 C
+[0;33mW (6092) testf: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (6102) testf: Euler Angle: (x (roll): 3.84 y (pitch): 2.07 z (yaw): 0.17)[deg][0m
+[0;33mW (6112) testf: Gravity: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (6152) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (6152) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (6192) testf: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (6202) testf: Euler Angle: (x (roll): 3.81 y (pitch): 2.06 z (yaw): 0.17)[deg][0m
+[0;33mW (6212) testf: Gravity: (x: -0.35 y: 0.65 z: 9.75)[m/s^2][0m
+[0;33mW (6212) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.79)[m/s^2][0m
+[0;33mW (6252) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.79)[m/s^2][0m
+[0;33mW (6282) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (6292) testf: Velocity: (x: -0.01 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (6302) testf: Euler Angle: (x (roll): 3.73 y (pitch): 2.05 z (yaw): 0.17)[deg][0m
+[0;33mW (6312) testf: Gravity: (x: -0.35 y: 0.64 z: 9.76)[m/s^2][0m
+[0;33mW (6342) testf: Angular Accel: (x: -0.35 y: 0.58 z: 9.71)[m/s^2][0m
+[0;33mW (6352) testf: Linear Accel: (x: -0.35 y: 0.58 z: 9.71)[m/s^2][0m
+[0;33mW (6392) testf: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (6402) testf: Euler Angle: (x (roll): 3.73 y (pitch): 2.06 z (yaw): 0.17)[deg][0m
+[0;33mW (6402) testf: Angular Accel: (x: -0.35 y: 0.62 z: 9.75)[m/s^2][0m
+[0;33mW (6412) testf: Gravity: (x: -0.35 y: 0.64 z: 9.75)[m/s^2][0m
+[0;33mW (6452) testf: Linear Accel: (x: -0.35 y: 0.62 z: 9.75)[m/s^2][0m
+[0;33mW (6462) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.79)[m/s^2][0m
+[0;33mW (6492) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (6502) testf: Euler Angle: (x (roll): 3.73 y (pitch): 2.06 z (yaw): 0.17)[deg][0m
+[0;33mW (6512) testf: Gravity: (x: -0.35 y: 0.63 z: 9.75)[m/s^2][0m
+[0;33mW (6532) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (6552) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (6592) testf: Angular Accel: (x: -0.35 y: 0.58 z: 9.75)[m/s^2][0m
+[0;33mW (6592) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (6602) testf: Euler Angle: (x (roll): 3.74 y (pitch): 2.05 z (yaw): 0.17)[deg][0m
+[0;33mW (6612) testf: Gravity: (x: -0.35 y: 0.63 z: 9.75)[m/s^2][0m
+[0;33mW (6652) testf: Linear Accel: (x: -0.35 y: 0.58 z: 9.75)[m/s^2][0m
+[0;33mW (6652) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (6692) testf: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (6702) testf: Euler Angle: (x (roll): 3.75 y (pitch): 2.05 z (yaw): 0.18)[deg][0m
+[0;33mW (6712) testf: Gravity: (x: -0.35 y: 0.64 z: 9.75)[m/s^2][0m
+[0;33mW (6712) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.79)[m/s^2][0m
+[0;33mW (6752) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.79)[m/s^2][0m
+[0;33mW (6782) testf: Angular Accel: (x: -0.35 y: 0.62 z: 9.75)[m/s^2][0m
+[0;33mW (6792) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (6802) testf: Euler Angle: (x (roll): 3.75 y (pitch): 2.05 z (yaw): 0.17)[deg][0m
+[0;33mW (6812) testf: Gravity: (x: -0.35 y: 0.63 z: 9.76)[m/s^2][0m
+[0;33mW (6842) testf: Angular Accel: (x: -0.35 y: 0.62 z: 9.75)[m/s^2][0m
+[0;33mW (6852) testf: Linear Accel: (x: -0.35 y: 0.62 z: 9.75)[m/s^2][0m
+[0;33mW (6892) testf: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (6902) testf: Euler Angle: (x (roll): 3.76 y (pitch): 2.04 z (yaw): 0.18)[deg][0m
+[0;33mW (6902) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (6912) testf: Gravity: (x: -0.34 y: 0.64 z: 9.76)[m/s^2][0m
+[0;33mW (6952) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (6962) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (6992) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (7002) testf: Euler Angle: (x (roll): 3.76 y (pitch): 2.04 z (yaw): 0.18)[deg][0m
+[0;33mW (7012) testf: Gravity: (x: -0.35 y: 0.64 z: 9.76)[m/s^2][0m
+[0;33mW (7032) testf: Angular Accel: (x: -0.35 y: 0.62 z: 9.75)[m/s^2][0m
+[0;33mW (7052) testf: Linear Accel: (x: -0.35 y: 0.62 z: 9.75)[m/s^2][0m
+MS5611: P=1008.47 Pa, T=23.32 C
+[0;33mW (7092) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (7102) testf: Euler Angle: (x (roll): 3.77 y (pitch): 2.04 z (yaw): 0.18)[deg][0m
+[0;33mW (7112) testf: Gravity: (x: -0.34 y: 0.64 z: 9.75)[m/s^2][0m
+[0;33mW (7152) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (7152) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.79)[m/s^2][0m
+[0;33mW (7192) testf: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (7202) testf: Euler Angle: (x (roll): 3.76 y (pitch): 2.05 z (yaw): 0.18)[deg][0m
+[0;33mW (7212) testf: Gravity: (x: -0.35 y: 0.64 z: 9.76)[m/s^2][0m
+[0;33mW (7212) testf: Angular Accel: (x: -0.35 y: 0.62 z: 9.75)[m/s^2][0m
+[0;33mW (7252) testf: Linear Accel: (x: -0.35 y: 0.62 z: 9.75)[m/s^2][0m
+[0;33mW (7282) testf: Angular Accel: (x: -0.35 y: 0.62 z: 9.71)[m/s^2][0m
+[0;33mW (7292) testf: Velocity: (x: -0.03 y: 0.02 z: 0.00)[rad/s][0m
+[0;33mW (7302) testf: Euler Angle: (x (roll): 3.68 y (pitch): 2.07 z (yaw): 0.19)[deg][0m
+[0;33mW (7312) testf: Gravity: (x: -0.36 y: 0.62 z: 9.76)[m/s^2][0m
+[0;33mW (7342) testf: Angular Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (7352) testf: Linear Accel: (x: -0.35 y: 0.66 z: 9.75)[m/s^2][0m
+[0;33mW (7392) testf: Velocity: (x: -0.14 y: 0.07 z: -0.03)[rad/s][0m
+[0;33mW (7402) testf: Euler Angle: (x (roll): 3.33 y (pitch): 2.26 z (yaw): 0.15)[deg][0m
+[0;33mW (7402) testf: Angular Accel: (x: -0.35 y: 0.58 z: 9.67)[m/s^2][0m
+[0;33mW (7412) testf: Gravity: (x: -0.39 y: 0.55 z: 9.76)[m/s^2][0m
+[0;33mW (7452) testf: Linear Accel: (x: -0.35 y: 0.58 z: 9.67)[m/s^2][0m
+[0;33mW (7462) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.83)[m/s^2][0m
+[0;33mW (7492) testf: Velocity: (x: 0.05 y: -0.03 z: 0.00)[rad/s][0m
+[0;33mW (7502) testf: Euler Angle: (x (roll): 2.91 y (pitch): 2.49 z (yaw): 0.11)[deg][0m
+[0;33mW (7512) testf: Gravity: (x: -0.41 y: 0.52 z: 9.74)[m/s^2][0m
+[0;33mW (7532) testf: Angular Accel: (x: -0.43 y: 0.47 z: 9.79)[m/s^2][0m
+[0;33mW (7552) testf: Linear Accel: (x: -0.43 y: 0.47 z: 9.79)[m/s^2][0m
+[0;33mW (7592) testf: Velocity: (x: -0.02 y: 0.01 z: 0.00)[rad/s][0m
+[0;33mW (7592) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (7602) testf: Euler Angle: (x (roll): 2.85 y (pitch): 2.53 z (yaw): 0.11)[deg][0m
+[0;33mW (7612) testf: Gravity: (x: -0.42 y: 0.50 z: 9.75)[m/s^2][0m
+[0;33mW (7652) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (7652) testf: Angular Accel: (x: -0.43 y: 0.47 z: 9.79)[m/s^2][0m
+[0;33mW (7692) testf: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (7702) testf: Euler Angle: (x (roll): 2.82 y (pitch): 2.54 z (yaw): 0.11)[deg][0m
+[0;33mW (7712) testf: Gravity: (x: -0.42 y: 0.50 z: 9.75)[m/s^2][0m
+[0;33mW (7712) testf: Angular Accel: (x: -0.43 y: 0.47 z: 9.75)[m/s^2][0m
+[0;33mW (7752) testf: Linear Accel: (x: -0.43 y: 0.47 z: 9.75)[m/s^2][0m
+[0;33mW (7782) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (7792) testf: Velocity: (x: -0.04 y: 0.03 z: -0.00)[rad/s][0m
+[0;33mW (7802) testf: Euler Angle: (x (roll): 3.00 y (pitch): 2.45 z (yaw): 0.12)[deg][0m
+[0;33mW (7812) testf: Gravity: (x: -0.41 y: 0.52 z: 9.75)[m/s^2][0m
+[0;33mW (7842) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.83)[m/s^2][0m
+[0;33mW (7852) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.83)[m/s^2][0m
+[0;33mW (7892) testf: Velocity: (x: 0.06 y: -0.03 z: 0.00)[rad/s][0m
+[0;33mW (7902) testf: Euler Angle: (x (roll): 3.28 y (pitch): 2.31 z (yaw): 0.12)[deg][0m
+[0;33mW (7902) testf: Angular Accel: (x: -0.39 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (7912) testf: Gravity: (x: -0.38 y: 0.58 z: 9.75)[m/s^2][0m
+[0;33mW (7952) testf: Linear Accel: (x: -0.39 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (7962) testf: Angular Accel: (x: -0.39 y: 0.58 z: 9.75)[m/s^2][0m
+[0;33mW (7992) testf: Velocity: (x: 0.02 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (8002) testf: Euler Angle: (x (roll): 3.30 y (pitch): 2.29 z (yaw): 0.12)[deg][0m
+[0;33mW (8012) testf: Gravity: (x: -0.41 y: 0.50 z: 9.77)[m/s^2][0m
+[0;33mW (8032) testf: Angular Accel: (x: -0.39 y: 0.58 z: 9.79)[m/s^2][0m
+[0;33mW (8052) testf: Linear Accel: (x: -0.39 y: 0.58 z: 9.79)[m/s^2][0m
+[0;33mW (8092) testf: Angular Accel: (x: -0.39 y: 0.58 z: 9.75)[m/s^2][0m
+MS5611: P=1008.47 Pa, T=23.34 C
+[0;33mW (8152) testf: Linear Accel: (x: -0.39 y: 0.58 z: 9.75)[m/s^2][0m
+[0;33mW (8152) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (8192) testf: Velocity: (x: -0.07 y: 0.05 z: -0.00)[rad/s][0m
+[0;33mW (8202) testf: Euler Angle: (x (roll): 2.95 y (pitch): 2.45 z (yaw): 0.11)[deg][0m
+[0;33mW (8212) testf: Gravity: (x: -0.42 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (8212) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.83)[m/s^2][0m
+[0;33mW (8252) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.83)[m/s^2][0m
+[0;33mW (8282) testf: Angular Accel: (x: -0.39 y: 0.58 z: 9.71)[m/s^2][0m
+[0;33mW (8292) testf: Velocity: (x: 0.04 y: -0.02 z: 0.00)[rad/s][0m
+[0;33mW (8302) testf: Euler Angle: (x (roll): 3.14 y (pitch): 2.36 z (yaw): 0.11)[deg][0m
+[0;33mW (8312) testf: Gravity: (x: -0.41 y: 0.53 z: 9.78)[m/s^2][0m
+[0;33mW (8342) testf: Angular Accel: (x: -0.39 y: 0.54 z: 9.75)[m/s^2][0m
+[0;33mW (8352) testf: Linear Accel: (x: -0.39 y: 0.54 z: 9.75)[m/s^2][0m
+[0;33mW (8392) testf: Velocity: (x: -0.01 y: 0.01 z: 0.00)[rad/s][0m
+[0;33mW (8402) testf: Euler Angle: (x (roll): 3.00 y (pitch): 2.45 z (yaw): 0.11)[deg][0m
+[0;33mW (8402) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (8412) testf: Gravity: (x: -0.41 y: 0.52 z: 9.77)[m/s^2][0m
+[0;33mW (8452) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (8472) testf: Angular Accel: (x: -0.43 y: 0.54 z: 9.79)[m/s^2][0m
+[0;33mW (8492) testf: Velocity: (x: -0.03 y: 0.02 z: -0.00)[rad/s][0m
+[0;33mW (8502) testf: Euler Angle: (x (roll): 3.00 y (pitch): 2.45 z (yaw): 0.11)[deg][0m
+[0;33mW (8512) testf: Gravity: (x: -0.41 y: 0.52 z: 9.77)[m/s^2][0m
+[0;33mW (8532) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (8552) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (8592) testf: Velocity: (x: 0.01 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (8592) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (8602) testf: Euler Angle: (x (roll): 3.02 y (pitch): 2.43 z (yaw): 0.11)[deg][0m
+[0;33mW (8612) testf: Gravity: (x: -0.41 y: 0.52 z: 9.78)[m/s^2][0m
+[0;33mW (8652) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (8652) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (8692) testf: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (8702) testf: Euler Angle: (x (roll): 3.02 y (pitch): 2.43 z (yaw): 0.11)[deg][0m
+[0;33mW (8712) testf: Gravity: (x: -0.41 y: 0.52 z: 9.78)[m/s^2][0m
+[0;33mW (8722) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (8752) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (8782) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (8792) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (8802) testf: Euler Angle: (x (roll): 3.01 y (pitch): 2.44 z (yaw): 0.12)[deg][0m
+[0;33mW (8812) testf: Gravity: (x: -0.42 y: 0.52 z: 9.79)[m/s^2][0m
+[0;33mW (8842) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (8852) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (8892) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (8902) testf: Euler Angle: (x (roll): 3.00 y (pitch): 2.44 z (yaw): 0.11)[deg][0m
+[0;33mW (8902) testf: Angular Accel: (x: -0.39 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (8912) testf: Gravity: (x: -0.42 y: 0.52 z: 9.78)[m/s^2][0m
+[0;33mW (8952) testf: Linear Accel: (x: -0.39 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (8972) testf: Angular Accel: (x: -0.43 y: 0.54 z: 9.79)[m/s^2][0m
+[0;33mW (8992) testf: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (9002) testf: Euler Angle: (x (roll): 2.97 y (pitch): 2.45 z (yaw): 0.12)[deg][0m
+[0;33mW (9012) testf: Gravity: (x: -0.41 y: 0.51 z: 9.78)[m/s^2][0m
+[0;33mW (9032) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (9052) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (9092) testf: Velocity: (x: -0.02 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (9092) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (9102) testf: Euler Angle: (x (roll): 2.94 y (pitch): 2.44 z (yaw): 0.12)[deg][0m
+MS5611: P=1008.46 Pa, T=23.36 C
+[0;33mW (9152) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (9192) testf: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (9202) testf: Euler Angle: (x (roll): 2.94 y (pitch): 2.43 z (yaw): 0.11)[deg][0m
+[0;33mW (9212) testf: Gravity: (x: -0.41 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (9222) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (9252) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (9282) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (9292) testf: Velocity: (x: 0.00 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (9302) testf: Euler Angle: (x (roll): 2.93 y (pitch): 2.44 z (yaw): 0.12)[deg][0m
+[0;33mW (9312) testf: Gravity: (x: -0.42 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (9342) testf: Angular Accel: (x: -0.43 y: 0.47 z: 9.79)[m/s^2][0m
+[0;33mW (9352) testf: Linear Accel: (x: -0.43 y: 0.47 z: 9.79)[m/s^2][0m
+[0;33mW (9392) testf: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (9402) testf: Euler Angle: (x (roll): 2.93 y (pitch): 2.45 z (yaw): 0.12)[deg][0m
+[0;33mW (9402) testf: Angular Accel: (x: -0.39 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (9412) testf: Gravity: (x: -0.42 y: 0.50 z: 9.78)[m/s^2][0m
+[0;33mW (9452) testf: Linear Accel: (x: -0.39 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (9472) testf: Angular Accel: (x: -0.39 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (9492) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (9502) testf: Euler Angle: (x (roll): 2.93 y (pitch): 2.44 z (yaw): 0.12)[deg][0m
+[0;33mW (9512) testf: Gravity: (x: -0.41 y: 0.50 z: 9.78)[m/s^2][0m
+[0;33mW (9532) testf: Angular Accel: (x: -0.43 y: 0.47 z: 9.75)[m/s^2][0m
+[0;33mW (9552) testf: Linear Accel: (x: -0.43 y: 0.47 z: 9.75)[m/s^2][0m
+[0;33mW (9592) testf: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (9592) testf: Angular Accel: (x: -0.39 y: 0.47 z: 9.75)[m/s^2][0m
+[0;33mW (9602) testf: Euler Angle: (x (roll): 2.93 y (pitch): 2.44 z (yaw): 0.13)[deg][0m
+[0;33mW (9612) testf: Gravity: (x: -0.41 y: 0.50 z: 9.78)[m/s^2][0m
+[0;33mW (9652) testf: Linear Accel: (x: -0.39 y: 0.47 z: 9.75)[m/s^2][0m
+[0;33mW (9652) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (9692) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (9702) testf: Euler Angle: (x (roll): 2.92 y (pitch): 2.43 z (yaw): 0.13)[deg][0m
+[0;33mW (9712) testf: Gravity: (x: -0.41 y: 0.49 z: 9.77)[m/s^2][0m
+[0;33mW (9722) testf: Angular Accel: (x: -0.43 y: 0.47 z: 9.75)[m/s^2][0m
+[0;33mW (9752) testf: Linear Accel: (x: -0.43 y: 0.47 z: 9.75)[m/s^2][0m
+[0;33mW (9782) testf: Angular Accel: (x: -0.43 y: 0.47 z: 9.75)[m/s^2][0m
+[0;33mW (9792) testf: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (9802) testf: Euler Angle: (x (roll): 2.91 y (pitch): 2.42 z (yaw): 0.13)[deg][0m
+[0;33mW (9812) testf: Gravity: (x: -0.41 y: 0.49 z: 9.77)[m/s^2][0m
+[0;33mW (9842) testf: Angular Accel: (x: -0.39 y: 0.47 z: 9.79)[m/s^2][0m
+[0;33mW (9852) testf: Linear Accel: (x: -0.39 y: 0.47 z: 9.79)[m/s^2][0m
+[0;33mW (9892) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (9902) testf: Euler Angle: (x (roll): 2.92 y (pitch): 2.42 z (yaw): 0.13)[deg][0m
+[0;33mW (9902) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (9912) testf: Gravity: (x: -0.41 y: 0.48 z: 9.77)[m/s^2][0m
+[0;33mW (9952) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (9972) testf: Angular Accel: (x: -0.43 y: 0.47 z: 9.79)[m/s^2][0m
+[0;33mW (9992) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (10002) testf: Euler Angle: (x (roll): 2.92 y (pitch): 2.42 z (yaw): 0.14)[deg][0m
+[0;33mW (10012) testf: Gravity: (x: -0.41 y: 0.48 z: 9.77)[m/s^2][0m
+[0;33mW (10032) testf: Angular Accel: (x: -0.39 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (10052) testf: Linear Accel: (x: -0.39 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (10092) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (10092) testf: Angular Accel: (x: -0.43 y: 0.47 z: 9.79)[m/s^2][0m
+[0;33mW (10102) testf: Euler Angle: (x (roll): 2.92 y (pitch): 2.42 z (yaw): 0.14)[deg][0m
+[0;33mW (10112) testf: Gravity: (x: -0.41 y: 0.48 z: 9.77)[m/s^2][0m
+MS5611: P=1008.46 Pa, T=23.38 C
+[0;33mW (10152) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (10192) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (10202) testf: Euler Angle: (x (roll): 2.91 y (pitch): 2.42 z (yaw): 0.14)[deg][0m
+[0;33mW (10212) testf: Gravity: (x: -0.41 y: 0.48 z: 9.77)[m/s^2][0m
+[0;33mW (10222) testf: Angular Accel: (x: -0.39 y: 0.47 z: 9.75)[m/s^2][0m
+[0;33mW (10252) testf: Linear Accel: (x: -0.39 y: 0.47 z: 9.75)[m/s^2][0m
+[0;33mW (10282) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (10292) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (10302) testf: Euler Angle: (x (roll): 2.93 y (pitch): 2.41 z (yaw): 0.14)[deg][0m
+[0;33mW (10312) testf: Gravity: (x: -0.41 y: 0.49 z: 9.77)[m/s^2][0m
+[0;33mW (10342) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (10352) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (10392) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (10402) testf: Euler Angle: (x (roll): 2.96 y (pitch): 2.41 z (yaw): 0.14)[deg][0m
+[0;33mW (10412) testf: Angular Accel: (x: -0.43 y: 0.54 z: 9.79)[m/s^2][0m
+[0;33mW (10412) testf: Gravity: (x: -0.41 y: 0.50 z: 9.77)[m/s^2][0m
+[0;33mW (10452) testf: Linear Accel: (x: -0.43 y: 0.54 z: 9.79)[m/s^2][0m
+[0;33mW (10472) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (10492) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (10502) testf: Euler Angle: (x (roll): 2.98 y (pitch): 2.41 z (yaw): 0.14)[deg][0m
+[0;33mW (10512) testf: Gravity: (x: -0.41 y: 0.52 z: 9.77)[m/s^2][0m
+[0;33mW (10532) testf: Angular Accel: (x: -0.43 y: 0.54 z: 9.79)[m/s^2][0m
+[0;33mW (10552) testf: Linear Accel: (x: -0.43 y: 0.54 z: 9.79)[m/s^2][0m
+[0;33mW (10592) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (10592) testf: Angular Accel: (x: -0.43 y: 0.47 z: 9.79)[m/s^2][0m
+[0;33mW (10602) testf: Euler Angle: (x (roll): 2.98 y (pitch): 2.41 z (yaw): 0.14)[deg][0m
+[0;33mW (10612) testf: Gravity: (x: -0.41 y: 0.52 z: 9.77)[m/s^2][0m
+[0;33mW (10652) testf: Linear Accel: (x: -0.43 y: 0.47 z: 9.79)[m/s^2][0m
+[0;33mW (10662) testf: Angular Accel: (x: -0.43 y: 0.54 z: 9.79)[m/s^2][0m
+[0;33mW (10692) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (10702) testf: Euler Angle: (x (roll): 2.98 y (pitch): 2.42 z (yaw): 0.14)[deg][0m
+[0;33mW (10712) testf: Gravity: (x: -0.42 y: 0.52 z: 9.78)[m/s^2][0m
+[0;33mW (10722) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (10752) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (10782) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (10792) testf: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (10802) testf: Euler Angle: (x (roll): 2.98 y (pitch): 2.43 z (yaw): 0.14)[deg][0m
+[0;33mW (10812) testf: Gravity: (x: -0.42 y: 0.52 z: 9.79)[m/s^2][0m
+[0;33mW (10842) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (10852) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (10892) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (10902) testf: Euler Angle: (x (roll): 2.99 y (pitch): 2.43 z (yaw): 0.15)[deg][0m
+[0;33mW (10912) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (10912) testf: Gravity: (x: -0.42 y: 0.52 z: 9.78)[m/s^2][0m
+[0;33mW (10952) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (10972) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (10992) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (11002) testf: Euler Angle: (x (roll): 2.99 y (pitch): 2.43 z (yaw): 0.15)[deg][0m
+[0;33mW (11012) testf: Gravity: (x: -0.42 y: 0.52 z: 9.78)[m/s^2][0m
+[0;33mW (11032) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (11052) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (11092) testf: Velocity: (x: -0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (11092) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (11102) testf: Euler Angle: (x (roll): 2.98 y (pitch): 2.43 z (yaw): 0.15)[deg][0m
+[0;33mW (11112) testf: Gravity: (x: -0.42 y: 0.51 z: 9.77)[m/s^2][0m
+MS5611: P=1008.46 Pa, T=23.39 C
+[0;33mW (11202) testf: Euler Angle: (x (roll): 2.98 y (pitch): 2.44 z (yaw): 0.15)[deg][0m
+[0;33mW (11212) testf: Gravity: (x: -0.42 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (11222) testf: Angular Accel: (x: -0.43 y: 0.54 z: 9.75)[m/s^2][0m
+[0;33mW (11252) testf: Linear Accel: (x: -0.43 y: 0.54 z: 9.75)[m/s^2][0m
+[0;33mW (11282) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (11292) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (11302) testf: Euler Angle: (x (roll): 2.99 y (pitch): 2.44 z (yaw): 0.15)[deg][0m
+[0;33mW (11312) testf: Gravity: (x: -0.42 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (11342) testf: Angular Accel: (x: -0.43 y: 0.54 z: 9.79)[m/s^2][0m
+[0;33mW (11352) testf: Linear Accel: (x: -0.43 y: 0.54 z: 9.79)[m/s^2][0m
+[0;33mW (11392) testf: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (11402) testf: Euler Angle: (x (roll): 2.98 y (pitch): 2.44 z (yaw): 0.15)[deg][0m
+[0;33mW (11412) testf: Gravity: (x: -0.42 y: 0.52 z: 9.77)[m/s^2][0m
+[0;33mW (11412) testf: Angular Accel: (x: -0.39 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (11452) testf: Linear Accel: (x: -0.39 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (11472) testf: Angular Accel: (x: -0.43 y: 0.54 z: 9.79)[m/s^2][0m
+[0;33mW (11492) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (11502) testf: Euler Angle: (x (roll): 2.99 y (pitch): 2.45 z (yaw): 0.15)[deg][0m
+[0;33mW (11512) testf: Gravity: (x: -0.41 y: 0.52 z: 9.77)[m/s^2][0m
+[0;33mW (11532) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (11552) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (11592) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (11592) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (11602) testf: Euler Angle: (x (roll): 3.00 y (pitch): 2.44 z (yaw): 0.15)[deg][0m
+[0;33mW (11612) testf: Gravity: (x: -0.41 y: 0.52 z: 9.77)[m/s^2][0m
+[0;33mW (11652) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (11662) testf: Angular Accel: (x: -0.39 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (11692) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (11702) testf: Euler Angle: (x (roll): 3.01 y (pitch): 2.44 z (yaw): 0.16)[deg][0m
+[0;33mW (11712) testf: Gravity: (x: -0.41 y: 0.52 z: 9.77)[m/s^2][0m
+[0;33mW (11722) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (11752) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (11782) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (11792) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (11802) testf: Euler Angle: (x (roll): 3.02 y (pitch): 2.44 z (yaw): 0.16)[deg][0m
+[0;33mW (11812) testf: Gravity: (x: -0.41 y: 0.52 z: 9.76)[m/s^2][0m
+[0;33mW (11842) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (11852) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (11892) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (11902) testf: Euler Angle: (x (roll): 3.03 y (pitch): 2.43 z (yaw): 0.16)[deg][0m
+[0;33mW (11912) testf: Gravity: (x: -0.41 y: 0.52 z: 9.77)[m/s^2][0m
+[0;33mW (11912) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (11952) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (11972) testf: Angular Accel: (x: -0.39 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (11992) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (12002) testf: Euler Angle: (x (roll): 3.02 y (pitch): 2.43 z (yaw): 0.16)[deg][0m
+[0;33mW (12012) testf: Gravity: (x: -0.41 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (12032) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (12052) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (12092) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (12092) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (12102) testf: Euler Angle: (x (roll): 3.02 y (pitch): 2.42 z (yaw): 0.16)[deg][0m
+[0;33mW (12112) testf: Gravity: (x: -0.41 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (12152) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (12162) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+MS5611: P=1008.47 Pa, T=23.41 C
+[0;33mW (12202) testf: Euler Angle: (x (roll): 3.02 y (pitch): 2.42 z (yaw): 0.15)[deg][0m
+[0;33mW (12212) testf: Gravity: (x: -0.41 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (12222) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (12252) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (12282) testf: Angular Accel: (x: -0.39 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (12292) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (12302) testf: Euler Angle: (x (roll): 3.01 y (pitch): 2.42 z (yaw): 0.16)[deg][0m
+[0;33mW (12312) testf: Gravity: (x: -0.41 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (12352) testf: Linear Accel: (x: -0.39 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (12352) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (12392) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (12402) testf: Euler Angle: (x (roll): 3.00 y (pitch): 2.42 z (yaw): 0.15)[deg][0m
+[0;33mW (12412) testf: Gravity: (x: -0.41 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (12412) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (12452) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (12472) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (12492) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (12502) testf: Euler Angle: (x (roll): 3.00 y (pitch): 2.42 z (yaw): 0.16)[deg][0m
+[0;33mW (12512) testf: Gravity: (x: -0.41 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (12532) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (12552) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (12592) testf: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (12602) testf: Euler Angle: (x (roll): 3.00 y (pitch): 2.42 z (yaw): 0.16)[deg][0m
+[0;33mW (12602) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (12612) testf: Gravity: (x: -0.42 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (12652) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (12662) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (12692) testf: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (12702) testf: Euler Angle: (x (roll): 3.00 y (pitch): 2.42 z (yaw): 0.15)[deg][0m
+[0;33mW (12712) testf: Gravity: (x: -0.42 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (12722) testf: Angular Accel: (x: -0.39 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (12752) testf: Linear Accel: (x: -0.39 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (12782) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (12782) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (12802) testf: Euler Angle: (x (roll): 3.00 y (pitch): 2.42 z (yaw): 0.16)[deg][0m
+[0;33mW (12812) testf: Gravity: (x: -0.41 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (12852) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (12852) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (12882) testf: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (12892) testf: Euler Angle: (x (roll): 2.99 y (pitch): 2.43 z (yaw): 0.16)[deg][0m
+[0;33mW (12912) testf: Gravity: (x: -0.41 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (12912) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (12952) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (12972) testf: Angular Accel: (x: -0.43 y: 0.54 z: 9.75)[m/s^2][0m
+[0;33mW (12982) testf: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (12992) testf: Euler Angle: (x (roll): 2.98 y (pitch): 2.43 z (yaw): 0.16)[deg][0m
+[0;33mW (13012) testf: Gravity: (x: -0.42 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (13032) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (13052) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (13082) testf: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (13102) testf: Euler Angle: (x (roll): 2.99 y (pitch): 2.43 z (yaw): 0.16)[deg][0m
+[0;33mW (13102) testf: Angular Accel: (x: -0.39 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (13112) testf: Gravity: (x: -0.41 y: 0.52 z: 9.77)[m/s^2][0m
+[0;33mW (13152) testf: Linear Accel: (x: -0.39 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (13162) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (13182) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+MS5611: P=1008.47 Pa, T=23.43 C
+[0;33mW (13222) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13252) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13282) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13282) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (13292) testf: Euler Angle: (x (roll): 3.00 y (pitch): 2.42 z (yaw): 0.17)[deg][0m
+[0;33mW (13312) testf: Gravity: (x: -0.41 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (13352) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13352) testf: Angular Accel: (x: -0.39 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (13382) testf: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (13392) testf: Euler Angle: (x (roll): 3.00 y (pitch): 2.43 z (yaw): 0.17)[deg][0m
+[0;33mW (13412) testf: Gravity: (x: -0.41 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (13412) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13452) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13472) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13482) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (13492) testf: Euler Angle: (x (roll): 2.99 y (pitch): 2.43 z (yaw): 0.17)[deg][0m
+[0;33mW (13512) testf: Gravity: (x: -0.41 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (13532) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (13552) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (13582) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (13592) testf: Euler Angle: (x (roll): 2.98 y (pitch): 2.43 z (yaw): 0.18)[deg][0m
+[0;33mW (13602) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13612) testf: Gravity: (x: -0.41 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (13652) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13662) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13682) testf: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (13692) testf: Euler Angle: (x (roll): 2.98 y (pitch): 2.44 z (yaw): 0.18)[deg][0m
+[0;33mW (13712) testf: Gravity: (x: -0.42 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (13722) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13752) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13782) testf: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (13792) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13792) testf: Euler Angle: (x (roll): 2.98 y (pitch): 2.43 z (yaw): 0.18)[deg][0m
+[0;33mW (13812) testf: Gravity: (x: -0.41 y: 0.51 z: 9.78)[m/s^2][0m
+[0;33mW (13852) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13852) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (13882) testf: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (13892) testf: Euler Angle: (x (roll): 2.99 y (pitch): 2.43 z (yaw): 0.18)[deg][0m
+[0;33mW (13912) testf: Gravity: (x: -0.41 y: 0.51 z: 9.78)[m/s^2][0m
+[0;33mW (13912) testf: Angular Accel: (x: -0.39 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13952) testf: Linear Accel: (x: -0.39 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (13972) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (13982) testf: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (13992) testf: Euler Angle: (x (roll): 2.99 y (pitch): 2.44 z (yaw): 0.18)[deg][0m
+[0;33mW (14002) testf: Gravity: (x: -0.41 y: 0.51 z: 9.78)[m/s^2][0m
+[0;33mW (14042) testf: Angular Accel: (x: -0.43 y: 0.54 z: 9.79)[m/s^2][0m
+[0;33mW (14052) testf: Linear Accel: (x: -0.43 y: 0.54 z: 9.79)[m/s^2][0m
+[0;33mW (14082) testf: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (14092) testf: Euler Angle: (x (roll): 2.98 y (pitch): 2.44 z (yaw): 0.18)[deg][0m
+[0;33mW (14102) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (14102) testf: Gravity: (x: -0.41 y: 0.52 z: 9.77)[m/s^2][0m
+[0;33mW (14142) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (14162) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (14182) testf: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (14192) testf: Euler Angle: (x (roll): 2.98 y (pitch): 2.44 z (yaw): 0.17)[deg][0m
+[0;33mW (14202) testf: Gravity: (x: -0.42 y: 0.52 z: 9.77)[m/s^2][0m
+MS5611: P=1008.48 Pa, T=23.44 C
+[0;33mW (14282) testf: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (14292) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (14292) testf: Euler Angle: (x (roll): 2.99 y (pitch): 2.44 z (yaw): 0.16)[deg][0m
+[0;33mW (14302) testf: Gravity: (x: -0.42 y: 0.52 z: 9.78)[m/s^2][0m
+[0;33mW (14342) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (14352) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.75)[m/s^2][0m
+[0;33mW (14382) testf: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (14392) testf: Euler Angle: (x (roll): 2.99 y (pitch): 2.44 z (yaw): 0.16)[deg][0m
+[0;33mW (14402) testf: Gravity: (x: -0.42 y: 0.51 z: 9.77)[m/s^2][0m
+[0;33mW (14412) testf: Angular Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m
+[0;33mW (14442) testf: Linear Accel: (x: -0.43 y: 0.51 z: 9.79)[m/s^2][0m

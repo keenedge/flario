@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "testf",
-    "project_version":    "fe03c15-dirty",
+    "project_version":    "d273d9c-dirty",
     "project_path":       "D:/testf",
     "idf_path":           "D:/esp/v5.5.3/esp-idf",
     "build_dir":          "D:/testf/build",
@@ -1250,12 +1250,12 @@
             "dir": "D:/testf/main",
             "type": "LIBRARY",
             "lib": "__idf_main",
-            "reqs": [ "esp_driver_gpio", "esp_driver_spi", "esp_timer" ],
+            "reqs": [ "esp_driver_i2c", "esp_driver_gpio", "esp_driver_spi", "esp_lcd", "esp_timer" ],
             "priv_reqs": [ "esp32_BNO08x" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "D:/testf/build/esp-idf/main/libmain.a",
-            "sources": [ "D:/testf/main/ms5611_spi.c", "D:/testf/main/testf.c" ],
+            "sources": [ "D:/testf/main/barometer_task.cpp", "D:/testf/main/display_task.cpp", "D:/testf/main/imu_task.cpp", "D:/testf/main/ms5611_spi.c", "D:/testf/main/telemetry.cpp", "D:/testf/main/testf.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
@@ -2964,7 +2964,7 @@
             "prefix": "idf",
             "dir": "D:/testf/main",
             "lib": "__idf_main",
-            "reqs": [ "esp_driver_gpio", "esp_driver_spi", "esp_timer" ],
+            "reqs": [ "esp_driver_i2c", "esp_driver_gpio", "esp_driver_spi", "esp_lcd", "esp_timer" ],
             "priv_reqs": [ "esp32_BNO08x" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
