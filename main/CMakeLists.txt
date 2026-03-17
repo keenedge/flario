@@ -2,6 +2,7 @@ idf_component_register(
     SRCS
         "barometer_task.cpp"
         "display_task.cpp"
+        "encoder.c"
         "imu_task.cpp"
         "ms5611_spi.c"
         "telemetry.cpp"
@@ -11,6 +12,7 @@ idf_component_register(
     REQUIRES
         esp_driver_i2c
         esp_driver_gpio
+        esp_driver_pcnt
         esp_driver_spi
         esp_lcd
         esp_timer

@@ -38,6 +38,7 @@ typedef struct {
     float pressure_hpa;
     float temp_c;
     float altitude_m;
+    float qnh_hpa;
 } telemetry_baro_t;
 
 typedef struct {
@@ -51,6 +52,8 @@ void telemetry_store_imu_gyro(float x_rads, float y_rads, float z_rads);
 void telemetry_store_imu_accel(float x_ms2, float y_ms2, float z_ms2);
 void telemetry_store_imu_linear_accel(float x_ms2, float y_ms2, float z_ms2);
 void telemetry_store_baro(int32_t pressure_pa, float temp_c);
+void telemetry_set_qnh_hpa(float qnh_hpa);
+void telemetry_adjust_qnh_hpa(float delta_hpa);
 void telemetry_load_snapshot(telemetry_snapshot_t *snapshot);
 
 #ifdef __cplusplus

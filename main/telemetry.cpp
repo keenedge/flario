@@ -7,8 +7,36 @@
 
 namespace {
 
+constexpr float DEFAULT_QNH_HPA = 1013.25f;
+constexpr float MIN_QNH_HPA = 850.0f;
+constexpr float MAX_QNH_HPA = 1100.0f;
+
 portMUX_TYPE s_telemetry_lock = portMUX_INITIALIZER_UNLOCKED;
-telemetry_snapshot_t s_snapshot = {};
+telemetry_snapshot_t s_snapshot = []() {
+    telemetry_snapshot_t snapshot = {};
+    snapshot.baro.qnh_hpa = DEFAULT_QNH_HPA;
+    return snapshot;
+}();
+
+float clamp_qnh_hpa(float qnh_hpa)
+{
+    if (qnh_hpa < MIN_QNH_HPA) {
+        return MIN_QNH_HPA;
+    }
+    if (qnh_hpa > MAX_QNH_HPA) {
+        return MAX_QNH_HPA;
+    }
+    return qnh_hpa;
+}
+
+float calculate_altitude_m(float pressure_hpa, float qnh_hpa)
+{
+    if ((pressure_hpa <= 0.0f) || (qnh_hpa <= 0.0f)) {
+        return 0.0f;
+    }
+
+    return 44330.0f * (1.0f - powf(pressure_hpa / qnh_hpa, 0.19029495f));
+}
 
 void telemetry_touch_imu(int64_t now_us)
 {
@@ -80,18 +108,35 @@ void telemetry_store_baro(int32_t pressure_pa, float temp_c)
 {
     const int64_t now_us = esp_timer_get_time();
     const float pressure_hpa = pressure_pa / 100.0f;
-    float altitude_m = 0.0f;
-
-    if (pressure_hpa > 0.0f) {
-        altitude_m = 44330.0f * (1.0f - powf(pressure_hpa / 1013.25f, 0.19029495f));
-    }
 
     portENTER_CRITICAL(&s_telemetry_lock);
     telemetry_touch_baro(now_us);
     s_snapshot.baro.pressure_pa = pressure_pa;
     s_snapshot.baro.pressure_hpa = pressure_hpa;
     s_snapshot.baro.temp_c = temp_c;
-    s_snapshot.baro.altitude_m = altitude_m;
+    s_snapshot.baro.altitude_m = calculate_altitude_m(pressure_hpa, s_snapshot.baro.qnh_hpa);
+    portEXIT_CRITICAL(&s_telemetry_lock);
+}
+
+void telemetry_set_qnh_hpa(float qnh_hpa)
+{
+    portENTER_CRITICAL(&s_telemetry_lock);
+    s_snapshot.baro.qnh_hpa = clamp_qnh_hpa(qnh_hpa);
+    if (s_snapshot.baro.valid) {
+        s_snapshot.baro.altitude_m = calculate_altitude_m(s_snapshot.baro.pressure_hpa, s_snapshot.baro.qnh_hpa);
+    }
+    s_snapshot.revision++;
+    portEXIT_CRITICAL(&s_telemetry_lock);
+}
+
+void telemetry_adjust_qnh_hpa(float delta_hpa)
+{
+    portENTER_CRITICAL(&s_telemetry_lock);
+    s_snapshot.baro.qnh_hpa = clamp_qnh_hpa(s_snapshot.baro.qnh_hpa + delta_hpa);
+    if (s_snapshot.baro.valid) {
+        s_snapshot.baro.altitude_m = calculate_altitude_m(s_snapshot.baro.pressure_hpa, s_snapshot.baro.qnh_hpa);
+    }
+    s_snapshot.revision++;
     portEXIT_CRITICAL(&s_telemetry_lock);
 }
 

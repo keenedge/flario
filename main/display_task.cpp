@@ -18,6 +18,7 @@
 #include "esp_timer.h"
 
 #include "display_task.hpp"
+#include "encoder.h"
 #include "telemetry.hpp"
 
 namespace {
@@ -36,7 +37,7 @@ constexpr int OLED_HEIGHT = 64;
 constexpr int OLED_PAGE_COUNT = OLED_HEIGHT / 8;
 constexpr size_t OLED_BUFFER_SIZE = OLED_WIDTH * OLED_PAGE_COUNT;
 constexpr TickType_t DISPLAY_REFRESH_TICKS = pdMS_TO_TICKS(250);
-constexpr int DISPLAY_PAGE_PERIOD_S = 4;
+constexpr uint8_t DISPLAY_PAGE_COUNT = 3;
 constexpr int TEXT_LINE_HEIGHT = 8;
 constexpr int TEXT_CHAR_WIDTH = 6;
 constexpr int TEXT_MAX_LINES = OLED_HEIGHT / TEXT_LINE_HEIGHT;
@@ -157,6 +158,16 @@ int age_ms_from_us(bool valid, int64_t updated_us)
     return (age_ms > 9999) ? 9999 : static_cast<int>(age_ms);
 }
 
+void render_timestamp_line(char *line, size_t line_len, bool valid, int64_t updated_us)
+{
+    if (!valid) {
+        snprintf(line, line_len, "TS WAIT");
+        return;
+    }
+
+    snprintf(line, line_len, "TS %8lluMS", (unsigned long long) (updated_us / 1000));
+}
+
 void render_wait_line(char *line, size_t line_len, const char *label)
 {
     snprintf(line, line_len, "%s WAIT", label);
@@ -164,71 +175,71 @@ void render_wait_line(char *line, size_t line_len, const char *label)
 
 void render_pose_page(char lines[TEXT_MAX_LINES][TEXT_LINE_LEN], const telemetry_snapshot_t *snapshot)
 {
-    snprintf(lines[0], TEXT_LINE_LEN, "POSE BARO");
+    snprintf(lines[0], TEXT_LINE_LEN, "PAGE 2 POSE");
+    render_timestamp_line(lines[1], TEXT_LINE_LEN, snapshot->imu.valid, snapshot->imu.updated_us);
 
     if (snapshot->imu.valid) {
-        snprintf(lines[1], TEXT_LINE_LEN, "YAW %6.1f", snapshot->imu.yaw_deg);
-        snprintf(lines[2], TEXT_LINE_LEN, "PIT %6.1f", snapshot->imu.pitch_deg);
-        snprintf(lines[3], TEXT_LINE_LEN, "ROL %6.1f", snapshot->imu.roll_deg);
+        snprintf(lines[2], TEXT_LINE_LEN, "RAW %6.1f", snapshot->imu.yaw_deg);
+        snprintf(lines[3], TEXT_LINE_LEN, "PIT %6.1f", snapshot->imu.pitch_deg);
+        snprintf(lines[4], TEXT_LINE_LEN, "ROL %6.1f", snapshot->imu.roll_deg);
     } else {
-        render_wait_line(lines[1], TEXT_LINE_LEN, "YAW");
-        render_wait_line(lines[2], TEXT_LINE_LEN, "PIT");
-        render_wait_line(lines[3], TEXT_LINE_LEN, "ROL");
-    }
-
-    if (snapshot->baro.valid) {
-        snprintf(lines[4], TEXT_LINE_LEN, "P %7.2f HPA", snapshot->baro.pressure_hpa);
-        snprintf(lines[5], TEXT_LINE_LEN, "T %7.2f C", snapshot->baro.temp_c);
-        snprintf(lines[7], TEXT_LINE_LEN, "BAR %4dMS", age_ms_from_us(true, snapshot->baro.updated_us));
-    } else {
-        render_wait_line(lines[4], TEXT_LINE_LEN, "BAR");
-        render_wait_line(lines[5], TEXT_LINE_LEN, "TEMP");
-        render_wait_line(lines[7], TEXT_LINE_LEN, "BAR");
+        render_wait_line(lines[2], TEXT_LINE_LEN, "RAW");
+        render_wait_line(lines[3], TEXT_LINE_LEN, "PIT");
+        render_wait_line(lines[4], TEXT_LINE_LEN, "ROL");
     }
 
     if (snapshot->imu.valid) {
-        snprintf(lines[6], TEXT_LINE_LEN, "IMU %4dMS", age_ms_from_us(true, snapshot->imu.updated_us));
+        snprintf(lines[6], TEXT_LINE_LEN, "AGE %4dMS", age_ms_from_us(true, snapshot->imu.updated_us));
     } else {
-        render_wait_line(lines[6], TEXT_LINE_LEN, "IMU");
+        render_wait_line(lines[6], TEXT_LINE_LEN, "AGE");
     }
 }
 
 void render_motion_page(char lines[TEXT_MAX_LINES][TEXT_LINE_LEN], const telemetry_snapshot_t *snapshot)
 {
-    snprintf(lines[0], TEXT_LINE_LEN, "MOTION");
-
-    if (snapshot->imu.valid) {
-        snprintf(lines[1], TEXT_LINE_LEN, "GX %7.2f", snapshot->imu.gyro_x_rads);
-        snprintf(lines[2], TEXT_LINE_LEN, "GY %7.2f", snapshot->imu.gyro_y_rads);
-        snprintf(lines[3], TEXT_LINE_LEN, "GZ %7.2f", snapshot->imu.gyro_z_rads);
-        snprintf(lines[4], TEXT_LINE_LEN, "LX %7.2f", snapshot->imu.lin_accel_x_ms2);
-        snprintf(lines[5], TEXT_LINE_LEN, "LY %7.2f", snapshot->imu.lin_accel_y_ms2);
-        snprintf(lines[6], TEXT_LINE_LEN, "LZ %7.2f", snapshot->imu.lin_accel_z_ms2);
-    } else {
-        render_wait_line(lines[1], TEXT_LINE_LEN, "GX");
-        render_wait_line(lines[2], TEXT_LINE_LEN, "GY");
-        render_wait_line(lines[3], TEXT_LINE_LEN, "GZ");
-        render_wait_line(lines[4], TEXT_LINE_LEN, "LX");
-        render_wait_line(lines[5], TEXT_LINE_LEN, "LY");
-        render_wait_line(lines[6], TEXT_LINE_LEN, "LZ");
-    }
+    snprintf(lines[0], TEXT_LINE_LEN, "PAGE 1 BARO");
+    render_timestamp_line(lines[1], TEXT_LINE_LEN, snapshot->baro.valid, snapshot->baro.updated_us);
 
     if (snapshot->baro.valid) {
-        snprintf(lines[7], TEXT_LINE_LEN, "P %7.2f HPA", snapshot->baro.pressure_hpa);
+        snprintf(lines[2], TEXT_LINE_LEN, "P %7.2f HPA", snapshot->baro.pressure_hpa);
+        snprintf(lines[3], TEXT_LINE_LEN, "ALT %6.1f M", snapshot->baro.altitude_m);
+        snprintf(lines[4], TEXT_LINE_LEN, "TMP %6.2f C", snapshot->baro.temp_c);
+        snprintf(lines[5], TEXT_LINE_LEN, "QNH %6.2f", snapshot->baro.qnh_hpa);
+        snprintf(lines[6], TEXT_LINE_LEN, "AGE %4dMS", age_ms_from_us(true, snapshot->baro.updated_us));
     } else {
-        render_wait_line(lines[7], TEXT_LINE_LEN, "BAR");
+        render_wait_line(lines[2], TEXT_LINE_LEN, "P");
+        render_wait_line(lines[3], TEXT_LINE_LEN, "ALT");
+        render_wait_line(lines[4], TEXT_LINE_LEN, "TMP");
+        snprintf(lines[5], TEXT_LINE_LEN, "QNH %6.2f", snapshot->baro.qnh_hpa);
+        render_wait_line(lines[6], TEXT_LINE_LEN, "AGE");
     }
 }
 
-void render_snapshot(const telemetry_snapshot_t *snapshot)
+void render_accel_page(char lines[TEXT_MAX_LINES][TEXT_LINE_LEN], const telemetry_snapshot_t *snapshot)
+{
+    snprintf(lines[0], TEXT_LINE_LEN, "PAGE 3 ACCEL");
+
+    if (snapshot->imu.valid) {
+        snprintf(lines[1], TEXT_LINE_LEN, "AX %7.2f", snapshot->imu.accel_x_ms2);
+        snprintf(lines[2], TEXT_LINE_LEN, "AY %7.2f", snapshot->imu.accel_y_ms2);
+        snprintf(lines[3], TEXT_LINE_LEN, "AZ %7.2f", snapshot->imu.accel_z_ms2);
+    } else {
+        render_wait_line(lines[1], TEXT_LINE_LEN, "AX");
+        render_wait_line(lines[2], TEXT_LINE_LEN, "AY");
+        render_wait_line(lines[3], TEXT_LINE_LEN, "AZ");
+    }
+}
+
+void render_snapshot(const telemetry_snapshot_t *snapshot, uint8_t page_index)
 {
     char lines[TEXT_MAX_LINES][TEXT_LINE_LEN] = {};
-    const bool show_motion_page = ((esp_timer_get_time() / 1000000) / DISPLAY_PAGE_PERIOD_S) % 2;
 
-    if (show_motion_page) {
+    if (page_index == 0) {
         render_motion_page(lines, snapshot);
-    } else {
+    } else if (page_index == 1) {
         render_pose_page(lines, snapshot);
+    } else {
+        render_accel_page(lines, snapshot);
     }
 
     clear_buffer();
@@ -302,10 +313,12 @@ void display_task(void *arg)
     (void)arg;
 
     telemetry_snapshot_t snapshot = {};
+    uint8_t page_index = 0;
 
     while (true) {
         telemetry_load_snapshot(&snapshot);
-        render_snapshot(&snapshot);
+        page_index = (uint8_t) (encoder_get_button_press_count() % DISPLAY_PAGE_COUNT);
+        render_snapshot(&snapshot, page_index);
         ESP_ERROR_CHECK(esp_lcd_panel_draw_bitmap(s_panel, 0, 0, OLED_WIDTH, OLED_HEIGHT, s_oled_buffer));
         vTaskDelay(DISPLAY_REFRESH_TICKS);
     }

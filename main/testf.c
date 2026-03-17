@@ -10,6 +10,7 @@
 #include "driver/gpio.h"
 
 #include "display_task.hpp"
+#include "encoder.h"
 #include "imu_task.hpp"
 #include "barometer_task.hpp"
 
@@ -44,6 +45,8 @@ extern "C" void app_main(void)
     gpio_dump_io_configuration(stdout, (1ULL << 3) | (1ULL << 26) | (1ULL << 47) | (1ULL << 48));
 
     init();
+
+    ESP_ERROR_CHECK(encoder_start());
 
     imu_start();
 
