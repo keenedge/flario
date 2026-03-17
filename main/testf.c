@@ -13,6 +13,8 @@
 #include "encoder.h"
 #include "imu_task.hpp"
 #include "barometer_task.hpp"
+#include "settings.h"
+#include "telemetry.hpp"
 
 #define PIN_NUM_VEXT GPIO_NUM_36
 #define PIN_NUM_CS_MS GPIO_NUM_4
@@ -42,9 +44,15 @@ void init(void)
 
 extern "C" void app_main(void)
 {
+    float saved_qnh_hpa = 1013.25f;
+
     gpio_dump_io_configuration(stdout, (1ULL << 3) | (1ULL << 26) | (1ULL << 47) | (1ULL << 48));
 
     init();
+
+    ESP_ERROR_CHECK(settings_init());
+    ESP_ERROR_CHECK(settings_load_qnh_hpa(&saved_qnh_hpa));
+    telemetry_set_qnh_hpa(saved_qnh_hpa);
 
     ESP_ERROR_CHECK(encoder_start());
 

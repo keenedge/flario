@@ -14,6 +14,7 @@
 #include "esp_timer.h"
 
 #include "encoder.h"
+#include "settings.h"
 #include "telemetry.hpp"
 
 #define ENC_A_GPIO GPIO_NUM_41
@@ -65,6 +66,9 @@ static void encoder_task(void *arg)
             ESP_ERROR_CHECK(pcnt_unit_clear_count(s_unit));
             if ((button_press_count % DISPLAY_PAGE_COUNT) == BARO_PAGE_INDEX) {
                 telemetry_adjust_qnh_hpa(detent_delta * QNH_STEP_HPA);
+                telemetry_snapshot_t snapshot = {};
+                telemetry_load_snapshot(&snapshot);
+                settings_schedule_qnh_save(snapshot.baro.qnh_hpa);
                 ESP_LOGI(TAG, "qnh step=%d pos=%ld", detent_delta, (long) position);
             }
         }
@@ -85,6 +89,7 @@ static void encoder_task(void *arg)
             ESP_LOGI(TAG, "button %s", btn_level ? "released" : "pressed");
         }
 
+        settings_service();
         vTaskDelay(pdMS_TO_TICKS(ENCODER_TASK_PERIOD_MS));
     }
 }

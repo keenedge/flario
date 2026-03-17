@@ -5,6 +5,7 @@ idf_component_register(
         "encoder.c"
         "imu_task.cpp"
         "ms5611_spi.c"
+        "settings.c"
         "telemetry.cpp"
         "testf.c"
     INCLUDE_DIRS
@@ -15,6 +16,7 @@ idf_component_register(
         esp_driver_pcnt
         esp_driver_spi
         esp_lcd
+        nvs_flash
         esp_timer
     PRIV_REQUIRES
         esp32_BNO08x
