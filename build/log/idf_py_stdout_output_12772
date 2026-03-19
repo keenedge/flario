@@ -1,0 +1,1103 @@
+Command: d:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\esp\v5.5.3\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\testf\build\testf.elf D:\testf\build\bootloader\bootloader.elf --force-color -m 'd:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\esp\v5.5.3\esp-idf\tools\idf.py'
+Vו�block revis�ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x9 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 10 2026 10:24:35[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (29) boot: efuse block revision: v1.3[0m
+[0;32mI (32) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (36) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (70) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c144h ( 49476) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001c16c vaddr=3fc94c00 size=03280h ( 12928) load[0m
+[0;32mI (99) esp_image: segment 2: paddr=0001f3f4 vaddr=40374000 size=00c24h (  3108) load[0m
+[0;32mI (103) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=19f04h (106244) map[0m
+[0;32mI (128) esp_image: segment 4: paddr=00039f2c vaddr=40374c24 size=0ff58h ( 65368) load[0m
+[0;32mI (143) esp_image: segment 5: paddr=00049e8c vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (161) cpu_start: Multicore app[0m
+[0;32mI (169) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (170) cpu_start: Pro cpu start user code[0m
+[0;32mI (170) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (171) app_init: Application information:[0m
+[0;32mI (175) app_init: Project name:     testf[0m
+[0;32mI (179) app_init: App version:      1[0m
+[0;32mI (182) app_init: Compile time:     Mar 10 2026 10:24:14[0m
+[0;32mI (187) app_init: ELF file SHA256:  25749371d...[0m
+[0;32mI (192) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (197) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (200) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (204) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (208) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (215) heap_init: At 3FC99400 len 00050310 (320 KiB): RAM[0m
+[0;32mI (220) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (225) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (230) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (236) spi_flash: detected chip: gd[0m
+[0;32mI (239) spi_flash: flash io: dio[0m
+[0;33mW (242) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (254) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (260) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (267) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[1;31mE (347) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (347) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (347) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (347) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (347) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (347) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (357) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (357) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (357) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (367) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (367) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (367) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (377) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (377) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (377) bno08x_hal: bad SHTP len=32767[0m
+[1;31mE (387) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (387) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (397) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (407) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (407) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (417) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (417) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (427) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (437) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (437) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (447) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (457) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (457) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (467) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (467) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (477) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (487) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (487) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (497) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (507) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (507) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (517) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (517) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (527) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (537) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (537) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (547) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (557) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (557) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (567) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (577) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (577) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (587) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (587) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (597) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (607) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (607) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (617) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (627) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (627) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (637) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (637) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (647) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (657) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (657) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (667) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (677) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (677) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (687) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (697) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (697) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (707) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (707) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (717) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (727) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (727) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (737) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (747) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (747) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (757) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (757) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (767) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (777) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (777) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (787) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (797) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (797) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (807) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (807) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (817) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (827) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (827) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (837) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (847) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (847) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (857) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (857) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (867) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (877) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (877) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (887) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (897) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (897) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (907) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (917) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (917) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (927) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (927) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (937) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (947) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (947) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (957) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (967) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (967) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (977) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (977) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (987) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (997) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (997) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1007) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1017) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1017) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1027) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1037) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1037) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1047) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1047) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1057) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1067) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1067) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1077) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1087) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1087) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1097) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1107) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1107) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1117) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1117) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1127) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1137) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1137) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1147) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1157) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1157) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1167) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1177) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1177) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1187) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1187) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1197) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1207) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1207) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1217) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1227) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1227) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1237) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1247) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1247) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1257) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1257) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1267) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1277) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1277) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1287) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1297) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1297) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1307) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1317) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1317) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1327) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1327) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1337) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1347) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1347) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1357) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1367) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1367) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1377) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1387) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1387) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1397) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1407) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1407) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1417) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1417) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1427) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1437) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1437) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1447) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1457) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1457) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1467) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1477) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1477) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1487) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1487) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1497) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1507) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1507) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1517) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1527) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1527) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1537) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1547) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1547) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1557) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1557) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1567) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1577) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1577) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1587) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1597) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1597) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1607) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1617) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1617) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1627) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1627) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1637) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1647) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1647) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1657) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1667) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1667) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1677) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1687) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1687) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1697) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1697) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1707) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1717) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1717) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1727) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1737) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1737) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1747) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1757) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1757) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1767) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1777) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1777) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1787) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1787) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1797) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1807) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1807) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1817) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1827) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1827) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1837) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1847) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1847) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1857) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1857) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1867) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1877) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1877) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1887) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1897) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1897) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1907) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1917) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1917) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1927) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1927) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1937) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1947) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1947) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1957) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1967) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1967) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1977) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1987) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1987) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (1997) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (1997) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2007) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2017) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2017) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2027) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2037) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2037) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2047) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2057) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2057) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2067) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2067) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2077) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2087) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2087) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2097) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2107) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2107) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2117) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2127) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2127) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2137) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2147) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2147) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2157) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2157) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2167) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2177) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2177) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2187) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2197) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2197) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2207) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2217) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2217) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2227) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2227) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2237) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2247) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2247) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2257) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2267) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2267) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2277) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2287) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2287) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2297) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2297) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2307) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2317) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2317) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2327) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2337) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2337) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2347) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2357) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2357) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2367) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2367) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2377) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2387) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2387) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2397) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2407) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2407) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2417) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2427) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2427) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2437) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2437) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2447) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2457) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2457) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2467) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2477) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2477) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2487) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2497) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2497) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2507) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2517) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2517) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2527) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2527) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2537) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2547) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2547) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2557) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2567) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2567) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2577) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2587) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2587) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2597) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2597) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2607) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2617) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2617) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2627) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2637) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2637) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2647) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2657) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2657) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2667) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2667) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2677) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2687) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2687) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2697) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2707) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2707) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2717) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2727) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2727) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2737) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2737) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2747) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2757) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2757) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2767) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2777) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2777) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2787) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2797) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2797) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2807) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2807) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2817) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2827) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2827) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2837) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2847) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2847) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2857) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2867) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2867) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2877) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2887) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2887) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2897) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2897) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2907) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2917) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2917) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2927) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2937) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2937) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2947) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2957) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2957) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2967) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2967) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2977) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2987) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (2987) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (2997) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3007) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3007) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3017) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3027) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3027) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3037) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3037) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3047) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3057) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3057) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3067) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3077) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3077) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3087) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3097) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3097) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3107) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3107) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3117) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3127) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3127) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3137) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3147) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3147) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3157) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3167) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3167) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3177) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3177) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3187) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3197) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3197) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3207) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3217) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3217) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3227) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3237) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3237) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3247) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3257) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3257) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3267) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3267) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3277) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3287) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3287) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3297) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3307) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3307) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3317) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3327) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3327) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3337) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3337) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3347) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3357) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3357) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3367) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3377) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3377) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3387) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3397) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3397) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3407) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3407) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3417) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3427) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3427) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3437) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3447) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3447) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3457) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3467) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3467) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3477) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3477) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3487) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3497) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3497) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3507) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3517) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3517) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3527) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3537) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3537) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3547) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3547) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3557) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3567) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3567) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3577) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3587) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3587) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3597) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3607) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3607) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3617) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3627) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3627) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3637) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3637) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3647) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3657) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3657) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3667) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3677) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3677) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3687) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3697) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3697) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3707) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3707) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3717) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3727) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3727) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3737) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3747) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3747) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3757) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3767) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3767) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3777) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3777) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3787) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3797) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3797) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3807) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3817) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3817) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3827) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3837) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3837) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3847) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3847) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3857) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3867) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3867) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3877) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3887) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3887) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3897) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3907) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3907) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3917) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3917) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3927) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3937) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3937) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3947) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3957) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3957) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3967) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3977) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3977) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3987) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (3997) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (3997) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4007) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4007) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4017) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4027) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4027) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4037) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4047) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4047) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4057) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4067) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4067) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4077) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4077) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4087) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4097) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4097) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4107) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4117) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4117) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4127) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4137) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4137) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4147) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4147) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4157) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4167) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4167) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4177) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4187) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4187) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4197) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4207) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4207) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4217) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4227) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4227) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4237) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4237) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4247) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4257) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4257) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4267) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4277) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4277) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4287) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4287) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4297) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4307) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4307) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4317) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4327) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4327) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4337) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4347) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4347) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4357) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4367) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4367) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4377) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4377) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4387) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4397) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4397) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4407) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4417) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4417) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4427) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4437) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4437) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4447) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4447) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4457) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4467) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4467) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4477) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4487) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4487) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4497) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4507) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4507) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4517) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4517) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4527) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4537) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4537) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4547) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4557) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4557) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4567) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4577) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4577) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4587) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4597) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4597) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4607) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4607) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4617) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4627) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4627) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4637) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4647) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4647) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4657) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4657) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4667) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4677) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4677) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4687) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4697) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4697) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4707) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4717) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4717) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4727) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4737) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4737) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4747) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4747) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4757) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4767) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4767) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4777) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4787) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4787) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4797) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4807) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4807) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4817) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4817) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4827) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4837) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4837) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4847) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4857) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4857) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4867) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4877) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4877) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4887) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4887) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4897) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4907) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4907) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4917) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4927) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4927) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4937) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4947) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4947) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4957) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4967) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4967) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4977) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4977) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4987) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (4997) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (4997) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5007) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5017) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5017) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5027) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5037) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5037) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5047) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5047) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5057) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5067) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5067) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5077) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5087) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5087) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5097) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5107) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5107) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5117) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5117) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5127) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5137) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5137) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5147) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5157) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5157) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5167) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5177) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5177) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5187) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5187) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5197) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5207) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5207) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5217) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5227) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5227) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5237) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5247) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5247) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5257) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5257) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5267) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5277) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5277) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5287) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5297) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5297) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5307) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5317) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5317) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5327) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5337) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5337) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5347) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5347) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5357) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5367) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5367) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5377) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5387) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5387) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5397) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5407) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5407) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5417) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5417) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5427) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5437) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5437) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5447) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5457) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5457) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5467) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5477) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5477) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5487) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5487) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5497) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5507) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5507) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5517) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5527) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5527) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5537) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5547) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5547) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5557) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5557) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5567) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5577) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5577) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5587) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5597) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5597) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5607) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5617) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5617) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5627) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5627) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5637) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5647) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5647) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5657) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5667) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5667) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5677) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5687) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5687) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5697) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5707) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5707) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5717) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5717) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5727) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5737) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5737) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5747) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5757) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5757) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5767) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5777) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5777) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5787) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5787) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5797) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5807) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5807) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5817) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5827) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5827) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5837) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5847) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5847) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5857) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5857) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5867) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5877) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5877) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5887) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5897) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5897) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5907) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5917) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5917) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5927) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5927) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5937) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5947) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5947) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5957) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5967) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5967) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5977) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5987) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5987) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (5997) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (5997) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6007) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6017) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6017) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6027) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6037) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6037) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6047) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6057) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6057) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6067) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6077) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6077) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6087) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6087) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6097) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6107) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6107) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6117) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6127) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6127) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6137) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6147) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6147) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6157) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6157) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6167) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6177) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6177) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6187) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6197) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6197) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6207) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6217) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6217) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6227) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6227) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6237) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6247) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6247) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6257) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6267) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6267) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6277) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6287) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6287) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6297) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6297) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6307) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6317) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6317) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6327) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6337) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6337) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6347) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6357) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6357) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6367) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6367) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6377) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6387) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6387) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6397) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6407) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6407) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6417) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6427) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6427) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6437) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6447) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6447) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6457) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6457) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6467) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6477) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6477) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6487) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6497) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6497) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6507) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6517) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6517) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6527) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6527) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6537) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6547) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6547) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6557) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6567) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6567) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6577) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6587) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6587) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6597) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6597) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6607) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6617) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6617) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6627) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6637) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6637) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6647) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6657) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6657) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6667) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6667) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6677) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6687) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6687) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6697) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6707) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6707) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6717) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6727) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6727) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6737) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6737) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6747) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6757) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6757) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6767) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6777) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6777) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6787) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6797) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6797) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6807) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6817) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6817) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6827) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6827) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6837) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6847) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6847) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6857) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6867) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6867) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6877) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6887) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6887) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6897) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6897) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6907) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6917) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6917) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6927) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m
+[1;31mE (6937) spi_master: check_trans_valid(1119): txdata transfer > host maximum[0m
+[1;31mE (6937) bno08x_hal: bno_read_shtp_packet(134): read payload failed[0m

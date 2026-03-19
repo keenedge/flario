@@ -1,0 +1,518 @@
+Command: d:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\esp\v5.5.3\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\testf\build\testf.elf D:\testf\build\bootloader\bootloader.elf --force-color -m 'd:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\esp\v5.5.3\esp-idf\tools\idf.py'
+oot: efuse block�ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 10 2026 10:24:35[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (29) boot: efuse block revision: v1.3[0m
+[0;32mI (32) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (36) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (70) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c2a8h ( 49832) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001c2d0 vaddr=3fc95300 size=03280h ( 12928) load[0m
+[0;32mI (99) esp_image: segment 2: paddr=0001f558 vaddr=40374000 size=00ac0h (  2752) load[0m
+[0;32mI (103) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=189f8h (100856) map[0m
+[0;32mI (127) esp_image: segment 4: paddr=00038a20 vaddr=40374ac0 size=10778h ( 67448) load[0m
+[0;32mI (142) esp_image: segment 5: paddr=000491a0 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (149) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (160) cpu_start: Multicore app[0m
+[0;32mI (169) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (169) cpu_start: Pro cpu start user code[0m
+[0;32mI (169) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (171) app_init: Application information:[0m
+[0;32mI (175) app_init: Project name:     testf[0m
+[0;32mI (178) app_init: App version:      d273d9c-dirty[0m
+[0;32mI (183) app_init: Compile time:     Mar 11 2026 16:40:53[0m
+[0;32mI (188) app_init: ELF file SHA256:  a519a918a...[0m
+[0;32mI (192) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (197) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (201) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (205) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (209) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (215) heap_init: At 3FC99C88 len 0004FA88 (318 KiB): RAM[0m
+[0;32mI (220) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (225) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (231) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (237) spi_flash: detected chip: gd[0m
+[0;32mI (239) spi_flash: flash io: dio[0m
+[0;33mW (242) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (255) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (261) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (268) main_task: Started on CPU0[0m
+[0;32mI (288) main_task: Calling app_main()[0m
+================IO DUMP Start================
+IO[3] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 0 (IOMUX)
+  SleepSelEn: 1
+
+IO[26] -
+  Pullup: 1, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+IO[47] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+IO[48] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+=================IO DUMP End=================
+[1;31mE (568) spi_master: spi_master_init_driver(299): host_id not initialized[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x420099fd
+file: "./main/testf.c" line 153
+func: void app_main()
+expression: spi_bus_add_device(SPI3_HOST, &devcfg, &ms5611_spi_dev)
+
+abort() was called at PC 0x4037aaaf on core 0
+
+
+Backtrace: 0x4037aaf1:0x3fc9c760 0x4037aab9:0x3fc9c780 0x40382ac1:0x3fc9c7a0 0x4037aaaf:0x3fc9c810 0x420099fd:0x3fc9c840 0x420180e4:0x3fc9c8a0 0x4037b7d1:0x3fc9c8d0
+
+
+
+
+ELF file SHA256: a519a918a
+
+Rebooting...
+���ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037ac40
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (29) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Mar 10 2026 10:24:35[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.3[0m
+[0;32mI (37) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (41) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (62) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (75) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c2a8h ( 49832) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=0001c2d0 vaddr=3fc95300 size=03280h ( 12928) load[0m
+[0;32mI (104) esp_image: segment 2: paddr=0001f558 vaddr=40374000 size=00ac0h (  2752) load[0m
+[0;32mI (107) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=189f8h (100856) map[0m
+[0;32mI (132) esp_image: segment 4: paddr=00038a20 vaddr=40374ac0 size=10778h ( 67448) load[0m
+[0;32mI (147) esp_image: segment 5: paddr=000491a0 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (154) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (154) boot: Disabling RNG early entropy source...[0m
+[0;32mI (165) cpu_start: Multicore app[0m
+[0;32mI (173) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (174) cpu_start: Pro cpu start user code[0m
+[0;32mI (174) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (175) app_init: Application information:[0m
+[0;32mI (179) app_init: Project name:     testf[0m
+[0;32mI (183) app_init: App version:      d273d9c-dirty[0m
+[0;32mI (187) app_init: Compile time:     Mar 11 2026 16:40:53[0m
+[0;32mI (192) app_init: ELF file SHA256:  a519a918a...[0m
+[0;32mI (197) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (202) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (205) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (209) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (213) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (220) heap_init: At 3FC99C88 len 0004FA88 (318 KiB): RAM[0m
+[0;32mI (225) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (230) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (235) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (241) spi_flash: detected chip: gd[0m
+[0;32mI (244) spi_flash: flash io: dio[0m
+[0;33mW (247) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (259) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (265) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (272) main_task: Started on CPU0[0m
+[0;32mI (292) main_task: Calling app_main()[0m
+================IO DUMP Start================
+IO[3] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 0 (IOMUX)
+  SleepSelEn: 1
+
+IO[26] -
+  Pullup: 1, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+IO[47] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+IO[48] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+=================IO DUMP End=================
+[1;31mE (572) spi_master: spi_master_init_driver(299): host_id not initialized[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x420099fd
+file: "./main/testf.c" line 153
+func: void app_main()
+expression: spi_bus_add_device(SPI3_HOST, &devcfg, &ms5611_spi_dev)
+
+abort() was called at PC 0x4037aaaf on core 0
+
+
+Backtrace: 0x4037aaf1:0x3fc9c760 0x4037aab9:0x3fc9c780 0x40382ac1:0x3fc9c7a0 0x4037aaaf:0x3fc9c810 0x420099fd:0x3fc9c840 0x420180e4:0x3fc9c8a0 0x4037b7d1:0x3fc9c8d0
+
+
+
+
+ELF file SHA256: a519a918a
+
+Rebooting...
+���ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037ac40
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (29) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Mar 10 2026 10:24:35[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.3[0m
+[0;32mI (37) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (41) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (62) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (75) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c2a8h ( 49832) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=0001c2d0 vaddr=3fc95300 size=03280h ( 12928) load[0m
+[0;32mI (104) esp_image: segment 2: paddr=0001f558 vaddr=40374000 size=00ac0h (  2752) load[0m
+[0;32mI (107) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=189f8h (100856) map[0m
+[0;32mI (132) esp_image: segment 4: paddr=00038a20 vaddr=40374ac0 size=10778h ( 67448) load[0m
+[0;32mI (147) esp_image: segment 5: paddr=000491a0 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (154) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (154) boot: Disabling RNG early entropy source...[0m
+[0;32mI (165) cpu_start: Multicore app[0m
+[0;32mI (173) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (174) cpu_start: Pro cpu start user code[0m
+[0;32mI (174) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (175) app_init: Application information:[0m
+[0;32mI (179) app_init: Project name:     testf[0m
+[0;32mI (183) app_init: App version:      d273d9c-dirty[0m
+[0;32mI (187) app_init: Compile time:     Mar 11 2026 16:40:53[0m
+[0;32mI (192) app_init: ELF file SHA256:  a519a918a...[0m
+[0;32mI (197) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (202) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (205) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (209) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (213) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (220) heap_init: At 3FC99C88 len 0004FA88 (318 KiB): RAM[0m
+[0;32mI (225) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (230) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (235) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (241) spi_flash: detected chip: gd[0m
+[0;32mI (244) spi_flash: flash io: dio[0m
+[0;33mW (247) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (259) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (265) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (272) main_task: Started on CPU0[0m
+[0;32mI (292) main_task: Calling app_main()[0m
+================IO DUMP Start================
+IO[3] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 0 (IOMUX)
+  SleepSelEn: 1
+
+IO[26] -
+  Pullup: 1, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+IO[47] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+IO[48] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+=================IO DUMP End=================
+[1;31mE (572) spi_master: spi_master_init_driver(299): host_id not initialized[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x420099fd
+file: "./main/testf.c" line 153
+func: void app_main()
+expression: spi_bus_add_device(SPI3_HOST, &devcfg, &ms5611_spi_dev)
+
+abort() was called at PC 0x4037aaaf on core 0
+
+
+Backtrace: 0x4037aaf1:0x3fc9c760 0x4037aab9:0x3fc9c780 0x40382ac1:0x3fc9c7a0 0x4037aaaf:0x3fc9c810 0x420099fd:0x3fc9c840 0x420180e4:0x3fc9c8a0 0x4037b7d1:0x3fc9c8d0
+
+
+
+
+ELF file SHA256: a519a918a
+
+Rebooting...
+���ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037ac40
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (29) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Mar 10 2026 10:24:35[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.3[0m
+[0;32mI (37) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (41) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (62) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (75) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c2a8h ( 49832) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=0001c2d0 vaddr=3fc95300 size=03280h ( 12928) load[0m
+[0;32mI (104) esp_image: segment 2: paddr=0001f558 vaddr=40374000 size=00ac0h (  2752) load[0m
+[0;32mI (107) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=189f8h (100856) map[0m
+[0;32mI (132) esp_image: segment 4: paddr=00038a20 vaddr=40374ac0 size=10778h ( 67448) load[0m
+[0;32mI (147) esp_image: segment 5: paddr=000491a0 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (154) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (154) boot: Disabling RNG early entropy source...[0m
+[0;32mI (165) cpu_start: Multicore app[0m
+[0;32mI (173) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (174) cpu_start: Pro cpu start user code[0m
+[0;32mI (174) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (175) app_init: Application information:[0m
+[0;32mI (179) app_init: Project name:     testf[0m
+[0;32mI (183) app_init: App version:      d273d9c-dirty[0m
+[0;32mI (187) app_init: Compile time:     Mar 11 2026 16:40:53[0m
+[0;32mI (192) app_init: ELF file SHA256:  a519a918a...[0m
+[0;32mI (197) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (202) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (205) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (209) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (213) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (220) heap_init: At 3FC99C88 len 0004FA88 (318 KiB): RAM[0m
+[0;32mI (225) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (230) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (235) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (241) spi_flash: detected chip: gd[0m
+[0;32mI (244) spi_flash: flash io: dio[0m
+[0;33mW (247) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (259) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (265) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (272) main_task: Started on CPU0[0m
+[0;32mI (292) main_task: Calling app_main()[0m
+================IO DUMP Start================
+IO[3] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 0 (IOMUX)
+  SleepSelEn: 1
+
+IO[26] -
+  Pullup: 1, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+IO[47] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+IO[48] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+=================IO DUMP End=================
+[1;31mE (572) spi_master: spi_master_init_driver(299): host_id not initialized[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x420099fd
+file: "./main/testf.c" line 153
+func: void app_main()
+expression: spi_bus_add_device(SPI3_HOST, &devcfg, &ms5611_spi_dev)
+
+abort() was called at PC 0x4037aaaf on core 0
+
+
+Backtrace: 0x4037aaf1:0x3fc9c760 0x4037aab9:0x3fc9c780 0x40382ac1:0x3fc9c7a0 0x4037aaaf:0x3fc9c810 0x420099fd:0x3fc9c840 0x420180e4:0x3fc9c8a0 0x4037b7d1:0x3fc9c8d0
+
+
+
+
+ELF file SHA256: a519a918a
+
+Rebooting...
+���ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037ac40
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (29) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Mar 10 2026 10:24:35[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.3[0m
+[0;32mI (37) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (41) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (55) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (62) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (68) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (75) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c2a8h ( 49832) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=0001c2d0 vaddr=3fc95300 size=03280h ( 12928) load[0m
+[0;32mI (104) esp_image: segment 2: paddr=0001f558 vaddr=40374000 size=00ac0h (  2752) load[0m
+[0;32mI (107) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=189f8h (100856) map[0m
+[0;32mI (132) esp_image: segment 4: paddr=00038a20 vaddr=40374ac0 size=10778h ( 67448) load[0m
+[0;32mI (147) esp_image: segment 5: paddr=000491a0 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (154) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (154) boot: Disabling RNG early entropy source...[0m
+[0;32mI (165) cpu_start: Multicore app[0m
+[0;32mI (173) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (174) cpu_start: Pro cpu start user code[0m
+[0;32mI (174) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (175) app_init: Application information:[0m
+[0;32mI (179) app_init: Project name:     testf[0m
+[0;32mI (183) app_init: App version:      d273d9c-dirty[0m
+[0;32mI (187) app_init: Compile time:     Mar 11 2026 16:40:53[0m
+[0;32mI (192) app_init: ELF file SHA256:  a519a918a...[0m
+[0;32mI (197) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (202) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (205) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (209) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (213) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (220) heap_init: At 3FC99C88 len 0004FA88 (318 KiB): RAM[0m
+[0;32mI (225) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (230) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (235) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (241) spi_flash: detected chip: gd[0m
+[0;32mI (244) spi_flash: flash io: dio[0m
+[0;33mW (247) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (259) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (265) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (272) main_task: Started on CPU0[0m
+[0;32mI (292) main_task: Calling app_main()[0m
+================IO DUMP Start================
+IO[3] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 0 (IOMUX)
+  SleepSelEn: 1
+
+IO[26] -
+  Pullup: 1, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+IO[47] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+IO[48] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+=================IO DUMP End=================

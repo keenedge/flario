@@ -1,5 +1,6 @@
 #pragma once
 
+<<<<<<< HEAD
 #include <stdint.h>
 
 #include "task_base.hpp"
@@ -34,3 +35,7 @@ private:
     BarometerSampleListener* barometerSampleListener_ = nullptr;
     Latest<BarometerSample> latest_;
 };
+=======
+void barometer_start(void);
+void barometer_task(void *arg);
+>>>>>>> testf-branch

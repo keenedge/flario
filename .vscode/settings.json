@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
   "C_Cpp.default.forcedInclude": [
     "${workspaceFolder}/build/config/sdkconfig.h"
@@ -14,4 +15,9 @@
   ],
   "idf.openOcdDebugLevel": 2,
   "idf.portWin": "COM3"
+=======
+    "idf.currentSetup": "C:/Espressif/frameworks/esp-idf-v5.5.3/",
+    "chat.fontSize": 18
+
+>>>>>>> testf-branch
 }

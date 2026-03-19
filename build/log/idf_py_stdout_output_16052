@@ -1,0 +1,240 @@
+Command: d:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\esp\v5.5.3\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\testf\build\testf.elf D:\testf\build\bootloader\bootloader.elf --force-color -m 'd:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\esp\v5.5.3\esp-idf\tools\idf.py'
+������revision�ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x29 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 10 2026 10:24:35[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (29) boot: efuse block revision: v1.3[0m
+[0;32mI (32) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (36) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (70) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0be4ch ( 48716) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001be74 vaddr=3fc94b00 size=03280h ( 12928) load[0m
+[0;32mI (99) esp_image: segment 2: paddr=0001f0fc vaddr=40374000 size=00f1ch (  3868) load[0m
+[0;32mI (103) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=18240h ( 98880) map[0m
+[0;32mI (127) esp_image: segment 4: paddr=00038268 vaddr=40374f1c size=0fbd4h ( 64468) load[0m
+[0;32mI (141) esp_image: segment 5: paddr=00047e44 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (148) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (149) boot: Disabling RNG early entropy source...[0m
+[0;32mI (159) cpu_start: Multicore app[0m
+[0;32mI (168) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (168) cpu_start: Pro cpu start user code[0m
+[0;32mI (168) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (174) app_init: Project name:     testf[0m
+[0;32mI (178) app_init: App version:      1[0m
+[0;32mI (181) app_init: Compile time:     Mar 10 2026 15:27:30[0m
+[0;32mI (186) app_init: ELF file SHA256:  19d9b2366...[0m
+[0;32mI (190) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (195) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (199) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (203) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (207) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (213) heap_init: At 3FC986A0 len 00051070 (324 KiB): RAM[0m
+[0;32mI (218) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (223) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (229) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (235) spi_flash: detected chip: gd[0m
+[0;32mI (237) spi_flash: flash io: dio[0m
+[0;33mW (240) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (252) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (259) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (266) main_task: Started on CPU0[0m
+[0;32mI (286) main_task: Calling app_main()[0m
+PROM: C0=0x0040 C1=0xC093 C2=0xBF2C C3=0x7879 C4=0x6B22 C5=0x7EE9 C6=0x6D7F 
+MS5611: P=1013.73 Pa, T=26.70 C
+MS5611: P=1016.18 Pa, T=27.77 C
+MS5611: P=1017.27 Pa, T=28.17 C
+MS5611: P=1017.90 Pa, T=28.32 C
+MS5611: P=1018.26 Pa, T=28.34 C
+MS5611: P=1018.48 Pa, T=28.29 C
+MS5611: P=1018.63 Pa, T=28.20 C
+MS5611: P=1018.72 Pa, T=28.09 C
+MS5611: P=1018.78 Pa, T=27.98 C
+MS5611: P=1018.79 Pa, T=27.86 C
+MS5611: P=1018.83 Pa, T=27.76 C
+MS5611: P=1018.83 Pa, T=27.65 C
+MS5611: P=1018.85 Pa, T=27.55 C
+MS5611: P=1018.84 Pa, T=27.47 C
+MS5611: P=1018.83 Pa, T=27.39 C
+MS5611: P=1018.84 Pa, T=27.32 C
+MS5611: P=1018.84 Pa, T=27.25 C
+MS5611: P=1018.85 Pa, T=27.19 C
+MS5611: P=1018.85 Pa, T=27.14 C
+MS5611: P=1018.85 Pa, T=27.09 C
+MS5611: P=1018.83 Pa, T=27.05 C
+MS5611: P=1018.85 Pa, T=27.00 C
+MS5611: P=1018.83 Pa, T=26.96 C
+MS5611: P=1018.86 Pa, T=26.92 C
+MS5611: P=1018.84 Pa, T=26.89 C
+MS5611: P=1018.84 Pa, T=26.87 C
+MS5611: P=1018.84 Pa, T=26.83 C
+MS5611: P=1018.87 Pa, T=26.81 C
+MS5611: P=1018.84 Pa, T=26.78 C
+MS5611: P=1018.86 Pa, T=26.76 C
+MS5611: P=1018.82 Pa, T=26.74 C
+MS5611: P=1018.85 Pa, T=26.72 C
+MS5611: P=1018.86 Pa, T=26.70 C
+MS5611: P=1018.87 Pa, T=26.68 C
+MS5611: P=1018.83 Pa, T=26.66 C
+MS5611: P=1018.84 Pa, T=26.65 C
+MS5611: P=1018.86 Pa, T=26.63 C
+MS5611: P=1018.85 Pa, T=26.62 C
+MS5611: P=1018.86 Pa, T=26.60 C
+MS5611: P=1018.84 Pa, T=26.59 C
+MS5611: P=1018.86 Pa, T=26.58 C
+MS5611: P=1018.88 Pa, T=26.56 C
+MS5611: P=1018.86 Pa, T=26.55 C
+MS5611: P=1018.86 Pa, T=26.55 C
+MS5611: P=1018.85 Pa, T=26.53 C
+MS5611: P=1018.83 Pa, T=26.52 C
+MS5611: P=1018.85 Pa, T=26.51 C
+MS5611: P=1018.84 Pa, T=26.50 C
+MS5611: P=1018.86 Pa, T=26.49 C
+MS5611: P=1018.84 Pa, T=26.49 C
+MS5611: P=1018.85 Pa, T=26.48 C
+MS5611: P=1018.86 Pa, T=26.47 C
+MS5611: P=1018.87 Pa, T=26.46 C
+MS5611: P=1018.86 Pa, T=26.46 C
+MS5611: P=1018.85 Pa, T=26.45 C
+MS5611: P=1018.84 Pa, T=26.44 C
+MS5611: P=1018.88 Pa, T=26.43 C
+MS5611: P=1018.86 Pa, T=26.43 C
+MS5611: P=1018.86 Pa, T=26.43 C
+MS5611: P=1018.84 Pa, T=26.41 C
+MS5611: P=1018.87 Pa, T=26.41 C
+MS5611: P=1018.88 Pa, T=26.40 C
+MS5611: P=1018.83 Pa, T=26.40 C
+MS5611: P=1018.86 Pa, T=26.39 C
+MS5611: P=1018.85 Pa, T=26.39 C
+MS5611: P=1018.87 Pa, T=26.38 C
+MS5611: P=1018.86 Pa, T=26.38 C
+MS5611: P=1018.85 Pa, T=26.38 C
+MS5611: P=1018.86 Pa, T=26.37 C
+MS5611: P=1018.85 Pa, T=26.37 C
+MS5611: P=1018.86 Pa, T=26.36 C
+MS5611: P=1018.89 Pa, T=26.36 C
+MS5611: P=1018.86 Pa, T=26.36 C
+MS5611: P=1018.86 Pa, T=26.35 C
+MS5611: P=1018.85 Pa, T=26.35 C
+MS5611: P=1018.90 Pa, T=26.34 C
+MS5611: P=1018.88 Pa, T=26.34 C
+MS5611: P=1018.86 Pa, T=26.34 C
+MS5611: P=1018.84 Pa, T=26.33 C
+MS5611: P=1018.88 Pa, T=26.33 C
+MS5611: P=1018.85 Pa, T=26.33 C
+MS5611: P=1018.89 Pa, T=26.33 C
+MS5611: P=1018.87 Pa, T=26.33 C
+MS5611: P=1018.86 Pa, T=26.32 C
+MS5611: P=1018.88 Pa, T=26.31 C
+MS5611: P=1018.87 Pa, T=26.31 C
+MS5611: P=1018.86 Pa, T=26.31 C
+MS5611: P=1018.82 Pa, T=26.31 C
+MS5611: P=1018.84 Pa, T=26.30 C
+MS5611: P=1018.86 Pa, T=26.30 C
+MS5611: P=1018.89 Pa, T=26.30 C
+MS5611: P=1018.87 Pa, T=26.30 C
+MS5611: P=1018.85 Pa, T=26.30 C
+MS5611: P=1018.86 Pa, T=26.29 C
+MS5611: P=1018.87 Pa, T=26.29 C
+MS5611: P=1018.88 Pa, T=26.29 C
+MS5611: P=1018.89 Pa, T=26.29 C
+MS5611: P=1018.84 Pa, T=26.28 C
+MS5611: P=1018.84 Pa, T=26.28 C
+MS5611: P=1018.86 Pa, T=26.28 C
+MS5611: P=1018.85 Pa, T=26.28 C
+MS5611: P=1018.85 Pa, T=26.28 C
+MS5611: P=1018.84 Pa, T=26.28 C
+MS5611: P=1018.87 Pa, T=26.27 C
+MS5611: P=1018.86 Pa, T=26.27 C
+MS5611: P=1018.87 Pa, T=26.27 C
+MS5611: P=1018.87 Pa, T=26.27 C
+MS5611: P=1018.83 Pa, T=26.27 C
+MS5611: P=1018.88 Pa, T=26.26 C
+MS5611: P=1018.87 Pa, T=26.26 C
+MS5611: P=1018.85 Pa, T=26.26 C
+MS5611: P=1018.87 Pa, T=26.26 C
+MS5611: P=1018.85 Pa, T=26.26 C
+MS5611: P=1018.89 Pa, T=26.26 C
+MS5611: P=1018.87 Pa, T=26.25 C
+MS5611: P=1018.87 Pa, T=26.26 C
+MS5611: P=1018.84 Pa, T=26.25 C
+MS5611: P=1018.84 Pa, T=26.25 C
+MS5611: P=1018.87 Pa, T=26.25 C
+MS5611: P=1018.86 Pa, T=26.25 C
+MS5611: P=1018.85 Pa, T=26.25 C
+MS5611: P=1018.84 Pa, T=26.25 C
+MS5611: P=1018.86 Pa, T=26.24 C
+MS5611: P=1018.88 Pa, T=26.24 C
+MS5611: P=1018.84 Pa, T=26.24 C
+MS5611: P=1018.85 Pa, T=26.24 C
+MS5611: P=1018.85 Pa, T=26.24 C
+MS5611: P=1018.85 Pa, T=26.24 C
+MS5611: P=1018.86 Pa, T=26.24 C
+MS5611: P=1018.86 Pa, T=26.24 C
+MS5611: P=1018.86 Pa, T=26.24 C
+MS5611: P=1018.83 Pa, T=26.23 C
+MS5611: P=1018.86 Pa, T=26.23 C
+MS5611: P=1018.87 Pa, T=26.23 C
+MS5611: P=1018.84 Pa, T=26.23 C
+MS5611: P=1018.83 Pa, T=26.23 C
+MS5611: P=1018.84 Pa, T=26.23 C
+MS5611: P=1018.86 Pa, T=26.23 C
+MS5611: P=1018.86 Pa, T=26.23 C
+MS5611: P=1018.83 Pa, T=26.23 C
+MS5611: P=1018.86 Pa, T=26.23 C
+MS5611: P=1018.85 Pa, T=26.22 C
+MS5611: P=1018.84 Pa, T=26.22 C
+MS5611: P=1018.85 Pa, T=26.22 C
+MS5611: P=1018.85 Pa, T=26.22 C
+MS5611: P=1018.85 Pa, T=26.22 C
+MS5611: P=1018.85 Pa, T=26.22 C
+MS5611: P=1018.85 Pa, T=26.22 C
+MS5611: P=1018.85 Pa, T=26.22 C
+MS5611: P=1018.86 Pa, T=26.22 C
+MS5611: P=1018.86 Pa, T=26.22 C
+MS5611: P=1018.86 Pa, T=26.21 C
+MS5611: P=1018.86 Pa, T=26.21 C
+MS5611: P=1018.84 Pa, T=26.22 C
+MS5611: P=1018.86 Pa, T=26.22 C
+MS5611: P=1018.85 Pa, T=26.21 C
+MS5611: P=1018.85 Pa, T=26.21 C
+MS5611: P=1018.85 Pa, T=26.21 C
+MS5611: P=1018.83 Pa, T=26.21 C
+MS5611: P=1018.85 Pa, T=26.21 C
+MS5611: P=1018.85 Pa, T=26.21 C
+MS5611: P=1018.87 Pa, T=26.21 C
+MS5611: P=1018.85 Pa, T=26.21 C
+MS5611: P=1018.86 Pa, T=26.21 C
+MS5611: P=1018.82 Pa, T=26.21 C
+MS5611: P=1018.87 Pa, T=26.21 C
+MS5611: P=1018.88 Pa, T=26.21 C
+MS5611: P=1018.88 Pa, T=26.21 C
+MS5611: P=1018.86 Pa, T=26.21 C
+MS5611: P=1018.85 Pa, T=26.21 C
+MS5611: P=1018.86 Pa, T=26.20 C
+MS5611: P=1018.86 Pa, T=26.20 C
+MS5611: P=1018.88 Pa, T=26.20 C
+MS5611: P=1018.84 Pa, T=26.20 C
+MS5611: P=1018.83 Pa, T=26.20 C
+MS5611: P=1018.85 Pa, T=26.20 C
+MS5611: P=1018.87 Pa, T=26.20 C
+MS5611: P=1018.85 Pa, T=26.20 C
+MS5611: P=1018.85 Pa, T=26.20 C
+MS5611: P=1018.82 Pa, T=26.20 C
+MS5611: P=1018.87 Pa, T=26.20 C

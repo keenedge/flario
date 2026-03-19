@@ -1,5 +1,6 @@
 #pragma once
 
+<<<<<<< HEAD
 #include <stdint.h>
 
 #include "task_base.hpp"
@@ -57,3 +58,7 @@ private:
     static constexpr uint32_t ACCEL_INTERVAL_US = 10000UL;
     static constexpr uint32_t LIN_ACCEL_INTERVAL_US = 10000UL;
 };
+=======
+void imu_start(void);
+void imu_task(void *arg);
+>>>>>>> testf-branch

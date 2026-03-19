@@ -1,0 +1,1719 @@
+Command: d:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\esp\v5.5.3\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\testf\build\testf.elf D:\testf\build\bootloader\bootloader.elf --force-color -m 'd:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\esp\v5.5.3\esp-idf\tools\idf.py'
+� efuse block rev�ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Mar 10 2026 10:24:35[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (29) boot: efuse block revision: v1.3[0m
+[0;32mI (32) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (36) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (70) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0ff3ch ( 65340) map[0m
+[0;32mI (99) esp_image: segment 1: paddr=0001ff64 vaddr=3fc96200 size=000b4h (   180) load[0m
+[0;32mI (99) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=27c14h (162836) map[0m
+[0;32mI (131) esp_image: segment 3: paddr=00047c3c vaddr=3fc962b4 size=03208h ( 12808) load[0m
+[0;32mI (134) esp_image: segment 4: paddr=0004ae4c vaddr=40374000 size=12194h ( 74132) load[0m
+[0;32mI (151) esp_image: segment 5: paddr=0005cfe8 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (159) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (159) boot: Disabling RNG early entropy source...[0m
+[0;32mI (169) cpu_start: Multicore app[0m
+[0;32mI (177) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (178) cpu_start: Pro cpu start user code[0m
+[0;32mI (178) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (180) app_init: Application information:[0m
+[0;32mI (184) app_init: Project name:     testf[0m
+[0;32mI (187) app_init: App version:      5243bec-dirty[0m
+[0;32mI (192) app_init: Compile time:     Mar 16 2026 18:08:17[0m
+[0;32mI (197) app_init: ELF file SHA256:  052dc7b0d...[0m
+[0;32mI (201) app_init: ESP-IDF:          -128-NOTFOUND[0m
+[0;32mI (206) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (209) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (213) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (217) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (224) heap_init: At 3FC9B8F8 len 0004DE18 (311 KiB): RAM[0m
+[0;32mI (229) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (234) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (239) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (245) spi_flash: detected chip: gd[0m
+[0;32mI (248) spi_flash: flash io: dio[0m
+[0;33mW (251) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (263) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (269) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (276) main_task: Started on CPU0[0m
+[0;32mI (296) main_task: Calling app_main()[0m
+================IO DUMP Start================
+IO[3] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 0 (IOMUX)
+  SleepSelEn: 1
+
+IO[26] -
+  Pullup: 1, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+IO[47] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+IO[48] -
+  Pullup: 0, Pulldown: 0, DriveCap: 2
+  InputEn: 1, OutputEn: [periph_sig_ctrl], OpenDrain: 0
+  FuncSel: 1 (GPIO)
+  GPIO Matrix SigOut ID: 256 (simple GPIO output)
+  GPIO Matrix SigIn ID: (simple GPIO input)
+  SleepSelEn: 1
+
+=================IO DUMP End=================
+[0;32mI (476) ENCODER: started A=41 B=42 BTN=40[0m
+[0;32mI (1416) BNO08x: Product ID 0 Info:                           [0m
+                ---------------------------
+                Product ID: 0x98a6b4
+                SW Version Major: 0x3
+                SW Version Minor: 0x2
+                SW Build Number:  0x6
+                SW Version Patch: 0xd
+                ---------------------------
+
+[0;32mI (1436) BNO08x: Product ID 1 Info:                           [0m
+                ---------------------------
+                Product ID: 0x98a6b4
+                SW Version Major: 0x3
+                SW Version Minor: 0x2
+                SW Build Number:  0x6
+                SW Version Patch: 0xd
+                ---------------------------
+
+[0;32mI (1466) BNO08x: Product ID 2 Info:                           [0m
+                ---------------------------
+                Product ID: 0x98a6b4
+                SW Version Major: 0x3
+                SW Version Minor: 0x2
+                SW Build Number:  0x6
+                SW Version Patch: 0xd
+                ---------------------------
+
+[0;32mI (1506) BNO08x: Product ID 3 Info:                           [0m
+                ---------------------------
+                Product ID: 0x98a6b4
+                SW Version Major: 0x3
+                SW Version Minor: 0x2
+                SW Build Number:  0x6
+                SW Version Patch: 0xd
+                ---------------------------
+
+[0;32mI (1536) BNO08x: Successfully initialized....[0m
+[0;32mI (2826) TASK_EXAMPLE: imu main loop 0[0m
+[0;33mW (2826) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.64 z (yaw): -0.00)[deg][0m
+[0;33mW (2836) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (2836) TASK_EXAMPLE: Gravity: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (2836) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (2846) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.68 z (yaw): -0.00)[deg][0m
+[0;33mW (2856) TASK_EXAMPLE: Gravity: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (2866) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (2896) TASK_EXAMPLE: Linear Accel: (x: -0.03 y: 0.00 z: -0.04)[m/s^2][0m
+[0;33mW (2926) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+PROM: C0=0x0040 C1=0xC093 C2=0xBF2C C3=0x7879 C4=0x6B22 C5=0x7EE9 C6=0x6D7F 
+[0;32mI (2936) BARO_TASK: barometer main loop 0[0m
+MS5611: P=310.81 hPa, T=-349.35 C
+[0;33mW (2996) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (3026) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (3036) TASK_EXAMPLE: Euler Angle: (x (roll): 0.24 y (pitch): -1.73 z (yaw): 0.00)[deg][0m
+[0;33mW (3056) TASK_EXAMPLE: Gravity: (x: 0.33 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (3056) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (3076) testf: app_main loop 0[0m
+[0;33mW (3096) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (3116) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (3126) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (3136) TASK_EXAMPLE: Euler Angle: (x (roll): 0.24 y (pitch): -1.76 z (yaw): -0.00)[deg][0m
+[0;33mW (3156) TASK_EXAMPLE: Gravity: (x: 0.33 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (3176) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (3196) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (3226) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (3236) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (3236) TASK_EXAMPLE: Euler Angle: (x (roll): 0.24 y (pitch): -1.78 z (yaw): 0.00)[deg][0m
+[0;33mW (3256) TASK_EXAMPLE: Gravity: (x: 0.33 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (3296) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (3306) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (3326) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (3336) TASK_EXAMPLE: Euler Angle: (x (roll): 0.25 y (pitch): -1.80 z (yaw): -0.00)[deg][0m
+[0;33mW (3346) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (3366) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (3396) TASK_EXAMPLE: Linear Accel: (x: 0.02 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (3426) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (3426) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (3436) TASK_EXAMPLE: Euler Angle: (x (roll): 0.25 y (pitch): -1.80 z (yaw): -0.00)[deg][0m
+[0;33mW (3446) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (3486) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (3496) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (3526) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (3536) TASK_EXAMPLE: Euler Angle: (x (roll): 0.25 y (pitch): -1.80 z (yaw): -0.00)[deg][0m
+[0;33mW (3556) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (3556) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (3586) TASK_EXAMPLE: Linear Accel: (x: 0.02 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (3616) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (3626) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (3636) TASK_EXAMPLE: Euler Angle: (x (roll): 0.24 y (pitch): -1.81 z (yaw): 0.00)[deg][0m
+[0;33mW (3656) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (3676) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (3686) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.01 z: 0.00)[m/s^2][0m
+[0;33mW (3726) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (3736) TASK_EXAMPLE: Euler Angle: (x (roll): 0.25 y (pitch): -1.81 z (yaw): -0.00)[deg][0m
+[0;33mW (3746) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (3746) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.04 z: 9.83)[m/s^2][0m
+[0;33mW (3786) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.01 z: -0.03)[m/s^2][0m
+[0;33mW (3806) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (3826) TASK_EXAMPLE: imu main loop 1[0m
+[0;33mW (3826) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (3836) TASK_EXAMPLE: Euler Angle: (x (roll): 0.24 y (pitch): -1.81 z (yaw): -0.00)[deg][0m
+[0;33mW (3846) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (3866) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (3886) TASK_EXAMPLE: Linear Accel: (x: 0.03 y: 0.01 z: -0.03)[m/s^2][0m
+[0;33mW (3926) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (3926) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (3936) TASK_EXAMPLE: Euler Angle: (x (roll): 0.24 y (pitch): -1.82 z (yaw): -0.00)[deg][0m
+[0;33mW (3946) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.81)[m/s^2][0m
+[0;32mI (3956) BARO_TASK: barometer main loop 1[0m
+MS5611: P=1013.15 hPa, T=26.82 C
+[0;33mW (3996) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (4026) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (4036) TASK_EXAMPLE: Euler Angle: (x (roll): 0.25 y (pitch): -1.82 z (yaw): -0.00)[deg][0m
+[0;33mW (4046) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (4056) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;32mI (4076) testf: app_main loop 1[0m
+[0;33mW (4086) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.00 z: -0.02)[m/s^2][0m
+[0;33mW (4116) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (4126) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (4136) TASK_EXAMPLE: Euler Angle: (x (roll): 0.24 y (pitch): -1.83 z (yaw): -0.00)[deg][0m
+[0;33mW (4146) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.05 z: 9.81)[m/s^2][0m
+[0;33mW (4176) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (4186) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.00 z: 0.02)[m/s^2][0m
+[0;33mW (4226) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (4236) TASK_EXAMPLE: Euler Angle: (x (roll): 0.25 y (pitch): -1.83 z (yaw): -0.00)[deg][0m
+[0;33mW (4246) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (4246) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (4286) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (4306) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (4326) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (4336) TASK_EXAMPLE: Euler Angle: (x (roll): 0.27 y (pitch): -1.83 z (yaw): -0.01)[deg][0m
+[0;33mW (4346) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (4366) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (4386) TASK_EXAMPLE: Linear Accel: (x: 0.03 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (4426) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (4426) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (4436) TASK_EXAMPLE: Euler Angle: (x (roll): 0.29 y (pitch): -1.83 z (yaw): -0.01)[deg][0m
+[0;33mW (4446) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (4486) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (4496) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (4526) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (4536) TASK_EXAMPLE: Euler Angle: (x (roll): 0.29 y (pitch): -1.83 z (yaw): -0.01)[deg][0m
+[0;33mW (4546) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (4556) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (4586) TASK_EXAMPLE: Linear Accel: (x: 0.03 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (4616) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (4626) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (4636) TASK_EXAMPLE: Euler Angle: (x (roll): 0.31 y (pitch): -1.83 z (yaw): -0.01)[deg][0m
+[0;33mW (4646) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (4676) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.12 z: 9.79)[m/s^2][0m
+[0;33mW (4686) TASK_EXAMPLE: Linear Accel: (x: 0.03 y: 0.08 z: -0.03)[m/s^2][0m
+[0;33mW (4726) TASK_EXAMPLE: Velocity: (x: 0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (4736) TASK_EXAMPLE: Euler Angle: (x (roll): 0.31 y (pitch): -1.83 z (yaw): -0.01)[deg][0m
+[0;33mW (4746) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (4746) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (4786) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (4806) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;32mI (4826) TASK_EXAMPLE: imu main loop 2[0m
+[0;33mW (4826) TASK_EXAMPLE: Velocity: (x: 0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (4836) TASK_EXAMPLE: Euler Angle: (x (roll): 0.32 y (pitch): -1.84 z (yaw): -0.01)[deg][0m
+[0;33mW (4846) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.06 z: 9.82)[m/s^2][0m
+[0;33mW (4866) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (4886) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.01 z: -0.03)[m/s^2][0m
+[0;33mW (4926) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (4936) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.12 z: 9.79)[m/s^2][0m
+[0;33mW (4936) TASK_EXAMPLE: Euler Angle: (x (roll): 0.31 y (pitch): -1.85 z (yaw): -0.01)[deg][0m
+[0;33mW (4946) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.81)[m/s^2][0m
+[0;32mI (4976) BARO_TASK: barometer main loop 2[0m
+[0;33mW (4986) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+MS5611: P=1013.14 hPa, T=26.54 C
+[0;33mW (5036) TASK_EXAMPLE: Euler Angle: (x (roll): 0.27 y (pitch): -1.84 z (yaw): -0.01)[deg][0m
+[0;33mW (5046) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.05 z: 9.81)[m/s^2][0m
+[0;33mW (5056) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: -0.03 z: 9.83)[m/s^2][0m
+[0;32mI (5076) testf: app_main loop 2[0m
+[0;33mW (5086) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.09 z: 0.02)[m/s^2][0m
+[0;33mW (5116) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (5126) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (5136) TASK_EXAMPLE: Euler Angle: (x (roll): 0.29 y (pitch): -1.84 z (yaw): -0.01)[deg][0m
+[0;33mW (5146) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.81)[m/s^2][0m
+[0;33mW (5176) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.09 z: 9.79)[m/s^2][0m
+[0;33mW (5186) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.04 z: -0.02)[m/s^2][0m
+[0;33mW (5226) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (5236) TASK_EXAMPLE: Euler Angle: (x (roll): 0.27 y (pitch): -1.84 z (yaw): -0.02)[deg][0m
+[0;33mW (5246) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (5246) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.04 z: 9.81)[m/s^2][0m
+[0;33mW (5286) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.01 z: 0.02)[m/s^2][0m
+[0;33mW (5306) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (5326) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (5336) TASK_EXAMPLE: Euler Angle: (x (roll): 0.27 y (pitch): -1.85 z (yaw): -0.01)[deg][0m
+[0;33mW (5346) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.04 z: 9.81)[m/s^2][0m
+[0;33mW (5366) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (5386) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (5426) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (5426) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (5436) TASK_EXAMPLE: Euler Angle: (x (roll): 0.26 y (pitch): -1.84 z (yaw): -0.01)[deg][0m
+[0;33mW (5446) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (5486) TASK_EXAMPLE: Linear Accel: (x: 0.03 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (5496) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (5526) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (5536) TASK_EXAMPLE: Euler Angle: (x (roll): 0.32 y (pitch): -1.87 z (yaw): -0.01)[deg][0m
+[0;33mW (5546) TASK_EXAMPLE: Gravity: (x: 0.33 y: 0.09 z: 9.82)[m/s^2][0m
+[0;33mW (5556) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: -0.07 z: 10.14)[m/s^2][0m
+[0;33mW (5586) TASK_EXAMPLE: Linear Accel: (x: -0.04 y: -0.24 z: 0.31)[m/s^2][0m
+[0;33mW (5616) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.28 z: 9.48)[m/s^2][0m
+[0;33mW (5626) TASK_EXAMPLE: Velocity: (x: -0.14 y: 0.06 z: -0.01)[rad/s][0m
+[0;33mW (5636) TASK_EXAMPLE: Euler Angle: (x (roll): 0.43 y (pitch): -1.91 z (yaw): 0.03)[deg][0m
+[0;33mW (5646) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.06 z: 9.83)[m/s^2][0m
+[0;33mW (5676) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.94)[m/s^2][0m
+[0;33mW (5686) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: -0.05 z: 0.11)[m/s^2][0m
+[0;33mW (5726) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (5736) TASK_EXAMPLE: Euler Angle: (x (roll): 0.34 y (pitch): -1.88 z (yaw): 0.04)[deg][0m
+[0;33mW (5746) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (5746) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (5786) TASK_EXAMPLE: Linear Accel: (x: 0.02 y: -0.01 z: 0.00)[m/s^2][0m
+[0;33mW (5806) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (5826) TASK_EXAMPLE: imu main loop 3[0m
+[0;33mW (5826) TASK_EXAMPLE: Velocity: (x: -0.05 y: 0.03 z: -0.00)[rad/s][0m
+[0;33mW (5836) TASK_EXAMPLE: Euler Angle: (x (roll): 0.29 y (pitch): -1.86 z (yaw): 0.04)[deg][0m
+[0;33mW (5846) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (5866) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.09 z: 9.79)[m/s^2][0m
+[0;33mW (5886) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.05 z: -0.04)[m/s^2][0m
+[0;33mW (5926) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (5926) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (5936) TASK_EXAMPLE: Euler Angle: (x (roll): 0.24 y (pitch): -1.85 z (yaw): 0.02)[deg][0m
+[0;33mW (5946) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.04 z: 9.83)[m/s^2][0m
+[0;33mW (5986) TASK_EXAMPLE: Linear Accel: (x: 0.03 y: -0.03 z: 0.00)[m/s^2][0m
+[0;32mI (5996) BARO_TASK: barometer main loop 3[0m
+MS5611: P=1013.07 hPa, T=26.31 C
+[0;33mW (6036) TASK_EXAMPLE: Euler Angle: (x (roll): 0.21 y (pitch): -1.83 z (yaw): 0.02)[deg][0m
+[0;33mW (6046) TASK_EXAMPLE: Gravity: (x: 0.33 y: 0.09 z: 9.79)[m/s^2][0m
+[0;33mW (6056) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;32mI (6076) testf: app_main loop 3[0m
+[0;33mW (6086) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: -0.07 z: 0.04)[m/s^2][0m
+[0;33mW (6116) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (6126) TASK_EXAMPLE: Velocity: (x: 0.04 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (6136) TASK_EXAMPLE: Euler Angle: (x (roll): 0.30 y (pitch): -1.87 z (yaw): 0.03)[deg][0m
+[0;33mW (6146) TASK_EXAMPLE: Gravity: (x: 0.34 y: 0.08 z: 9.80)[m/s^2][0m
+[0;33mW (6176) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (6186) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: -0.02 z: 0.02)[m/s^2][0m
+[0;33mW (6226) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.01 z: 0.00)[rad/s][0m
+[0;33mW (6236) TASK_EXAMPLE: Euler Angle: (x (roll): 0.33 y (pitch): -1.88 z (yaw): 0.03)[deg][0m
+[0;33mW (6246) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (6246) TASK_EXAMPLE: Gravity: (x: 0.33 y: 0.06 z: 9.80)[m/s^2][0m
+[0;33mW (6286) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: -0.02 z: -0.02)[m/s^2][0m
+[0;33mW (6306) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (6326) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (6336) TASK_EXAMPLE: Euler Angle: (x (roll): 0.40 y (pitch): -1.92 z (yaw): 0.03)[deg][0m
+[0;33mW (6346) TASK_EXAMPLE: Gravity: (x: 0.34 y: 0.06 z: 9.81)[m/s^2][0m
+[0;33mW (6366) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (6386) TASK_EXAMPLE: Linear Accel: (x: -0.03 y: -0.02 z: -0.02)[m/s^2][0m
+[0;33mW (6426) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.01 z: 0.00)[rad/s][0m
+[0;33mW (6436) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (6436) TASK_EXAMPLE: Euler Angle: (x (roll): 0.41 y (pitch): -1.92 z (yaw): 0.03)[deg][0m
+[0;33mW (6446) TASK_EXAMPLE: Gravity: (x: 0.33 y: 0.06 z: 9.81)[m/s^2][0m
+[0;33mW (6486) TASK_EXAMPLE: Linear Accel: (x: 0.02 y: -0.01 z: 0.02)[m/s^2][0m
+[0;33mW (6496) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (6526) TASK_EXAMPLE: Velocity: (x: 0.02 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (6536) TASK_EXAMPLE: Euler Angle: (x (roll): 0.37 y (pitch): -1.91 z (yaw): 0.03)[deg][0m
+[0;33mW (6546) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.05 z: 9.81)[m/s^2][0m
+[0;33mW (6556) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (6586) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: -0.02)[m/s^2][0m
+[0;33mW (6616) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.09 z: 9.79)[m/s^2][0m
+[0;33mW (6626) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.01 z: -0.00)[rad/s][0m
+[0;33mW (6636) TASK_EXAMPLE: Euler Angle: (x (roll): 0.36 y (pitch): -1.92 z (yaw): 0.03)[deg][0m
+[0;33mW (6646) TASK_EXAMPLE: Gravity: (x: 0.34 y: 0.05 z: 9.81)[m/s^2][0m
+[0;33mW (6686) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (6686) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: -0.01 z: 0.02)[m/s^2][0m
+[0;33mW (6726) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (6736) TASK_EXAMPLE: Euler Angle: (x (roll): 0.35 y (pitch): -1.92 z (yaw): 0.03)[deg][0m
+[0;33mW (6746) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (6746) TASK_EXAMPLE: Gravity: (x: 0.34 y: 0.05 z: 9.81)[m/s^2][0m
+[0;33mW (6786) TASK_EXAMPLE: Linear Accel: (x: -0.00 y: -0.01 z: 0.02)[m/s^2][0m
+[0;33mW (6806) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.79)[m/s^2][0m
+[0;32mI (6826) TASK_EXAMPLE: imu main loop 4[0m
+[0;33mW (6826) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (6836) TASK_EXAMPLE: Euler Angle: (x (roll): 0.34 y (pitch): -1.92 z (yaw): 0.02)[deg][0m
+[0;33mW (6846) TASK_EXAMPLE: Gravity: (x: 0.34 y: 0.05 z: 9.81)[m/s^2][0m
+[0;33mW (6866) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (6886) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.02)[m/s^2][0m
+[0;33mW (6926) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (6936) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (6936) TASK_EXAMPLE: Euler Angle: (x (roll): 0.32 y (pitch): -1.92 z (yaw): 0.02)[deg][0m
+[0;33mW (6946) TASK_EXAMPLE: Gravity: (x: 0.34 y: 0.05 z: 9.81)[m/s^2][0m
+[0;33mW (6986) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.02)[m/s^2][0m
+[0;33mW (6996) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (7016) BARO_TASK: barometer main loop 4[0m
+MS5611: P=1013.08 hPa, T=26.14 C
+[0;33mW (7046) TASK_EXAMPLE: Gravity: (x: 0.34 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (7056) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (7076) testf: app_main loop 4[0m
+[0;33mW (7086) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (7116) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (7126) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (7136) TASK_EXAMPLE: Euler Angle: (x (roll): 0.29 y (pitch): -1.92 z (yaw): 0.03)[deg][0m
+[0;33mW (7146) TASK_EXAMPLE: Gravity: (x: 0.34 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (7186) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (7186) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (7226) TASK_EXAMPLE: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (7236) TASK_EXAMPLE: Euler Angle: (x (roll): 0.26 y (pitch): -1.92 z (yaw): 0.02)[deg][0m
+[0;33mW (7246) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (7246) TASK_EXAMPLE: Gravity: (x: 0.34 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (7286) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (7306) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (7326) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (7336) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.91 z (yaw): 0.02)[deg][0m
+[0;33mW (7346) TASK_EXAMPLE: Gravity: (x: 0.33 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (7366) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (7386) TASK_EXAMPLE: Linear Accel: (x: -0.03 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (7426) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (7436) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (7436) TASK_EXAMPLE: Euler Angle: (x (roll): 0.16 y (pitch): -1.89 z (yaw): 0.02)[deg][0m
+[0;33mW (7446) TASK_EXAMPLE: Gravity: (x: 0.33 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (7486) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (7496) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (7526) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (7536) TASK_EXAMPLE: Euler Angle: (x (roll): 0.17 y (pitch): -1.89 z (yaw): 0.03)[deg][0m
+[0;33mW (7546) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.04 z: 9.83)[m/s^2][0m
+[0;33mW (7556) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (7586) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.01 z: 0.00)[m/s^2][0m
+[0;33mW (7626) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (7626) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (7636) TASK_EXAMPLE: Euler Angle: (x (roll): 0.17 y (pitch): -1.88 z (yaw): 0.03)[deg][0m
+[0;33mW (7646) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.03 z: 9.83)[m/s^2][0m
+[0;33mW (7686) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (7686) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.02 z: 0.00)[m/s^2][0m
+[0;33mW (7726) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (7736) TASK_EXAMPLE: Euler Angle: (x (roll): 0.18 y (pitch): -1.88 z (yaw): 0.03)[deg][0m
+[0;33mW (7746) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.04 z: 9.83)[m/s^2][0m
+[0;33mW (7746) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (7786) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.01 z: 0.00)[m/s^2][0m
+[0;33mW (7806) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (7826) TASK_EXAMPLE: imu main loop 5[0m
+[0;33mW (7826) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (7836) TASK_EXAMPLE: Euler Angle: (x (roll): 0.17 y (pitch): -1.87 z (yaw): 0.03)[deg][0m
+[0;33mW (7846) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.83)[m/s^2][0m
+[0;33mW (7876) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (7886) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.03 z: 0.00)[m/s^2][0m
+[0;33mW (7926) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (7936) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (7936) TASK_EXAMPLE: Euler Angle: (x (roll): 0.17 y (pitch): -1.85 z (yaw): 0.03)[deg][0m
+[0;33mW (7946) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.83)[m/s^2][0m
+[0;33mW (7986) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.00)[m/s^2][0m
+[0;33mW (7996) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (8026) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;32mI (8036) BARO_TASK: barometer main loop 5[0m
+MS5611: P=1013.12 hPa, T=26.00 C
+[0;32mI (8076) testf: app_main loop 5[0m
+[0;33mW (8086) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.03 z: 0.01)[m/s^2][0m
+[0;33mW (8126) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (8126) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (8136) TASK_EXAMPLE: Euler Angle: (x (roll): 0.16 y (pitch): -1.82 z (yaw): 0.03)[deg][0m
+[0;33mW (8146) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (8186) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (8186) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (8226) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (8236) TASK_EXAMPLE: Euler Angle: (x (roll): 0.17 y (pitch): -1.80 z (yaw): 0.03)[deg][0m
+[0;33mW (8246) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (8246) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (8286) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: -0.03 z: 0.01)[m/s^2][0m
+[0;33mW (8306) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (8326) TASK_EXAMPLE: Velocity: (x: -0.00 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (8336) TASK_EXAMPLE: Euler Angle: (x (roll): 0.17 y (pitch): -1.80 z (yaw): 0.03)[deg][0m
+[0;33mW (8346) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.83)[m/s^2][0m
+[0;33mW (8376) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (8386) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: -0.04)[m/s^2][0m
+[0;33mW (8426) TASK_EXAMPLE: Velocity: (x: -0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (8436) TASK_EXAMPLE: Euler Angle: (x (roll): 0.17 y (pitch): -1.80 z (yaw): 0.02)[deg][0m
+[0;33mW (8436) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (8446) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (8486) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (8496) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (8526) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (8536) TASK_EXAMPLE: Euler Angle: (x (roll): 0.19 y (pitch): -1.80 z (yaw): 0.03)[deg][0m
+[0;33mW (8546) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (8556) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (8586) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.02 z: -0.03)[m/s^2][0m
+[0;33mW (8626) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (8626) TASK_EXAMPLE: Velocity: (x: -0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (8636) TASK_EXAMPLE: Euler Angle: (x (roll): 0.15 y (pitch): -1.80 z (yaw): 0.03)[deg][0m
+[0;33mW (8646) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;33mW (8686) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.01 z: 0.02)[m/s^2][0m
+[0;33mW (8686) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (8726) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (8736) TASK_EXAMPLE: Euler Angle: (x (roll): 0.15 y (pitch): -1.80 z (yaw): 0.03)[deg][0m
+[0;33mW (8746) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (8746) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (8786) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: 0.03 z: -0.03)[m/s^2][0m
+[0;33mW (8816) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;32mI (8826) TASK_EXAMPLE: imu main loop 6[0m
+[0;33mW (8826) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (8836) TASK_EXAMPLE: Euler Angle: (x (roll): 0.10 y (pitch): -1.79 z (yaw): 0.02)[deg][0m
+[0;33mW (8846) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.81)[m/s^2][0m
+[0;33mW (8876) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (8886) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.02)[m/s^2][0m
+[0;33mW (8926) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (8936) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.79 z (yaw): 0.02)[deg][0m
+[0;33mW (8936) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (8946) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (8986) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (8996) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (9026) TASK_EXAMPLE: Velocity: (x: 0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (9036) TASK_EXAMPLE: Euler Angle: (x (roll): 0.12 y (pitch): -1.79 z (yaw): 0.02)[deg][0m
+[0;33mW (9046) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;32mI (9056) BARO_TASK: barometer main loop 6[0m
+MS5611: P=1013.08 hPa, T=25.88 C
+[0;32mI (9076) testf: app_main loop 6[0m
+[0;33mW (9126) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (9126) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (9136) TASK_EXAMPLE: Euler Angle: (x (roll): 0.13 y (pitch): -1.80 z (yaw): 0.02)[deg][0m
+[0;33mW (9146) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (9186) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.03 z: 0.00)[m/s^2][0m
+[0;33mW (9186) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (9226) TASK_EXAMPLE: Velocity: (x: -0.01 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (9236) TASK_EXAMPLE: Euler Angle: (x (roll): 0.09 y (pitch): -1.79 z (yaw): 0.01)[deg][0m
+[0;33mW (9246) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (9246) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (9286) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.00)[m/s^2][0m
+[0;33mW (9316) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (9326) TASK_EXAMPLE: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (9336) TASK_EXAMPLE: Euler Angle: (x (roll): 0.07 y (pitch): -1.78 z (yaw): 0.01)[deg][0m
+[0;33mW (9346) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (9376) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (9386) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.00)[m/s^2][0m
+[0;33mW (9426) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (9436) TASK_EXAMPLE: Euler Angle: (x (roll): 0.06 y (pitch): -1.78 z (yaw): 0.01)[deg][0m
+[0;33mW (9436) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (9446) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (9486) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.00)[m/s^2][0m
+[0;33mW (9496) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (9526) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (9536) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.78 z (yaw): 0.01)[deg][0m
+[0;33mW (9546) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (9566) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (9586) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.01 z: 0.00)[m/s^2][0m
+[0;33mW (9626) TASK_EXAMPLE: Velocity: (x: 0.02 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (9626) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (9636) TASK_EXAMPLE: Euler Angle: (x (roll): 0.15 y (pitch): -1.81 z (yaw): 0.02)[deg][0m
+[0;33mW (9646) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (9686) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.02 z: 0.00)[m/s^2][0m
+[0;33mW (9686) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (9726) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (9736) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.84 z (yaw): 0.02)[deg][0m
+[0;33mW (9746) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.03 z: 9.83)[m/s^2][0m
+[0;33mW (9746) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (9786) TASK_EXAMPLE: Linear Accel: (x: 0.02 y: 0.02 z: -0.04)[m/s^2][0m
+[0;33mW (9816) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (9826) TASK_EXAMPLE: imu main loop 7[0m
+[0;33mW (9826) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (9836) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.84 z (yaw): 0.02)[deg][0m
+[0;33mW (9846) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (9876) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (9886) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (9926) TASK_EXAMPLE: Velocity: (x: 0.03 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (9936) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.85 z (yaw): 0.02)[deg][0m
+[0;33mW (9936) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (9946) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (9986) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (10006) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (10026) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (10036) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.84 z (yaw): 0.02)[deg][0m
+[0;33mW (10046) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (10066) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (10076) BARO_TASK: barometer main loop 7[0m
+[0;32mI (10076) testf: app_main loop 7[0m
+MS5611: P=1013.11 hPa, T=25.78 C
+[0;33mW (10126) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (10136) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.84 z (yaw): 0.02)[deg][0m
+[0;33mW (10146) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (10186) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (10186) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (10226) TASK_EXAMPLE: Velocity: (x: 0.02 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (10236) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.83 z (yaw): 0.02)[deg][0m
+[0;33mW (10246) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (10256) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (10286) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.05 z: 0.01)[m/s^2][0m
+[0;33mW (10316) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.09 z: 9.79)[m/s^2][0m
+[0;33mW (10326) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (10336) TASK_EXAMPLE: Euler Angle: (x (roll): 0.34 y (pitch): -1.90 z (yaw): 0.04)[deg][0m
+[0;33mW (10346) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.06 z: 9.82)[m/s^2][0m
+[0;33mW (10376) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.09 z: 9.83)[m/s^2][0m
+[0;33mW (10386) TASK_EXAMPLE: Linear Accel: (x: 0.03 y: 0.03 z: 0.01)[m/s^2][0m
+[0;33mW (10426) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (10436) TASK_EXAMPLE: Euler Angle: (x (roll): 0.31 y (pitch): -1.87 z (yaw): 0.04)[deg][0m
+[0;33mW (10436) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (10446) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (10486) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (10506) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.09 z: 9.79)[m/s^2][0m
+[0;33mW (10526) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (10536) TASK_EXAMPLE: Euler Angle: (x (roll): 0.25 y (pitch): -1.85 z (yaw): 0.03)[deg][0m
+[0;33mW (10546) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (10566) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (10586) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.00 z: 0.02)[m/s^2][0m
+[0;33mW (10626) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (10626) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (10636) TASK_EXAMPLE: Euler Angle: (x (roll): 0.26 y (pitch): -1.84 z (yaw): 0.03)[deg][0m
+[0;33mW (10646) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.81)[m/s^2][0m
+[0;33mW (10686) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (10686) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (10726) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (10736) TASK_EXAMPLE: Euler Angle: (x (roll): 0.24 y (pitch): -1.83 z (yaw): 0.03)[deg][0m
+[0;33mW (10746) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (10756) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (10786) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (10816) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;32mI (10826) TASK_EXAMPLE: imu main loop 8[0m
+[0;33mW (10826) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (10836) TASK_EXAMPLE: Euler Angle: (x (roll): 0.24 y (pitch): -1.83 z (yaw): 0.03)[deg][0m
+[0;33mW (10846) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (10876) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (10886) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.01 z: -0.03)[m/s^2][0m
+[0;33mW (10926) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (10936) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.82 z (yaw): 0.03)[deg][0m
+[0;33mW (10936) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (10946) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.05 z: 9.81)[m/s^2][0m
+[0;33mW (10986) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.02)[m/s^2][0m
+[0;33mW (11006) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (11026) TASK_EXAMPLE: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (11036) TASK_EXAMPLE: Euler Angle: (x (roll): 0.21 y (pitch): -1.81 z (yaw): 0.03)[deg][0m
+[0;33mW (11046) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.05 z: 9.81)[m/s^2][0m
+[0;33mW (11066) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (11076) testf: app_main loop 8[0m
+[0;33mW (11086) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.02)[m/s^2][0m
+[0;32mI (11096) BARO_TASK: barometer main loop 8[0m
+MS5611: P=1013.11 hPa, T=25.70 C
+[0;33mW (11126) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (11136) TASK_EXAMPLE: Euler Angle: (x (roll): 0.21 y (pitch): -1.81 z (yaw): 0.03)[deg][0m
+[0;33mW (11146) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (11186) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: -0.02)[m/s^2][0m
+[0;33mW (11196) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (11226) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (11236) TASK_EXAMPLE: Euler Angle: (x (roll): 0.18 y (pitch): -1.80 z (yaw): 0.03)[deg][0m
+[0;33mW (11246) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.81)[m/s^2][0m
+[0;33mW (11256) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (11286) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.02)[m/s^2][0m
+[0;33mW (11316) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (11326) TASK_EXAMPLE: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (11336) TASK_EXAMPLE: Euler Angle: (x (roll): 0.18 y (pitch): -1.79 z (yaw): 0.03)[deg][0m
+[0;33mW (11346) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (11376) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (11386) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.03 z: 0.01)[m/s^2][0m
+[0;33mW (11426) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (11436) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.79 z (yaw): 0.03)[deg][0m
+[0;33mW (11446) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (11446) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (11486) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.03 z: 0.01)[m/s^2][0m
+[0;33mW (11506) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (11526) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (11536) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.79 z (yaw): 0.03)[deg][0m
+[0;33mW (11546) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (11566) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (11586) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (11626) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (11626) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (11636) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.78 z (yaw): 0.03)[deg][0m
+[0;33mW (11646) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (11686) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.01)[m/s^2][0m
+[0;33mW (11696) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (11726) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (11736) TASK_EXAMPLE: Euler Angle: (x (roll): 0.17 y (pitch): -1.78 z (yaw): 0.03)[deg][0m
+[0;33mW (11746) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (11756) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (11786) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.01)[m/s^2][0m
+[0;33mW (11816) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (11826) TASK_EXAMPLE: imu main loop 9[0m
+[0;33mW (11826) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (11836) TASK_EXAMPLE: Euler Angle: (x (roll): 0.17 y (pitch): -1.78 z (yaw): 0.03)[deg][0m
+[0;33mW (11846) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (11876) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (11886) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: -0.03)[m/s^2][0m
+[0;32mI (11926) ENCODER: step=1 pos=1[0m
+[0;33mW (11926) TASK_EXAMPLE: Velocity: (x: -0.04 y: 0.01 z: 0.00)[rad/s][0m
+[0;33mW (11936) TASK_EXAMPLE: Euler Angle: (x (roll): 0.13 y (pitch): -1.77 z (yaw): 0.03)[deg][0m
+[0;33mW (11946) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (11946) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (11986) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.01)[m/s^2][0m
+[0;33mW (12006) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (12026) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (12036) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.79 z (yaw): 0.03)[deg][0m
+[0;33mW (12046) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (12066) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (12076) testf: app_main loop 9[0m
+[0;33mW (12086) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: 0.01)[m/s^2][0m
+[0;32mI (12116) BARO_TASK: barometer main loop 9[0m
+[0;33mW (12126) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+MS5611: P=1013.09 hPa, T=25.63 C
+[0;33mW (12146) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (12186) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (12196) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (12226) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (12236) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.79 z (yaw): 0.03)[deg][0m
+[0;33mW (12246) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (12256) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (12286) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: -0.03)[m/s^2][0m
+[0;33mW (12316) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (12326) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (12336) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.79 z (yaw): 0.03)[deg][0m
+[0;33mW (12346) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.81)[m/s^2][0m
+[0;33mW (12386) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (12386) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: -0.02)[m/s^2][0m
+[0;33mW (12426) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (12436) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.78 z (yaw): 0.04)[deg][0m
+[0;33mW (12446) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.81)[m/s^2][0m
+[0;33mW (12446) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (12486) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.02)[m/s^2][0m
+[0;33mW (12506) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (12526) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (12536) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.78 z (yaw): 0.03)[deg][0m
+[0;33mW (12546) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.81)[m/s^2][0m
+[0;33mW (12566) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (12586) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: -0.02)[m/s^2][0m
+[0;33mW (12626) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (12636) TASK_EXAMPLE: Euler Angle: (x (roll): 0.15 y (pitch): -1.76 z (yaw): 0.04)[deg][0m
+[0;33mW (12636) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (12646) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.81)[m/s^2][0m
+[0;33mW (12686) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: -0.02 z: 0.02)[m/s^2][0m
+[0;33mW (12696) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (12726) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.01 z: 0.00)[rad/s][0m
+[0;33mW (12736) TASK_EXAMPLE: Euler Angle: (x (roll): 0.10 y (pitch): -1.74 z (yaw): 0.03)[deg][0m
+[0;33mW (12746) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.81)[m/s^2][0m
+[0;33mW (12756) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (12786) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: 0.04 z: -0.02)[m/s^2][0m
+[0;33mW (12816) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;32mI (12826) TASK_EXAMPLE: imu main loop 10[0m
+[0;33mW (12826) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.01)[rad/s][0m
+[0;33mW (12836) TASK_EXAMPLE: Euler Angle: (x (roll): 0.04 y (pitch): -1.72 z (yaw): -0.01)[deg][0m
+[0;33mW (12846) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.81)[m/s^2][0m
+[0;33mW (12886) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: -0.01 z: 0.02)[m/s^2][0m
+[0;33mW (12886) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (12926) TASK_EXAMPLE: Velocity: (x: 0.02 y: -0.01 z: -0.00)[rad/s][0m
+[0;33mW (12936) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.73 z (yaw): -0.02)[deg][0m
+[0;33mW (12946) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;33mW (12946) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (12986) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (13006) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (13026) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (13036) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.74 z (yaw): -0.02)[deg][0m
+[0;33mW (13046) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (13066) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;32mI (13076) testf: app_main loop 10[0m
+[0;33mW (13086) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (13126) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;32mI (13136) BARO_TASK: barometer main loop 10[0m
+[0;33mW (13136) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+MS5611: P=1013.11 hPa, T=25.57 C
+[0;33mW (13196) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (13226) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (13236) TASK_EXAMPLE: Euler Angle: (x (roll): 0.05 y (pitch): -1.73 z (yaw): -0.06)[deg][0m
+[0;33mW (13246) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (13256) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: -0.03 z: 9.83)[m/s^2][0m
+[0;33mW (13286) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.04 z: 0.00)[m/s^2][0m
+[0;33mW (13326) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (13326) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (13336) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.76 z (yaw): -0.06)[deg][0m
+[0;33mW (13346) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (13386) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.01 z: 0.00)[m/s^2][0m
+[0;33mW (13386) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (13426) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (13436) TASK_EXAMPLE: Euler Angle: (x (roll): 0.14 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (13446) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (13446) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (13486) ENCODER: step=1 pos=2[0m
+[0;33mW (13486) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.04 z: 0.00)[m/s^2][0m
+[0;33mW (13506) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (13526) TASK_EXAMPLE: Velocity: (x: 0.05 y: -0.02 z: -0.00)[rad/s][0m
+[0;33mW (13536) TASK_EXAMPLE: Euler Angle: (x (roll): 0.13 y (pitch): -1.78 z (yaw): -0.07)[deg][0m
+[0;33mW (13546) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (13576) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (13586) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (13626) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (13636) TASK_EXAMPLE: Euler Angle: (x (roll): 0.18 y (pitch): -1.80 z (yaw): -0.07)[deg][0m
+[0;33mW (13636) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (13646) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (13686) TASK_EXAMPLE: Linear Accel: (x: 0.04 y: 0.03 z: 0.01)[m/s^2][0m
+[0;33mW (13696) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (13726) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (13736) TASK_EXAMPLE: Euler Angle: (x (roll): 0.19 y (pitch): -1.81 z (yaw): -0.07)[deg][0m
+[0;33mW (13746) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (13756) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (13786) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.02 z: -0.03)[m/s^2][0m
+[0;32mI (13826) TASK_EXAMPLE: imu main loop 11[0m
+[0;33mW (13826) TASK_EXAMPLE: Velocity: (x: -0.02 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (13826) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (13836) TASK_EXAMPLE: Euler Angle: (x (roll): 0.14 y (pitch): -1.80 z (yaw): -0.07)[deg][0m
+[0;33mW (13846) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (13886) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (13886) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (13926) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (13936) TASK_EXAMPLE: Euler Angle: (x (roll): 0.10 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (13946) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;33mW (13946) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (13986) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: 0.02)[m/s^2][0m
+[0;33mW (14006) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (14026) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (14036) TASK_EXAMPLE: Euler Angle: (x (roll): 0.10 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (14046) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;32mI (14076) testf: app_main loop 11[0m
+[0;33mW (14076) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (14086) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.02)[m/s^2][0m
+[0;33mW (14126) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (14136) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (14136) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (14146) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;32mI (14156) BARO_TASK: barometer main loop 11[0m
+MS5611: P=1013.14 hPa, T=25.51 C
+[0;33mW (14196) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (14226) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (14236) TASK_EXAMPLE: Euler Angle: (x (roll): 0.05 y (pitch): -1.77 z (yaw): -0.06)[deg][0m
+[0;33mW (14246) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;33mW (14256) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (14286) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (14326) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (14326) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (14336) TASK_EXAMPLE: Euler Angle: (x (roll): 0.04 y (pitch): -1.76 z (yaw): -0.06)[deg][0m
+[0;33mW (14346) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.82)[m/s^2][0m
+[0;33mW (14386) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (14386) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (14426) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (14436) TASK_EXAMPLE: Euler Angle: (x (roll): 0.04 y (pitch): -1.76 z (yaw): -0.06)[deg][0m
+[0;33mW (14446) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.82)[m/s^2][0m
+[0;33mW (14446) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (14486) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (14516) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (14526) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (14536) TASK_EXAMPLE: Euler Angle: (x (roll): 0.05 y (pitch): -1.76 z (yaw): -0.06)[deg][0m
+[0;33mW (14546) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (14576) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (14586) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.04 z: -0.04)[m/s^2][0m
+[0;33mW (14616) TASK_EXAMPLE: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (14636) TASK_EXAMPLE: Euler Angle: (x (roll): 0.04 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (14636) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (14646) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.01 z: 9.82)[m/s^2][0m
+[0;33mW (14686) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (14696) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (14716) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (14736) TASK_EXAMPLE: Euler Angle: (x (roll): 0.02 y (pitch): -1.76 z (yaw): -0.07)[deg][0m
+[0;33mW (14746) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (14766) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (14786) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: 0.00 z: -0.03)[m/s^2][0m
+[0;33mW (14816) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;32mI (14826) TASK_EXAMPLE: imu main loop 12[0m
+[0;33mW (14826) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (14826) TASK_EXAMPLE: Euler Angle: (x (roll): 0.00 y (pitch): -1.76 z (yaw): -0.08)[deg][0m
+[0;32mI (14836) ENCODER: step=1 pos=3[0m
+[0;33mW (14846) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.82)[m/s^2][0m
+[0;33mW (14886) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (14886) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: -0.03 z: 9.83)[m/s^2][0m
+[0;33mW (14916) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (14926) TASK_EXAMPLE: Euler Angle: (x (roll): 0.00 y (pitch): -1.76 z (yaw): -0.08)[deg][0m
+[0;33mW (14946) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.00 z: 9.82)[m/s^2][0m
+[0;33mW (14946) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (14986) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.00 z: -0.03)[m/s^2][0m
+[0;33mW (15016) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (15016) TASK_EXAMPLE: Velocity: (x: 0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (15026) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.78 z (yaw): -0.09)[deg][0m
+[0;33mW (15046) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.02 z: 9.81)[m/s^2][0m
+[0;32mI (15076) testf: app_main loop 12[0m
+[0;33mW (15076) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (15086) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.01 z: 0.02)[m/s^2][0m
+[0;33mW (15116) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (15126) TASK_EXAMPLE: Euler Angle: (x (roll): 0.09 y (pitch): -1.80 z (yaw): -0.09)[deg][0m
+[0;33mW (15136) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (15146) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;32mI (15176) BARO_TASK: barometer main loop 12[0m
+MS5611: P=1013.15 hPa, T=25.47 C
+[0;33mW (15216) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (15226) TASK_EXAMPLE: Euler Angle: (x (roll): 0.09 y (pitch): -1.80 z (yaw): -0.09)[deg][0m
+[0;33mW (15246) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.81)[m/s^2][0m
+[0;33mW (15266) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (15286) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: -0.02)[m/s^2][0m
+[0;33mW (15316) TASK_EXAMPLE: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (15326) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (15326) TASK_EXAMPLE: Euler Angle: (x (roll): 0.06 y (pitch): -1.79 z (yaw): -0.08)[deg][0m
+[0;33mW (15346) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.00 z: 9.81)[m/s^2][0m
+[0;33mW (15386) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.02)[m/s^2][0m
+[0;33mW (15386) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (15416) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (15426) TASK_EXAMPLE: Euler Angle: (x (roll): 0.06 y (pitch): -1.78 z (yaw): -0.08)[deg][0m
+[0;33mW (15446) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.00 z: 9.81)[m/s^2][0m
+[0;33mW (15456) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (15486) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: -0.02)[m/s^2][0m
+[0;33mW (15516) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (15516) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (15526) TASK_EXAMPLE: Euler Angle: (x (roll): 0.04 y (pitch): -1.78 z (yaw): -0.08)[deg][0m
+[0;33mW (15546) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.00 z: 9.81)[m/s^2][0m
+[0;33mW (15576) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (15586) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: -0.02)[m/s^2][0m
+[0;33mW (15616) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (15626) TASK_EXAMPLE: Euler Angle: (x (roll): 0.04 y (pitch): -1.79 z (yaw): -0.08)[deg][0m
+[0;33mW (15636) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (15636) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.81)[m/s^2][0m
+[0;33mW (15686) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.02)[m/s^2][0m
+[0;33mW (15706) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (15716) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (15726) TASK_EXAMPLE: Euler Angle: (x (roll): 0.04 y (pitch): -1.79 z (yaw): -0.08)[deg][0m
+[0;33mW (15736) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.81)[m/s^2][0m
+[0;33mW (15766) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (15786) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: -0.02)[m/s^2][0m
+[0;33mW (15816) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;32mI (15826) TASK_EXAMPLE: imu main loop 13[0m
+[0;33mW (15826) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (15826) TASK_EXAMPLE: Euler Angle: (x (roll): 0.04 y (pitch): -1.79 z (yaw): -0.08)[deg][0m
+[0;33mW (15836) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.81)[m/s^2][0m
+[0;33mW (15876) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.02)[m/s^2][0m
+[0;33mW (15886) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (15916) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (15926) TASK_EXAMPLE: Euler Angle: (x (roll): 0.02 y (pitch): -1.78 z (yaw): -0.08)[deg][0m
+[0;33mW (15936) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.00 z: 9.81)[m/s^2][0m
+[0;33mW (15956) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (15976) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (16016) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (16016) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (16026) TASK_EXAMPLE: Euler Angle: (x (roll): -0.01 y (pitch): -1.78 z (yaw): -0.09)[deg][0m
+[0;33mW (16036) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.00 z: 9.82)[m/s^2][0m
+[0;32mI (16076) testf: app_main loop 13[0m
+[0;33mW (16076) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (16076) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (16116) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (16126) TASK_EXAMPLE: Euler Angle: (x (roll): -0.03 y (pitch): -1.78 z (yaw): -0.09)[deg][0m
+[0;33mW (16136) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (16146) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.82)[m/s^2][0m
+[0;33mW (16176) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.01)[m/s^2][0m
+[0;32mI (16196) BARO_TASK: barometer main loop 13[0m
+MS5611: P=1013.16 hPa, T=25.42 C
+[0;33mW (16226) TASK_EXAMPLE: Euler Angle: (x (roll): 0.00 y (pitch): -1.78 z (yaw): -0.08)[deg][0m
+[0;33mW (16236) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (16266) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (16276) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.00)[m/s^2][0m
+[0;33mW (16316) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (16326) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (16326) TASK_EXAMPLE: Euler Angle: (x (roll): -0.02 y (pitch): -1.77 z (yaw): -0.09)[deg][0m
+[0;33mW (16336) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.00 z: 9.83)[m/s^2][0m
+[0;33mW (16376) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.00)[m/s^2][0m
+[0;33mW (16396) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (16416) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (16426) TASK_EXAMPLE: Euler Angle: (x (roll): -0.02 y (pitch): -1.78 z (yaw): -0.09)[deg][0m
+[0;33mW (16436) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.00 z: 9.83)[m/s^2][0m
+[0;33mW (16456) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (16476) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: -0.03)[m/s^2][0m
+[0;33mW (16516) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (16516) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (16526) TASK_EXAMPLE: Euler Angle: (x (roll): 0.02 y (pitch): -1.79 z (yaw): -0.10)[deg][0m
+[0;33mW (16536) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.81)[m/s^2][0m
+[0;33mW (16576) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (16576) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.02)[m/s^2][0m
+[0;33mW (16616) TASK_EXAMPLE: Velocity: (x: 0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (16626) TASK_EXAMPLE: Euler Angle: (x (roll): 0.04 y (pitch): -1.79 z (yaw): -0.09)[deg][0m
+[0;33mW (16636) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;33mW (16646) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (16676) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: -0.02)[m/s^2][0m
+[0;33mW (16706) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (16716) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.01 z: -0.00)[rad/s][0m
+[0;33mW (16726) TASK_EXAMPLE: Euler Angle: (x (roll): 0.06 y (pitch): -1.79 z (yaw): -0.09)[deg][0m
+[0;33mW (16736) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;33mW (16766) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (16776) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: -0.02)[m/s^2][0m
+[0;33mW (16816) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;32mI (16826) TASK_EXAMPLE: imu main loop 14[0m
+[0;33mW (16826) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (16826) TASK_EXAMPLE: Euler Angle: (x (roll): 0.02 y (pitch): -1.78 z (yaw): -0.09)[deg][0m
+[0;33mW (16836) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.81)[m/s^2][0m
+[0;33mW (16876) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.02)[m/s^2][0m
+[0;33mW (16886) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (16916) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (16926) TASK_EXAMPLE: Euler Angle: (x (roll): -0.01 y (pitch): -1.78 z (yaw): -0.09)[deg][0m
+[0;33mW (16936) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.00 z: 9.81)[m/s^2][0m
+[0;33mW (16956) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (16976) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: -0.02)[m/s^2][0m
+[0;33mW (17016) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (17016) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (17026) TASK_EXAMPLE: Euler Angle: (x (roll): -0.02 y (pitch): -1.78 z (yaw): -0.08)[deg][0m
+[0;33mW (17036) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.00 z: 9.81)[m/s^2][0m
+[0;32mI (17076) testf: app_main loop 14[0m
+[0;33mW (17076) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (17076) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.02)[m/s^2][0m
+[0;33mW (17116) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (17126) TASK_EXAMPLE: Euler Angle: (x (roll): -0.01 y (pitch): -1.78 z (yaw): -0.08)[deg][0m
+[0;33mW (17136) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.00 z: 9.81)[m/s^2][0m
+[0;33mW (17136) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (17176) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (17206) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;32mI (17216) BARO_TASK: barometer main loop 14[0m
+MS5611: P=1013.17 hPa, T=25.39 C
+[0;33mW (17266) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (17276) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (17316) TASK_EXAMPLE: Velocity: (x: 0.03 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (17326) TASK_EXAMPLE: Euler Angle: (x (roll): 0.18 y (pitch): -1.85 z (yaw): -0.09)[deg][0m
+[0;33mW (17326) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (17336) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (17376) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (17386) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (17416) TASK_EXAMPLE: Velocity: (x: -0.02 y: 0.01 z: -0.00)[rad/s][0m
+[0;33mW (17426) TASK_EXAMPLE: Euler Angle: (x (roll): 0.15 y (pitch): -1.84 z (yaw): -0.09)[deg][0m
+[0;33mW (17436) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.03 z: 9.83)[m/s^2][0m
+[0;33mW (17456) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (17476) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.02 z: 0.00)[m/s^2][0m
+[0;33mW (17516) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (17516) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (17526) TASK_EXAMPLE: Euler Angle: (x (roll): 0.18 y (pitch): -1.85 z (yaw): -0.08)[deg][0m
+[0;33mW (17536) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.04 z: 9.83)[m/s^2][0m
+[0;33mW (17576) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.00)[m/s^2][0m
+[0;33mW (17576) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (17616) TASK_EXAMPLE: Velocity: (x: 0.02 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (17626) TASK_EXAMPLE: Euler Angle: (x (roll): 0.25 y (pitch): -1.88 z (yaw): -0.08)[deg][0m
+[0;33mW (17636) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (17636) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (17676) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.00 z: 0.00)[m/s^2][0m
+[0;33mW (17706) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (17716) TASK_EXAMPLE: Velocity: (x: -0.02 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (17726) TASK_EXAMPLE: Euler Angle: (x (roll): 0.23 y (pitch): -1.87 z (yaw): -0.08)[deg][0m
+[0;33mW (17736) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.83)[m/s^2][0m
+[0;33mW (17766) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (17776) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (17816) TASK_EXAMPLE: Velocity: (x: 0.03 y: -0.01 z: 0.00)[rad/s][0m
+[0;32mI (17826) TASK_EXAMPLE: imu main loop 15[0m
+[0;33mW (17826) TASK_EXAMPLE: Euler Angle: (x (roll): 0.30 y (pitch): -1.89 z (yaw): -0.08)[deg][0m
+[0;33mW (17826) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (17836) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (17876) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (17896) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.09 z: 9.79)[m/s^2][0m
+[0;33mW (17916) TASK_EXAMPLE: Velocity: (x: -0.02 y: 0.01 z: 0.00)[rad/s][0m
+[0;33mW (17926) TASK_EXAMPLE: Euler Angle: (x (roll): 0.28 y (pitch): -1.87 z (yaw): -0.08)[deg][0m
+[0;33mW (17936) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (17956) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (17976) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: -0.03)[m/s^2][0m
+[0;33mW (18016) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (18016) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (18026) TASK_EXAMPLE: Euler Angle: (x (roll): 0.18 y (pitch): -1.83 z (yaw): -0.08)[deg][0m
+[0;33mW (18036) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.81)[m/s^2][0m
+[0;32mI (18076) testf: app_main loop 15[0m
+[0;33mW (18076) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.02)[m/s^2][0m
+[0;33mW (18076) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (18116) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (18126) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.82 z (yaw): -0.08)[deg][0m
+[0;33mW (18136) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.05 z: 9.81)[m/s^2][0m
+[0;33mW (18146) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (18176) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.02)[m/s^2][0m
+[0;33mW (18206) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (18216) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (18226) TASK_EXAMPLE: Euler Angle: (x (roll): 0.14 y (pitch): -1.79 z (yaw): -0.08)[deg][0m
+[0;32mI (18236) BARO_TASK: barometer main loop 15[0m
+MS5611: P=1013.16 hPa, T=25.35 C
+[0;33mW (18276) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.03 z: 0.01)[m/s^2][0m
+[0;33mW (18316) TASK_EXAMPLE: Velocity: (x: 0.02 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (18326) TASK_EXAMPLE: Euler Angle: (x (roll): 0.15 y (pitch): -1.79 z (yaw): -0.07)[deg][0m
+[0;33mW (18326) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (18336) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (18376) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.01)[m/s^2][0m
+[0;33mW (18396) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (18416) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (18426) TASK_EXAMPLE: Euler Angle: (x (roll): 0.16 y (pitch): -1.79 z (yaw): -0.07)[deg][0m
+[0;33mW (18436) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.83)[m/s^2][0m
+[0;33mW (18456) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (18476) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: 0.00)[m/s^2][0m
+[0;33mW (18516) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (18516) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (18526) TASK_EXAMPLE: Euler Angle: (x (roll): 0.16 y (pitch): -1.79 z (yaw): -0.08)[deg][0m
+[0;33mW (18536) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.83)[m/s^2][0m
+[0;33mW (18576) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.00)[m/s^2][0m
+[0;33mW (18576) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (18616) TASK_EXAMPLE: Velocity: (x: -0.01 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (18626) TASK_EXAMPLE: Euler Angle: (x (roll): 0.13 y (pitch): -1.78 z (yaw): -0.08)[deg][0m
+[0;33mW (18636) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (18646) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (18676) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.00)[m/s^2][0m
+[0;33mW (18706) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (18716) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (18726) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.78 z (yaw): -0.08)[deg][0m
+[0;33mW (18736) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (18766) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (18776) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: -0.01 z: -0.04)[m/s^2][0m
+[0;33mW (18816) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;32mI (18826) TASK_EXAMPLE: imu main loop 16[0m
+[0;33mW (18826) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.77 z (yaw): -0.08)[deg][0m
+[0;33mW (18826) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (18836) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (18876) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (18896) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (18916) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (18926) TASK_EXAMPLE: Euler Angle: (x (roll): 0.10 y (pitch): -1.76 z (yaw): -0.08)[deg][0m
+[0;33mW (18936) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.82)[m/s^2][0m
+[0;33mW (18956) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (18976) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (19016) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (19016) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (19026) TASK_EXAMPLE: Euler Angle: (x (roll): 0.12 y (pitch): -1.78 z (yaw): -0.08)[deg][0m
+[0;33mW (19036) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.02 z: 9.82)[m/s^2][0m
+[0;32mI (19076) testf: app_main loop 16[0m
+[0;33mW (19076) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.03 z: 0.01)[m/s^2][0m
+[0;33mW (19086) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (19116) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (19126) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.78 z (yaw): -0.08)[deg][0m
+[0;33mW (19136) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (19146) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (19176) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (19206) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (19216) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (19226) TASK_EXAMPLE: Euler Angle: (x (roll): 0.10 y (pitch): -1.78 z (yaw): -0.08)[deg][0m
+[0;33mW (19236) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;32mI (19256) BARO_TASK: barometer main loop 16[0m
+MS5611: P=1013.16 hPa, T=25.32 C
+[0;33mW (19316) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (19326) TASK_EXAMPLE: Euler Angle: (x (roll): 0.13 y (pitch): -1.79 z (yaw): -0.07)[deg][0m
+[0;33mW (19336) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (19336) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (19376) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.01)[m/s^2][0m
+[0;33mW (19396) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (19416) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (19426) TASK_EXAMPLE: Euler Angle: (x (roll): 0.15 y (pitch): -1.80 z (yaw): -0.08)[deg][0m
+[0;33mW (19436) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (19456) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (19476) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.03 z: 0.01)[m/s^2][0m
+[0;33mW (19516) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (19516) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (19526) TASK_EXAMPLE: Euler Angle: (x (roll): 0.16 y (pitch): -1.80 z (yaw): -0.07)[deg][0m
+[0;33mW (19536) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (19576) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (19586) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (19616) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (19626) TASK_EXAMPLE: Euler Angle: (x (roll): 0.16 y (pitch): -1.80 z (yaw): -0.07)[deg][0m
+[0;33mW (19636) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (19646) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (19676) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: -0.03)[m/s^2][0m
+[0;33mW (19706) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (19716) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (19726) TASK_EXAMPLE: Euler Angle: (x (roll): 0.16 y (pitch): -1.79 z (yaw): -0.07)[deg][0m
+[0;33mW (19736) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (19766) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (19776) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.01)[m/s^2][0m
+[0;33mW (19816) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;32mI (19826) TASK_EXAMPLE: imu main loop 17[0m
+[0;33mW (19826) TASK_EXAMPLE: Euler Angle: (x (roll): 0.14 y (pitch): -1.78 z (yaw): -0.07)[deg][0m
+[0;33mW (19836) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (19836) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (19876) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (19896) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (19916) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.01 z: 0.00)[rad/s][0m
+[0;33mW (19926) TASK_EXAMPLE: Euler Angle: (x (roll): 0.10 y (pitch): -1.77 z (yaw): -0.07)[deg][0m
+[0;33mW (19936) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (19956) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (19976) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.01)[m/s^2][0m
+[0;33mW (20016) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (20016) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (20026) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.77 z (yaw): -0.07)[deg][0m
+[0;33mW (20036) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;32mI (20076) testf: app_main loop 17[0m
+[0;33mW (20076) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.00)[m/s^2][0m
+[0;33mW (20086) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (20116) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (20126) TASK_EXAMPLE: Euler Angle: (x (roll): 0.09 y (pitch): -1.77 z (yaw): -0.06)[deg][0m
+[0;33mW (20136) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (20146) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (20176) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: -0.04)[m/s^2][0m
+[0;33mW (20206) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (20216) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (20226) TASK_EXAMPLE: Euler Angle: (x (roll): 0.12 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (20236) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;32mI (20276) BARO_TASK: barometer main loop 17[0m
+[0;33mW (20276) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+MS5611: P=1013.14 hPa, T=25.28 C
+[0;33mW (20326) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (20336) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (20336) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (20376) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.01)[m/s^2][0m
+[0;33mW (20396) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (20416) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (20426) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (20436) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (20456) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (20476) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.01)[m/s^2][0m
+[0;33mW (20516) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (20526) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (20526) TASK_EXAMPLE: Euler Angle: (x (roll): 0.13 y (pitch): -1.79 z (yaw): -0.06)[deg][0m
+[0;33mW (20536) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (20576) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.00)[m/s^2][0m
+[0;33mW (20586) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;32mI (20596) ENCODER: step=1 pos=4[0m
+[0;33mW (20616) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (20626) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.77 z (yaw): -0.06)[deg][0m
+[0;33mW (20636) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (20646) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (20676) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (20706) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (20716) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (20726) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (20736) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (20776) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (20776) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.02)[m/s^2][0m
+[0;33mW (20816) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;32mI (20826) TASK_EXAMPLE: imu main loop 18[0m
+[0;33mW (20826) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.79 z (yaw): -0.06)[deg][0m
+[0;33mW (20836) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;33mW (20836) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (20876) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.02)[m/s^2][0m
+[0;33mW (20896) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (20916) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (20926) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.79 z (yaw): -0.06)[deg][0m
+[0;33mW (20936) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (20956) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (20976) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (21016) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (21026) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (21026) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.79 z (yaw): -0.06)[deg][0m
+[0;33mW (21036) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;32mI (21076) testf: app_main loop 18[0m
+[0;33mW (21076) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.01)[m/s^2][0m
+[0;33mW (21086) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (21116) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (21126) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.79 z (yaw): -0.06)[deg][0m
+[0;33mW (21136) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (21146) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (21176) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.00)[m/s^2][0m
+[0;33mW (21206) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (21216) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (21226) TASK_EXAMPLE: Euler Angle: (x (roll): 0.13 y (pitch): -1.80 z (yaw): -0.06)[deg][0m
+[0;33mW (21236) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (21276) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (21276) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: -0.04)[m/s^2][0m
+[0;32mI (21296) BARO_TASK: barometer main loop 18[0m
+MS5611: P=1013.14 hPa, T=25.25 C
+[0;33mW (21326) TASK_EXAMPLE: Euler Angle: (x (roll): 0.13 y (pitch): -1.79 z (yaw): -0.06)[deg][0m
+[0;33mW (21336) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (21336) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (21376) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.01)[m/s^2][0m
+[0;33mW (21396) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (21416) TASK_EXAMPLE: Velocity: (x: 0.04 y: -0.02 z: 0.00)[rad/s][0m
+[0;33mW (21426) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.83 z (yaw): -0.07)[deg][0m
+[0;33mW (21436) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (21466) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (21476) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (21516) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (21526) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (21526) TASK_EXAMPLE: Euler Angle: (x (roll): 0.16 y (pitch): -1.80 z (yaw): -0.07)[deg][0m
+[0;33mW (21536) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (21576) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (21586) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (21616) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;32mI (21626) ENCODER: step=-1 pos=3[0m
+[0;33mW (21626) TASK_EXAMPLE: Euler Angle: (x (roll): 0.23 y (pitch): -1.84 z (yaw): -0.07)[deg][0m
+[0;33mW (21636) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (21646) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (21676) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: -0.03)[m/s^2][0m
+[0;33mW (21716) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (21716) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (21726) TASK_EXAMPLE: Euler Angle: (x (roll): 0.12 y (pitch): -1.80 z (yaw): -0.07)[deg][0m
+[0;33mW (21736) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (21776) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.01)[m/s^2][0m
+[0;33mW (21776) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (21816) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;32mI (21826) TASK_EXAMPLE: imu main loop 19[0m
+[0;33mW (21826) TASK_EXAMPLE: Euler Angle: (x (roll): 0.16 y (pitch): -1.80 z (yaw): -0.07)[deg][0m
+[0;33mW (21836) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (21836) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (21876) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (21896) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (21916) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (21926) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.79 z (yaw): -0.06)[deg][0m
+[0;33mW (21936) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (21966) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (21976) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: -0.02 z: 0.01)[m/s^2][0m
+[0;33mW (22016) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (22026) TASK_EXAMPLE: Euler Angle: (x (roll): 0.13 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (22026) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (22036) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.83)[m/s^2][0m
+[0;32mI (22076) testf: app_main loop 19[0m
+[0;33mW (22076) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: 0.02 z: 0.00)[m/s^2][0m
+[0;33mW (22086) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (22116) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (22126) TASK_EXAMPLE: Euler Angle: (x (roll): 0.05 y (pitch): -1.76 z (yaw): -0.06)[deg][0m
+[0;33mW (22136) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (22146) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (22176) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: -0.03)[m/s^2][0m
+[0;33mW (22216) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (22216) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (22226) TASK_EXAMPLE: Euler Angle: (x (roll): 0.03 y (pitch): -1.76 z (yaw): -0.06)[deg][0m
+[0;33mW (22236) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;33mW (22276) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.02)[m/s^2][0m
+[0;33mW (22276) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;32mI (22316) BARO_TASK: barometer main loop 19[0m
+MS5611: P=1013.16 hPa, T=25.22 C
+[0;33mW (22336) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (22376) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (22396) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (22416) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (22426) TASK_EXAMPLE: Euler Angle: (x (roll): 0.06 y (pitch): -1.77 z (yaw): -0.06)[deg][0m
+[0;33mW (22436) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (22466) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (22476) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (22516) TASK_EXAMPLE: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (22526) TASK_EXAMPLE: Euler Angle: (x (roll): 0.04 y (pitch): -1.76 z (yaw): -0.06)[deg][0m
+[0;33mW (22526) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (22536) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.82)[m/s^2][0m
+[0;33mW (22576) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (22586) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (22616) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (22626) TASK_EXAMPLE: Euler Angle: (x (roll): 0.07 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (22636) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (22656) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (22676) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: -0.04)[m/s^2][0m
+[0;33mW (22716) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (22716) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (22726) TASK_EXAMPLE: Euler Angle: (x (roll): 0.07 y (pitch): -1.77 z (yaw): -0.06)[deg][0m
+[0;33mW (22736) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (22776) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (22776) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (22816) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;32mI (22826) TASK_EXAMPLE: imu main loop 20[0m
+[0;33mW (22826) TASK_EXAMPLE: Euler Angle: (x (roll): 0.07 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (22836) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.82)[m/s^2][0m
+[0;33mW (22836) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (22876) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (22906) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (22916) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (22926) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (22936) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.01 z: 9.82)[m/s^2][0m
+[0;33mW (22966) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (22976) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.04 z: 0.01)[m/s^2][0m
+[0;33mW (23016) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (23026) TASK_EXAMPLE: Euler Angle: (x (roll): 0.06 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (23026) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (23036) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;32mI (23076) testf: app_main loop 20[0m
+[0;33mW (23076) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.01 z: 0.00)[m/s^2][0m
+[0;33mW (23086) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (23116) TASK_EXAMPLE: Velocity: (x: 0.02 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (23126) TASK_EXAMPLE: Euler Angle: (x (roll): 0.09 y (pitch): -1.80 z (yaw): -0.06)[deg][0m
+[0;33mW (23136) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (23156) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;32mI (23166) ENCODER: step=1 pos=4[0m
+[0;33mW (23176) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.00)[m/s^2][0m
+[0;33mW (23216) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (23216) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (23226) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.79 z (yaw): -0.05)[deg][0m
+[0;33mW (23236) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (23276) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.01 z: 0.00)[m/s^2][0m
+[0;33mW (23276) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (23316) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (23326) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.79 z (yaw): -0.06)[deg][0m
+[0;32mI (23336) BARO_TASK: barometer main loop 20[0m
+[0;33mW (23336) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+MS5611: P=1013.15 hPa, T=25.20 C
+[0;33mW (23406) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (23416) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (23426) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (23436) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (23466) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (23476) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (23516) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (23526) TASK_EXAMPLE: Euler Angle: (x (roll): 0.09 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (23526) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (23536) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (23576) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: -0.03)[m/s^2][0m
+[0;33mW (23586) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (23616) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (23626) TASK_EXAMPLE: Euler Angle: (x (roll): 0.09 y (pitch): -1.78 z (yaw): -0.05)[deg][0m
+[0;33mW (23636) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;33mW (23656) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (23676) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: -0.02)[m/s^2][0m
+[0;33mW (23716) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (23716) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (23726) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (23736) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.80)[m/s^2][0m
+[0;33mW (23776) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.02)[m/s^2][0m
+[0;33mW (23776) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (23816) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;32mI (23826) TASK_EXAMPLE: imu main loop 21[0m
+[0;33mW (23826) TASK_EXAMPLE: Euler Angle: (x (roll): 0.10 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (23836) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;33mW (23846) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (23876) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.03 z: 0.02)[m/s^2][0m
+[0;33mW (23906) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (23916) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (23926) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (23936) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;33mW (23966) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (23976) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (24016) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (24026) TASK_EXAMPLE: Euler Angle: (x (roll): 0.12 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (24026) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (24036) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;32mI (24076) testf: app_main loop 21[0m
+[0;33mW (24076) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (24096) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (24116) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (24126) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (24136) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (24156) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (24176) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: -0.03)[m/s^2][0m
+[0;33mW (24216) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.01 z: 0.00)[rad/s][0m
+[0;33mW (24216) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (24226) TASK_EXAMPLE: Euler Angle: (x (roll): 0.09 y (pitch): -1.76 z (yaw): -0.06)[deg][0m
+[0;33mW (24236) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (24276) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: -0.02)[m/s^2][0m
+[0;33mW (24276) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;32mI (24286) ENCODER: step=1 pos=5[0m
+[0;33mW (24316) TASK_EXAMPLE: Velocity: (x: 0.03 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (24326) TASK_EXAMPLE: Euler Angle: (x (roll): 0.09 y (pitch): -1.77 z (yaw): -0.06)[deg][0m
+[0;33mW (24336) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;33mW (24346) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;32mI (24356) BARO_TASK: barometer main loop 21[0m
+MS5611: P=1013.18 hPa, T=25.18 C
+[0;33mW (24406) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (24416) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (24426) TASK_EXAMPLE: Euler Angle: (x (roll): 0.09 y (pitch): -1.76 z (yaw): -0.06)[deg][0m
+[0;33mW (24436) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (24466) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (24476) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (24516) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (24526) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (24526) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (24536) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (24576) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.03 z: 0.01)[m/s^2][0m
+[0;33mW (24596) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (24616) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (24626) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.77 z (yaw): -0.06)[deg][0m
+[0;33mW (24636) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (24656) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (24676) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.00)[m/s^2][0m
+[0;33mW (24716) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (24716) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (24726) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.76 z (yaw): -0.06)[deg][0m
+[0;33mW (24736) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (24776) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.00)[m/s^2][0m
+[0;33mW (24786) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (24816) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;32mI (24826) TASK_EXAMPLE: imu main loop 22[0m
+[0;33mW (24826) TASK_EXAMPLE: Euler Angle: (x (roll): 0.08 y (pitch): -1.77 z (yaw): -0.06)[deg][0m
+[0;33mW (24836) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.83)[m/s^2][0m
+[0;33mW (24846) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (24876) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: -0.04)[m/s^2][0m
+[0;33mW (24906) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (24916) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (24926) TASK_EXAMPLE: Euler Angle: (x (roll): 0.09 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (24936) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (24966) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (24976) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (25016) TASK_EXAMPLE: Velocity: (x: 0.01 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (25026) TASK_EXAMPLE: Euler Angle: (x (roll): 0.11 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (25036) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (25036) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;32mI (25076) testf: app_main loop 22[0m
+[0;33mW (25076) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.02)[m/s^2][0m
+[0;33mW (25096) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (25116) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (25126) TASK_EXAMPLE: Euler Angle: (x (roll): 0.09 y (pitch): -1.78 z (yaw): -0.07)[deg][0m
+[0;33mW (25136) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;33mW (25156) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (25176) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: 0.02)[m/s^2][0m
+[0;33mW (25216) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (25216) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (25226) TASK_EXAMPLE: Euler Angle: (x (roll): 0.07 y (pitch): -1.78 z (yaw): -0.07)[deg][0m
+[0;33mW (25236) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;33mW (25276) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.02)[m/s^2][0m
+[0;33mW (25286) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (25316) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (25326) TASK_EXAMPLE: Euler Angle: (x (roll): 0.09 y (pitch): -1.79 z (yaw): -0.07)[deg][0m
+[0;33mW (25336) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (25346) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (25366) ENCODER: step=1 pos=6[0m
+[0;32mI (25376) BARO_TASK: barometer main loop 22[0m
+MS5611: P=1013.18 hPa, T=25.16 C
+[0;33mW (25416) TASK_EXAMPLE: Velocity: (x: 0.03 y: -0.01 z: -0.00)[rad/s][0m
+[0;33mW (25426) TASK_EXAMPLE: Euler Angle: (x (roll): 0.10 y (pitch): -1.79 z (yaw): -0.07)[deg][0m
+[0;33mW (25436) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (25466) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (25476) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.03 z: 0.01)[m/s^2][0m
+[0;33mW (25516) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (25526) TASK_EXAMPLE: Euler Angle: (x (roll): 0.15 y (pitch): -1.80 z (yaw): -0.08)[deg][0m
+[0;33mW (25536) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.03 z: 9.83)[m/s^2][0m
+[0;33mW (25536) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (25576) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.02 z: 0.00)[m/s^2][0m
+[0;33mW (25596) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (25616) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (25626) TASK_EXAMPLE: Euler Angle: (x (roll): 0.13 y (pitch): -1.79 z (yaw): -0.08)[deg][0m
+[0;33mW (25636) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (25656) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (25676) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.01 z: 0.01)[m/s^2][0m
+[0;33mW (25716) TASK_EXAMPLE: Velocity: (x: -0.05 y: 0.02 z: 0.00)[rad/s][0m
+[0;33mW (25716) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (25726) TASK_EXAMPLE: Euler Angle: (x (roll): 0.18 y (pitch): -1.82 z (yaw): -0.08)[deg][0m
+[0;33mW (25736) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (25776) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.02 z: -0.03)[m/s^2][0m
+[0;33mW (25786) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (25816) TASK_EXAMPLE: Velocity: (x: 0.02 y: -0.00 z: -0.00)[rad/s][0m
+[0;32mI (25826) TASK_EXAMPLE: imu main loop 23[0m
+[0;33mW (25826) TASK_EXAMPLE: Euler Angle: (x (roll): 0.19 y (pitch): -1.83 z (yaw): -0.07)[deg][0m
+[0;33mW (25836) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.03 z: 9.81)[m/s^2][0m
+[0;33mW (25846) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (25876) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.01 z: 0.02)[m/s^2][0m
+[0;33mW (25906) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (25916) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (25926) TASK_EXAMPLE: Euler Angle: (x (roll): 0.19 y (pitch): -1.83 z (yaw): -0.08)[deg][0m
+[0;33mW (25936) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (25966) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (25976) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (26016) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (26026) TASK_EXAMPLE: Euler Angle: (x (roll): 0.18 y (pitch): -1.83 z (yaw): -0.08)[deg][0m
+[0;33mW (26036) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (26036) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (26076) testf: app_main loop 23[0m
+[0;33mW (26076) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (26096) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (26116) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (26126) TASK_EXAMPLE: Euler Angle: (x (roll): 0.18 y (pitch): -1.82 z (yaw): -0.08)[deg][0m
+[0;33mW (26136) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (26156) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (26176) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: -0.03)[m/s^2][0m
+[0;33mW (26216) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.01 z: 0.00)[rad/s][0m
+[0;33mW (26226) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.82 z (yaw): -0.08)[deg][0m
+[0;33mW (26226) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (26236) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (26276) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (26286) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (26316) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (26326) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.81 z (yaw): -0.08)[deg][0m
+[0;33mW (26336) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (26346) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (26376) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.01)[m/s^2][0m
+[0;32mI (26396) BARO_TASK: barometer main loop 23[0m
+[0;33mW (26416) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+MS5611: P=1013.18 hPa, T=25.14 C
+[0;33mW (26436) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (26476) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.03 z: 0.01)[m/s^2][0m
+[0;33mW (26476) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (26516) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: -0.00)[rad/s][0m
+[0;33mW (26526) TASK_EXAMPLE: Euler Angle: (x (roll): 0.21 y (pitch): -1.80 z (yaw): -0.08)[deg][0m
+[0;33mW (26536) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (26536) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (26576) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: -0.03)[m/s^2][0m
+[0;33mW (26596) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (26616) TASK_EXAMPLE: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (26626) TASK_EXAMPLE: Euler Angle: (x (roll): 0.21 y (pitch): -1.80 z (yaw): -0.07)[deg][0m
+[0;33mW (26636) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (26656) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (26676) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (26716) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (26726) TASK_EXAMPLE: Euler Angle: (x (roll): 0.21 y (pitch): -1.80 z (yaw): -0.07)[deg][0m
+[0;33mW (26726) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (26736) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (26776) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (26786) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (26806) TASK_EXAMPLE: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;32mI (26826) TASK_EXAMPLE: imu main loop 24[0m
+[0;33mW (26826) TASK_EXAMPLE: Euler Angle: (x (roll): 0.21 y (pitch): -1.80 z (yaw): -0.07)[deg][0m
+[0;33mW (26836) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (26846) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (26876) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.04 z: 0.01)[m/s^2][0m
+[0;33mW (26906) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (26916) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (26926) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.81 z (yaw): -0.06)[deg][0m
+[0;33mW (26936) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.04 z: 9.83)[m/s^2][0m
+[0;33mW (26976) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.01 z: 0.00)[m/s^2][0m
+[0;33mW (26976) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (27006) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (27016) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.80 z (yaw): -0.06)[deg][0m
+[0;33mW (27036) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (27036) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;32mI (27076) testf: app_main loop 24[0m
+[0;33mW (27076) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (27096) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (27106) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (27116) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.80 z (yaw): -0.06)[deg][0m
+[0;33mW (27136) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (27166) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (27176) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: -0.03)[m/s^2][0m
+[0;33mW (27206) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (27216) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.80 z (yaw): -0.06)[deg][0m
+[0;33mW (27226) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (27236) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (27276) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: -0.02)[m/s^2][0m
+[0;33mW (27286) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (27306) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (27316) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.79 z (yaw): -0.06)[deg][0m
+[0;33mW (27336) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.05 z: 9.81)[m/s^2][0m
+[0;33mW (27346) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (27376) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: -0.02)[m/s^2][0m
+[0;33mW (27406) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;32mI (27416) BARO_TASK: barometer main loop 24[0m
+[0;33mW (27416) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.80 z (yaw): -0.06)[deg][0m
+MS5611: P=1013.19 hPa, T=25.12 C
+[0;33mW (27476) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: -0.02)[m/s^2][0m
+[0;33mW (27476) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (27506) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (27516) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.79 z (yaw): -0.06)[deg][0m
+[0;33mW (27536) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.05 z: 9.80)[m/s^2][0m
+[0;33mW (27536) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (27576) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.00 z: 0.02)[m/s^2][0m
+[0;33mW (27596) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (27606) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (27616) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.78 z (yaw): -0.06)[deg][0m
+[0;33mW (27636) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.05 z: 9.81)[m/s^2][0m
+[0;33mW (27666) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (27676) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.01 z: -0.02)[m/s^2][0m
+[0;33mW (27706) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (27716) TASK_EXAMPLE: Euler Angle: (x (roll): 0.23 y (pitch): -1.79 z (yaw): -0.06)[deg][0m
+[0;33mW (27726) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (27736) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.04 z: 9.81)[m/s^2][0m
+[0;33mW (27776) TASK_EXAMPLE: Linear Accel: (x: 0.03 y: 0.01 z: 0.02)[m/s^2][0m
+[0;33mW (27786) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (27806) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (27816) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.80 z (yaw): -0.06)[deg][0m
+[0;32mI (27826) TASK_EXAMPLE: imu main loop 25[0m
+[0;33mW (27836) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.03 z: 9.81)[m/s^2][0m
+[0;33mW (27846) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (27876) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: -0.02 z: 0.01)[m/s^2][0m
+[0;33mW (27906) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (27916) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (27916) TASK_EXAMPLE: Euler Angle: (x (roll): 0.21 y (pitch): -1.80 z (yaw): -0.06)[deg][0m
+[0;33mW (27936) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (27976) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.02 z: -0.03)[m/s^2][0m
+[0;33mW (27976) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (28006) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (28016) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.80 z (yaw): -0.06)[deg][0m
+[0;33mW (28026) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.03 z: 9.81)[m/s^2][0m
+[0;33mW (28036) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (28066) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.02 z: 0.02)[m/s^2][0m
+[0;32mI (28076) testf: app_main loop 25[0m
+[0;33mW (28106) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (28106) TASK_EXAMPLE: Velocity: (x: -0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (28116) TASK_EXAMPLE: Euler Angle: (x (roll): 0.19 y (pitch): -1.82 z (yaw): -0.06)[deg][0m
+[0;33mW (28126) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.04 z: 9.81)[m/s^2][0m
+[0;33mW (28166) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (28166) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.02 z: -0.02)[m/s^2][0m
+[0;33mW (28206) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (28216) TASK_EXAMPLE: Euler Angle: (x (roll): 0.18 y (pitch): -1.82 z (yaw): -0.06)[deg][0m
+[0;33mW (28226) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.79)[m/s^2][0m
+[0;33mW (28226) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.03 z: 9.81)[m/s^2][0m
+[0;33mW (28266) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: -0.02 z: -0.02)[m/s^2][0m
+[0;33mW (28286) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (28306) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (28316) TASK_EXAMPLE: Euler Angle: (x (roll): 0.18 y (pitch): -1.81 z (yaw): -0.06)[deg][0m
+[0;33mW (28326) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.80)[m/s^2][0m
+[0;33mW (28356) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (28366) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.02 z: 0.02)[m/s^2][0m
+[0;33mW (28406) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (28416) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (28416) TASK_EXAMPLE: Euler Angle: (x (roll): 0.18 y (pitch): -1.80 z (yaw): -0.06)[deg][0m
+[0;33mW (28426) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.81)[m/s^2][0m
+[0;32mI (28436) BARO_TASK: barometer main loop 25[0m
+MS5611: P=1013.19 hPa, T=25.11 C
+[0;33mW (28476) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (28506) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (28516) TASK_EXAMPLE: Euler Angle: (x (roll): 0.17 y (pitch): -1.80 z (yaw): -0.06)[deg][0m
+[0;33mW (28526) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.02 z: 9.82)[m/s^2][0m
+[0;33mW (28536) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (28566) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.02 z: 0.01)[m/s^2][0m
+[0;33mW (28606) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (28606) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (28616) TASK_EXAMPLE: Euler Angle: (x (roll): 0.17 y (pitch): -1.80 z (yaw): -0.06)[deg][0m
+[0;33mW (28626) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (28666) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (28666) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (28706) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (28716) TASK_EXAMPLE: Euler Angle: (x (roll): 0.18 y (pitch): -1.80 z (yaw): -0.05)[deg][0m
+[0;33mW (28726) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (28726) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.83)[m/s^2][0m
+[0;33mW (28766) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.01 z: 0.00)[m/s^2][0m
+[0;33mW (28786) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (28806) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (28816) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.80 z (yaw): -0.05)[deg][0m
+[0;32mI (28826) TASK_EXAMPLE: imu main loop 26[0m
+[0;33mW (28826) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.04 z: 9.83)[m/s^2][0m
+[0;33mW (28846) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (28866) TASK_EXAMPLE: Linear Accel: (x: -0.01 y: 0.00 z: -0.04)[m/s^2][0m
+[0;33mW (28906) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (28916) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (28916) TASK_EXAMPLE: Euler Angle: (x (roll): 0.20 y (pitch): -1.81 z (yaw): -0.05)[deg][0m
+[0;33mW (28926) TASK_EXAMPLE: Gravity: (x: 0.31 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (28966) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: -0.03 z: 0.01)[m/s^2][0m
+[0;33mW (28976) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (29006) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (29016) TASK_EXAMPLE: Euler Angle: (x (roll): 0.23 y (pitch): -1.80 z (yaw): -0.05)[deg][0m
+[0;33mW (29026) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (29036) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.09 z: 9.79)[m/s^2][0m
+[0;33mW (29066) TASK_EXAMPLE: Linear Accel: (x: 0.00 y: 0.05 z: -0.03)[m/s^2][0m
+[0;32mI (29076) testf: app_main loop 26[0m
+[0;33mW (29096) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (29106) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (29116) TASK_EXAMPLE: Euler Angle: (x (roll): 0.24 y (pitch): -1.80 z (yaw): -0.05)[deg][0m
+[0;33mW (29126) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (29166) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (29166) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (29206) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (29216) TASK_EXAMPLE: Euler Angle: (x (roll): 0.23 y (pitch): -1.79 z (yaw): -0.05)[deg][0m
+[0;33mW (29226) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (29226) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (29266) TASK_EXAMPLE: Linear Accel: (x: 0.03 y: -0.04 z: 0.01)[m/s^2][0m
+[0;33mW (29286) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.09 z: 9.83)[m/s^2][0m
+[0;33mW (29306) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (29316) TASK_EXAMPLE: Euler Angle: (x (roll): 0.23 y (pitch): -1.79 z (yaw): -0.05)[deg][0m
+[0;33mW (29326) TASK_EXAMPLE: Gravity: (x: 0.30 y: 0.03 z: 9.82)[m/s^2][0m
+[0;33mW (29356) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (29366) TASK_EXAMPLE: Linear Accel: (x: 0.03 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (29406) TASK_EXAMPLE: Velocity: (x: 0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (29416) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (29416) TASK_EXAMPLE: Euler Angle: (x (roll): 0.23 y (pitch): -1.80 z (yaw): -0.05)[deg][0m
+[0;33mW (29426) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.05 z: 9.82)[m/s^2][0m
+[0;32mI (29456) BARO_TASK: barometer main loop 26[0m
+MS5611: P=1013.21 hPa, T=25.09 C
+[0;33mW (29506) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (29516) TASK_EXAMPLE: Euler Angle: (x (roll): 0.24 y (pitch): -1.81 z (yaw): -0.05)[deg][0m
+[0;33mW (29526) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (29536) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.09 z: 9.79)[m/s^2][0m
+[0;33mW (29566) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.05 z: -0.04)[m/s^2][0m
+[0;33mW (29606) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (29606) TASK_EXAMPLE: Velocity: (x: 0.00 y: -0.00 z: 0.00)[rad/s][0m
+[0;33mW (29616) TASK_EXAMPLE: Euler Angle: (x (roll): 0.23 y (pitch): -1.82 z (yaw): -0.05)[deg][0m
+[0;33mW (29626) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.04 z: 9.82)[m/s^2][0m
+[0;33mW (29666) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (29666) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: 0.01 z: 0.01)[m/s^2][0m
+[0;33mW (29706) TASK_EXAMPLE: Velocity: (x: 0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (29716) TASK_EXAMPLE: Euler Angle: (x (roll): 0.24 y (pitch): -1.83 z (yaw): -0.05)[deg][0m
+[0;33mW (29726) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (29726) TASK_EXAMPLE: Gravity: (x: 0.32 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (29766) TASK_EXAMPLE: Linear Accel: (x: 0.02 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (29786) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (29806) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: -0.00)[rad/s][0m
+[0;33mW (29816) TASK_EXAMPLE: Euler Angle: (x (roll): 0.23 y (pitch): -1.83 z (yaw): -0.05)[deg][0m
+[0;32mI (29826) TASK_EXAMPLE: imu main loop 27[0m
+[0;33mW (29826) TASK_EXAMPLE: Gravity: (x: 0.33 y: 0.05 z: 9.82)[m/s^2][0m
+[0;33mW (29856) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (29866) TASK_EXAMPLE: Linear Accel: (x: 0.01 y: 0.00 z: 0.01)[m/s^2][0m
+[0;33mW (29906) TASK_EXAMPLE: Velocity: (x: -0.00 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (29916) TASK_EXAMPLE: Angular Accel: (x: 0.30 y: 0.01 z: 9.83)[m/s^2][0m
+[0;33mW (29916) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.84 z (yaw): -0.05)[deg][0m
+[0;33mW (29926) TASK_EXAMPLE: Gravity: (x: 0.33 y: 0.05 z: 9.83)[m/s^2][0m
+[0;33mW (29966) TASK_EXAMPLE: Linear Accel: (x: -0.02 y: -0.04 z: 0.00)[m/s^2][0m
+[0;33mW (29976) TASK_EXAMPLE: Angular Accel: (x: 0.34 y: 0.05 z: 9.79)[m/s^2][0m
+[0;33mW (30006) TASK_EXAMPLE: Velocity: (x: -0.01 y: 0.00 z: 0.00)[rad/s][0m
+[0;33mW (30016) TASK_EXAMPLE: Euler Angle: (x (roll): 0.22 y (pitch): -1.85 z (yaw): -0.05)[deg][0m
