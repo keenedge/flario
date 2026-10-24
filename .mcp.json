@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "kicad": {
+      "command": "uvx",
+      "args": ["kicad-mcp-pro@4.3.0"],
+      "env": {
+        "KICAD_MCP_PROJECT_DIR": "${KICAD_MCP_PROJECT_DIR:-hardware}",
+        "KICAD_MCP_OPERATING_MODE": "${KICAD_MCP_OPERATING_MODE:-readonly}"
+      }
+    }
+  }
+}
