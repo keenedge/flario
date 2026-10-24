@@ -1,0 +1,20 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "4be64db2-d0eb-44ab-9167-6be2786d9585")
+	(paper "A4")
+	(title_block
+		(title "airio")
+		(date "2026-10-24")
+		(rev "0.1")
+		(company "Flario")
+	)
+	(lib_symbols)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
