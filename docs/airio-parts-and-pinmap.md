@@ -18,7 +18,7 @@ rechecked before ordering. "From" is LCSC's lowest tier, so qty 1 costs more.
 |---|---|---|---|---|---|---|---|
 | U1 | MCU + BLE + USB + charger | Seeed XIAO nRF52840 (102010448) | [C17209540](https://www.lcsc.com/product-detail/C17209540.html) | from C$14.82 | 158 | page | Castellated module. Onboard BQ25101 charger, 3.3 V LDO, USB-C, UF2 bootloader. Non-Sense version (no onboard IMU). |
 | U2 | Barometer | Bosch BMP581 | [C5362283](https://www.lcsc.com/product-detail/C5362283.html) | C$3.59 | **0** | live | LGA-10 2x2 mm. I2C. Out of stock at LCSC: order elsewhere or use U2-alt. |
-| U2-alt | Barometer (footprint compatible) | Bosch BMP580 | [C22391138](https://www.lcsc.com/product-detail/C22391138.html) | C$1.70 | 14,944 | live | Same package and pinout. Confirm the Zephyr `bmp581` driver accepts its chip ID before relying on it. |
+| U2-alt | Barometer (likely drop-in) | Bosch BMP580 | [C22391138](https://www.lcsc.com/product-detail/C22391138.html) | C$1.70 | 14,944 | live | Same 2x2 mm LGA-10 package and specs per Bosch. Pinout not yet checked against the BMP580 datasheet. Zephyr's `bmp581` driver accepts chip IDs 0x50 and 0x51, so firmware should work unchanged. |
 | U3 | 6-axis IMU | ST LSM6DSV16XTR | [C5267406](https://www.lcsc.com/product-detail/C5267406.html) | C$4.75 | 6,395 | live | LGA-14 2.5x3 mm. I2C. On-chip sensor fusion (SFLP). |
 | BZ1 | Piezo beeper | Murata PKLCS1212E4001-R1 | [C113159](https://www.lcsc.com/product-detail/C113159.html) | from C$0.92 | 7,334 | page | 12x12 mm SMD, 4 kHz resonance, 84 dB. Driven differentially from two GPIOs (about 6.6 Vpp) so no driver stage is needed. |
 | C1-C4 | Sensor decoupling, 100 nF 0603 X7R | Samsung CL10B104KB8NNNC | [C1591](https://www.lcsc.com/product-detail/C1591.html) | from C$0.01 | conflicting on page | page | One each on BMP581 VDD, BMP581 VDDIO, LSM6DSV16X VDD, LSM6DSV16X VDDIO. JLC basic part. |
@@ -37,11 +37,11 @@ revisit it for a bare-chip v1.
 |---|---|---|---|---|
 | D0 | P0.02 | IMU_INT1 | in | LSM6DSV16X INT1, data-ready, active high. |
 | D1 | P0.03 | BARO_INT | in | BMP581 INT, data-ready, push-pull active high. |
-| D2 | P0.28 | BUZZ_A | out | PWM0 channel 0. |
-| D3 | P0.29 | BUZZ_B | out | PWM0 channel 1, inverted, so the piezo sees twice the swing. |
-| D4 | P0.04 | I2C_SDA | io | i2c0. BMP581 at 0x47 (SDO high), LSM6DSV16X at 0x6A (SDO low). |
-| D5 | P0.05 | I2C_SCL | out | i2c0, 400 kHz. |
-| D6 | P1.11 | BTN | in | SW1 to GND, internal pull-up. Also wakes from System OFF. |
+| D2 | P0.28 | BUZZ_A | out | PWM1 channel 0. (PWM0 is used by the XIAO's LED.) |
+| D3 | P0.29 | BUZZ_B | out | PWM1 channel 1, inverted, so the piezo sees twice the swing. |
+| D4 | P0.04 | I2C_SDA | io | Zephyr `i2c1`. BMP581 at 0x47 (SDO high), LSM6DSV16X at 0x6A (SDO low). |
+| D5 | P0.05 | I2C_SCL | out | Zephyr `i2c1`, 400 kHz. |
+| D6 | P1.11 | BTN | in | SW1 to GND, internal pull-up. Also wakes from System OFF. The board's default UART TX is disabled in firmware. |
 | D7 | P1.12 | spare | | UART RX if a debug UART is wanted. Logs go over USB CDC ACM by default. |
 | D8 | P1.13 | spare (SPI SCK) | | Reserved for a future flash chip or display. |
 | D9 | P1.14 | spare (SPI MISO) | | |
