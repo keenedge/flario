@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "airio")(type "KiCad")(uri "${KIPRJMOD}/airio.kicad_sym")(options "")(descr "airio project symbols"))
+)
