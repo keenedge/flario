@@ -1,0 +1,88 @@
+/*
+ * airio v0 carrier board on a Seeed XIAO nRF52840.
+ * Pin map: docs/airio-parts-and-pinmap.md
+ */
+
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <zephyr/dt-bindings/sensor/bmp581.h>
+#include <zephyr/dt-bindings/sensor/lsm6dsv16x.h>
+
+/ {
+	aliases {
+		baro = &bmp581;
+		imu = &lsm6dsv16x;
+		sw0 = &btn;
+	};
+
+	zephyr,user {
+		/* BZ1 between D2 and D3; B is inverted so the piezo sees 2x swing. */
+		pwms = <&pwm1 0 PWM_HZ(1000) PWM_POLARITY_NORMAL>,
+		       <&pwm1 1 PWM_HZ(1000) PWM_POLARITY_INVERTED>;
+		pwm-names = "buzz_a", "buzz_b";
+	};
+
+	buttons {
+		compatible = "gpio-keys";
+
+		btn: btn {
+			gpios = <&gpio1 11 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "BTN (D6)";
+			zephyr,code = <INPUT_KEY_0>;
+		};
+	};
+};
+
+&pinctrl {
+	pwm1_default: pwm1_default {
+		group1 {
+			psels = <NRF_PSEL(PWM_OUT0, 0, 28)>,
+				<NRF_PSEL(PWM_OUT1, 0, 29)>;
+		};
+	};
+
+	pwm1_sleep: pwm1_sleep {
+		group1 {
+			psels = <NRF_PSEL(PWM_OUT0, 0, 28)>,
+				<NRF_PSEL(PWM_OUT1, 0, 29)>;
+			low-power-enable;
+		};
+	};
+};
+
+&pwm1 {
+	status = "okay";
+	pinctrl-0 = <&pwm1_default>;
+	pinctrl-1 = <&pwm1_sleep>;
+	pinctrl-names = "default", "sleep";
+};
+
+/* D6 is the button, so the default UART on D6/D7 is off. Logs go over USB. */
+&uart0 {
+	status = "disabled";
+};
+
+/* D4 (SDA) / D5 (SCL) */
+&i2c1 {
+	clock-frequency = <I2C_BITRATE_FAST>;
+
+	bmp581: bmp581@47 {
+		compatible = "bosch,bmp581";
+		reg = <0x47>;
+		int-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;
+		odr = <BMP581_DT_ODR_50_HZ>;
+		press-osr = <BMP581_DT_OVERSAMPLING_16X>;
+		temp-osr = <BMP581_DT_OVERSAMPLING_2X>;
+		press-iir = <BMP581_DT_IIR_FILTER_BYPASS>;
+	};
+
+	lsm6dsv16x: lsm6dsv16x@6a {
+		compatible = "st,lsm6dsv16x";
+		reg = <0x6a>;
+		int1-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
+		drdy-pin = <1>;
+		accel-range = <LSM6DSV16X_DT_FS_4G>;
+		accel-odr = <LSM6DSVXXX_DT_ODR_AT_60Hz>;
+		gyro-range = <LSM6DSV16X_DT_FS_500DPS>;
+		gyro-odr = <LSM6DSVXXX_DT_ODR_AT_60Hz>;
+	};
+};
