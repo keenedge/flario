@@ -16,7 +16,7 @@ KiCad.
 | `airio.kicad_dru` | Custom DRC rules (see PCB below) |
 | `airio-top.png` | Render of the top side |
 | `airio.kicad_sym` | Project symbols: XIAO nRF52840, BMP581, LSM6DSV16X |
-| `airio.pretty/` | Project footprints: `XIAO-nRF52840-SMD`, `Bosch_LGA-10_2x2mm_P0.5mm` |
+| `airio.pretty/` | Project footprints: `XIAO-nRF52840-Plus-SMD` (used), `XIAO-nRF52840-SMD` (previous), `Bosch_LGA-10_2x2mm_P0.5mm` |
 | `sym-lib-table`, `fp-lib-table` | Add the two project libraries as `airio` |
 | `airio.pdf` | Schematic plot |
 
@@ -32,12 +32,13 @@ Exclude them in the ERC window (right-click, Exclude) if you want a clean run.
 
 ## Footprints
 
-- **U1** uses Seeed's `XIAO-nRF52840-SMD` footprint from
+- **U1** is a XIAO nRF52840 Plus on `XIAO-nRF52840-Plus-SMD`, Seeed's footprint from
   [Seeed-Studio/OPL_Kicad_Library](https://github.com/Seeed-Studio/OPL_Kicad_Library)
-  (commit 3be8215, CC-BY-SA-4.0). Pads 1-14 are the castellated edge, 15-18 the
-  underside SWD pads (SWDIO, SWCLK, RST, GND), 19-20 the battery pads (BAT+,
-  BAT-) and 21-22 NFC1/NFC2. The project symbol's underside pins were
-  renumbered to Seeed's order so they land on the right pads.
+  (commit b0035c5, CC-BY-SA-4.0), rotated so its main pads land where the standard
+  XIAO's did. Pads 1-14 are the main castellations, 15-23 are D11-D19 on 1.27 mm
+  half-pitch castellations, 24-27 the underside SWD pads (SWDIO, SWCLK, RST, GND)
+  and 28-29 the battery pads (BAT+, BAT-). The Plus isn't on LCSC, so JLC can't
+  place it: buy it from Seeed and hand solder it.
 - **U2** uses `Bosch_LGA-10_2x2mm_P0.5mm`: 10 pads at 0.5 mm pitch, two on the
   pin 1 side and three on each adjacent side, numbered counter-clockwise from
   the top. Pad centres sit 0.775 mm from the body centre, pads are 0.30 x
@@ -81,7 +82,7 @@ excluding shipping and duty. Stock was read from LCSC's product API on
 
 | Ref | Part | LCSC # | Qty | CAD each | Min order | LCSC stock |
 |---|---|---|---|---|---|---|
-| U1 | Seeed XIAO nRF52840 (102010448) | [C17209540](https://www.lcsc.com/product-detail/C17209540.html) | 1 | C$15.18 | 1 | 158 |
+| U1 | Seeed XIAO nRF52840 Plus (102010672) | Not on LCSC; Seeed | 1 | C$14.55 (US$10.40) | 1 | Not on LCSC (in stock at Seeed) |
 | U2 | Bosch BMP581 | [C5362283](https://www.lcsc.com/product-detail/C5362283.html) | 1 | C$3.41 | 1 | 7,388 |
 | U2 alt | Bosch BMP580 | [C22391138](https://www.lcsc.com/product-detail/C22391138.html) | 1 | C$1.70 | 1 | 14,944 |
 | U3 | ST LSM6DSV16XTR | [C5267406](https://www.lcsc.com/product-detail/C5267406.html) | 1 | C$4.75 | 1 | 6,395 |
@@ -94,7 +95,8 @@ excluding shipping and duty. Stock was read from LCSC's product API on
 | R1, R2 | UNI-ROYAL 0603WAF4701T5E, 4.7 kΩ 0603 | [C23162](https://www.lcsc.com/product-detail/C23162.html) | 2 | C$0.004 | 100 | 4,646,400 |
 
 Ports J2-J4 follow `/mnt/project-files/airio/core-ports-spec.md`: pin 1 is GND on
-all of them. NFC1/NFC2 are used as GPIOs, so the firmware needs `nfct-pins-as-gpios`.
+all of them. GPS_RX is on D12 (P0.19) and SCR_DISP on D11 (P0.15), two of the XIAO Plus's
+extra half-pitch pads, because the NFC pads sit inside the antenna keepout.
 
 C1-C4 were changed from C1591 to C66501 because C1591 shows 0 stock at LCSC.
 The BMP581 is back in stock at LCSC (2026-10-25); the BMP580 still fits the same footprint as a fallback.
