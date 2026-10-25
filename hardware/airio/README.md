@@ -107,5 +107,15 @@ The BMP581 is back in stock at LCSC (2026-10-25); the BMP580 still fits the same
   battery packs are not consistent about which side is red.
 - Check the BMP581 footprint against section 8 of the datasheet.
 
+## Assembly
+
+1. JLC reflows the SMD parts it can source (everything except U1).
+2. Order a stencil with the boards. The XIAO Plus pads, including the six
+   underside pads (battery and SWD), are on the paste layer.
+3. Paste the U1 pads, place the XIAO nRF52840 Plus, and reflow it on a hotplate
+   or with hot air. The underside battery and SWD pads can't be soldered with an
+   iron.
+4. Hand solder the through-hole ports J2-J4 last.
+
 To point the KiCad MCP server at this project, set
 `KICAD_MCP_PROJECT_DIR=hardware/airio` or ask Claude to call `kicad_set_project`.
