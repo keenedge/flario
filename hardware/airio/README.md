@@ -12,7 +12,7 @@ KiCad.
 | File | Contents |
 |---|---|
 | `airio.kicad_sch` | Schematic, one A4 sheet |
-| `airio.kicad_pcb` | Two-layer board, 42 x 24 mm, 1.0 mm thick |
+| `airio.kicad_pcb` | Two-layer board, 42 x 24 mm, 1.0 mm thick: parts placed, not routed |
 | `airio.kicad_dru` | Custom DRC rules (see PCB below) |
 | `airio-top.png` | Render of the top side |
 | `airio.kicad_sym` | Project symbols: XIAO nRF52840, BMP581, LSM6DSV16X |
@@ -59,20 +59,16 @@ Python against the netlist).
   (a rule area keeps tracks, vias and pours out). The piezo and JST sit along
   the top, the sensors in the lower middle, and the button in the bottom left.
   The BMP581 is kept away from the XIAO's regulator at the USB end.
-- **Routing:** 0.2 mm signal tracks, 0.4 mm VBAT, 0.6/0.3 mm vias. Ground is
-  poured on both layers and stitched with vias. One SCL track necks to
-  0.15 mm between the LSM6DSV16X pads.
+- **Routing:** not done. Tracks, vias and the ground pours were removed so
+  the board can be routed by hand; the ratsnest shows the 49 connections still
+  to make. The antenna keepout rule area and the custom rules stay.
 - **Test pads:** TP1-TP6 are on the bottom in a 2.54 mm row (GND, 3V3, SWDIO,
-  SWCLK, RST, VBAT, left to right seen from the top), under the battery, for a pogo-pin SWD adapter.
-- **DRC:** KiCad 10.0.7 with schematic parity finds 0 errors and 0 unconnected
-  pads. The 25 warnings are silkscreen from the Seeed, switch and IMU
-  footprints running over their own pads or the board edge, which JLC clips.
-  `airio.kicad_dru` allows the 0.15 mm pad gaps of ST's LGA-14 land pattern,
-  sets a 0.3 mm copper-to-edge clearance, and allows 0.15 mm tracks. All of
-  these are within JLC's standard limits.
-
-The layout was placed and routed by a script, not by hand, so it's worth a
-look in KiCad before ordering.
+  SWCLK, RST, VBAT, left to right seen from the top), under the battery, for a
+  pogo-pin SWD adapter.
+- **DRC:** KiCad 10.0.7 with schematic parity finds no footprint or parity
+  errors. `airio.kicad_dru` allows the 0.15 mm pad gaps of ST's LGA-14 land
+  pattern, sets a 0.3 mm copper-to-edge clearance, and allows 0.15 mm tracks,
+  all within JLC's standard limits.
 
 ## Parts
 
