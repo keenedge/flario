@@ -12,6 +12,9 @@ KiCad.
 | File | Contents |
 |---|---|
 | `airio.kicad_sch` | Schematic, one A4 sheet |
+| `airio.kicad_pcb` | Two-layer board, 42 x 24 mm, 1.0 mm thick |
+| `airio.kicad_dru` | Custom DRC rules (see PCB below) |
+| `airio-top.png` | Render of the top side |
 | `airio.kicad_sym` | Project symbols: XIAO nRF52840, BMP581, LSM6DSV16X |
 | `airio.pretty/` | Project footprints: `XIAO-nRF52840-SMD`, `Bosch_LGA-10_2x2mm_P0.5mm` |
 | `sym-lib-table`, `fp-lib-table` | Add the two project libraries as `airio` |
@@ -45,6 +48,32 @@ Exclude them in the ERC window (right-click, Exclude) if you want a clean run.
 Every symbol pin has a matching footprint pad (checked with KiCad's pcbnew
 Python against the netlist).
 
+## PCB
+
+![Top side](airio-top.png)
+
+- **Size:** 42 x 24 mm, two layers, 1.0 mm FR4. Everything sits on the top side
+  for single-sided JLC assembly, apart from the six bare test pads.
+- **Placement:** the XIAO sits on the right with its USB-C at the top edge. Its
+  antenna end hangs over the bottom right, which has no copper on either layer
+  (a rule area keeps tracks, vias and pours out). The piezo and JST sit along
+  the top, the sensors in the lower middle, and the button in the bottom left.
+  The BMP581 is kept away from the XIAO's regulator at the USB end.
+- **Routing:** 0.2 mm signal tracks, 0.4 mm VBAT, 0.6/0.3 mm vias. Ground is
+  poured on both layers and stitched with vias. One SCL track necks to
+  0.15 mm between the LSM6DSV16X pads.
+- **Test pads:** TP1-TP6 are on the bottom in a 2.54 mm row (GND, 3V3, SWDIO,
+  SWCLK, RST, VBAT, left to right seen from the top), under the battery, for a pogo-pin SWD adapter.
+- **DRC:** KiCad 10.0.7 with schematic parity finds 0 errors and 0 unconnected
+  pads. The 25 warnings are silkscreen from the Seeed, switch and IMU
+  footprints running over their own pads or the board edge, which JLC clips.
+  `airio.kicad_dru` allows the 0.15 mm pad gaps of ST's LGA-14 land pattern,
+  sets a 0.3 mm copper-to-edge clearance, and allows 0.15 mm tracks. All of
+  these are within JLC's standard limits.
+
+The layout was placed and routed by a script, not by hand, so it's worth a
+look in KiCad before ordering.
+
 ## Parts
 
 Prices are LCSC, converted at 1.3993 CAD per USD (Bank of Canada, 2026-10-23),
@@ -66,10 +95,11 @@ excluding shipping and duty. Stock was read from LCSC's product API on
 C1-C4 were changed from C1591 to C66501 because C1591 shows 0 stock at LCSC.
 The BMP581 is out of stock at LCSC; the BMP580 fits the same footprint.
 
-## Still to do before layout
+## Still to do before ordering
 
 - Check J1's polarity against the LiPo you'll use. Pin 1 is VBAT. JST PH
   battery packs are not consistent about which side is red.
+- Check the BMP581 footprint against section 8 of the datasheet.
 
 To point the KiCad MCP server at this project, set
 `KICAD_MCP_PROJECT_DIR=hardware/airio` or ask Claude to call `kicad_set_project`.

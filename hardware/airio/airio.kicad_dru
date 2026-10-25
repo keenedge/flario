@@ -1,0 +1,14 @@
+(version 1)
+
+# ST's recommended LGA-14 land pattern for the LSM6DSV16X has 0.15 mm gaps
+# between pads, which JLC's 0.127 mm minimum allows.
+(rule "LGA-14 pad gaps"
+  (constraint clearance (min 0.125mm))
+  (condition "A.memberOfFootprint('U3') && B.memberOfFootprint('U3')"))
+
+(rule "Board edge"
+  (constraint edge_clearance (min 0.3mm)))
+
+# Narrowed track where a 0.2 mm one would not fit between sensor pads.
+(rule "Minimum track"
+  (constraint track_width (min 0.15mm)))
