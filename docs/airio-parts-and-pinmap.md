@@ -1,4 +1,4 @@
-# airio v0: parts list and XIAO nRF52840 Plus pin map
+# airio v0: parts list and XIAO nRF52840 pin map
 
 airio is a small BLE-only vario, separate from the ESP32-S3 Flario Rev A in
 [parts-list.md](parts-list.md). v0 is a carrier PCB with a Seeed XIAO nRF52840
@@ -16,18 +16,21 @@ rechecked before ordering. "From" is LCSC's lowest tier, so qty 1 costs more.
 
 | Ref | Function | Part | LCSC # | CAD each | LCSC stock | Source | Notes |
 |---|---|---|---|---|---|---|---|
-| U1 | MCU + BLE + USB + charger | Seeed XIAO nRF52840 Plus (102010672) | Not on LCSC | C$14.55 (US$10.40 at Seeed; US$8.90 at 10+) | Not on LCSC (in stock at Seeed, 2026-10-25) | Seeed page | Castellated module, hand soldered. Same chip and outline as the XIAO nRF52840, plus D11-D19 on 1.27 mm half-pitch castellations. Changed 2026-10-25 because the NFC pads sit inside the antenna keepout. |
+| U1 | MCU + BLE + USB + charger | Seeed XIAO nRF52840 (102010448) | [C17209540](https://www.lcsc.com/product-detail/C17209540.html) | from C$14.82 | 158 | page | Castellated module. Onboard BQ25101 charger, 3.3 V LDO, USB-C, UF2 bootloader. Non-Sense version (no onboard IMU). |
 | U2 | Barometer | Bosch BMP581 | [C5362283](https://www.lcsc.com/product-detail/C5362283.html) | C$3.41 | 7,388 | live 2026-10-25 | LGA-10 2x2 mm. I2C. Back in stock. |
 | U2-alt | Barometer (likely drop-in) | Bosch BMP580 | [C22391138](https://www.lcsc.com/product-detail/C22391138.html) | C$1.70 | 14,944 | live | Same 2x2 mm LGA-10 package and specs per Bosch. Pinout not yet checked against the BMP580 datasheet. Zephyr's `bmp581` driver accepts chip IDs 0x50 and 0x51, so firmware should work unchanged. |
 | U3 | 6-axis IMU | ST LSM6DSV16XTR | [C5267406](https://www.lcsc.com/product-detail/C5267406.html) | C$4.75 | 6,395 | live | LGA-14 2.5x3 mm. I2C. On-chip sensor fusion (SFLP). |
-| J2 | GPS port | JST B4B-PH-K-S(LF)(SN), 4-pin vertical THT | [C131334](https://www.lcsc.com/product-detail/C131334.html) | from C$0.064 | 111,650 | live 2026-10-25 | 1 GND, 2 +3V3, 3 GPS TX (to D7), 4 GPS RX (from D12). For the SparkFun MAX-M10S breakout. |
-| J3 | Screen port | JST B8B-PH-K-S(LF)(SN), 8-pin vertical THT | [C157974](https://www.lcsc.com/product-detail/C157974.html) | from C$0.122 | 61,155 | live 2026-10-25 | 1 GND, 2 +3V3, 3 VBAT, 4 SCK (D8), 5 MOSI (D10), 6 CS (D9), 7 DISP (D11), 8 EXTCOMIN reserved, not connected. For the Adafruit 2.7" Sharp memory LCD breakout. |
+| J2 | GPS port | JST B4B-PH-K-S(LF)(SN), 4-pin vertical THT | [C131334](https://www.lcsc.com/product-detail/C131334.html) | from C$0.064 | 111,650 | live 2026-10-25 | 1 GND, 2 +3V3, 3 GPS TX (to D7), 4 GPS RX (from D1). For the SparkFun MAX-M10S breakout. |
+| J3 | Screen port | JST B8B-PH-K-S(LF)(SN), 8-pin vertical THT | [C157974](https://www.lcsc.com/product-detail/C157974.html) | from C$0.122 | 61,155 | live 2026-10-25 | 1 GND, 2 +3V3, 3 VBAT, 4 SCK (D8), 5 MOSI (D10), 6 CS (D9), 7 DISP (U4 P2), 8 EXTCOMIN reserved, not connected. For the Adafruit 2.7" Sharp memory LCD breakout. |
 | J4 | Spare I2C port | JST B4B-PH-K-S(LF)(SN), 4-pin vertical THT | [C131334](https://www.lcsc.com/product-detail/C131334.html) | from C$0.064 | 111,650 | live 2026-10-25 | 1 GND, 2 +3V3, 3 SDA, 4 SCL. Shares R1/R2 pull-ups; no pull-ups at the port. |
 | BZ1 | Piezo beeper | Murata PKLCS1212E4001-R1 | [C113159](https://www.lcsc.com/product-detail/C113159.html) | from C$0.92 | 7,334 | page | 12x12 mm SMD, 4 kHz resonance, 84 dB. Driven differentially from two GPIOs (about 6.6 Vpp) so no driver stage is needed. |
 | C1-C4 | Sensor decoupling, 100 nF 0603 X7R | Samsung CL10B104KB8NNNC | [C1591](https://www.lcsc.com/product-detail/C1591.html) | from C$0.01 | conflicting on page | page | One each on BMP581 VDD, BMP581 VDDIO, LSM6DSV16X VDD, LSM6DSV16X VDDIO. JLC basic part. |
 | R1, R2 | I2C pull-ups, 4.7 kΩ 0603 | UNI-ROYAL 0603WAF4701T5E | [C23162](https://www.lcsc.com/product-detail/C23162.html) | from C$0.002 | 4,646,600 | page | SDA and SCL to 3V3. |
-| R3 | BMP581 INT pull-up, 10 kΩ 0603 | TBD | TBD | | | | Only if INT is configured open-drain; firmware uses push-pull, so this is optional. |
-| SW1 | User / power button | TBD | TBD | | | | Tactile switch to GND, internal pull-up. |
+| U4 | I2C I/O expander | TI TCA9534PWR, TSSOP-16 | [C783615](https://www.lcsc.com/product-detail/C783615.html) | C$1.31 | 11,270 | live 2026-10-25 | Address 0x20 (A0-A2 to GND). P0 BTN, P1 BARO_INT, P2 SCR_DISP, P3-P7 spare. Open-drain INT to D6. No internal pull-ups; set unused pins as outputs in firmware. |
+| R3 | Expander INT pull-up, 10 kΩ 0603 | UNI-ROYAL 0603WAF1002T5E | [C25804](https://www.lcsc.com/product-detail/C25804.html) | from C$0.003 | 567,800 | live 2026-10-25 | EXP_INT to 3V3. |
+| R4 | Button pull-up, 10 kΩ 0603 | UNI-ROYAL 0603WAF1002T5E | [C25804](https://www.lcsc.com/product-detail/C25804.html) | from C$0.003 | 567,800 | live 2026-10-25 | BTN to 3V3; the TCA9534 has no internal pull-ups. |
+| C5 | Expander decoupling, 100 nF 0603 | Samsung CL10B104KO8NNNC | [C66501](https://www.lcsc.com/product-detail/C66501.html) | from C$0.013 | 796,150 | live 2026-10-24 | On U4 VDD. |
+| SW1 | User / power button | XKB TS-1187A-B-A-B | [C318884](https://www.lcsc.com/product-detail/C318884.html) | from C$0.03 | 923,940 | live 2026-10-24 | Tactile switch to GND on U4 P0, pulled up by R4. |
 | BT1 | 1S LiPo, about 150 mAh | Not on LCSC | | | | | Solder to the XIAO's BAT+/BAT- pads. Size from the 8 h power estimate with 2x margin. |
 
 ## Pin map
@@ -39,27 +42,28 @@ revisit it for a bare-chip v1.
 | XIAO pin | nRF52840 | airio signal | Direction | Notes |
 |---|---|---|---|---|
 | D0 | P0.02 | IMU_INT1 | in | LSM6DSV16X INT1, data-ready, active high. |
-| D1 | P0.03 | BARO_INT | in | BMP581 INT, data-ready, push-pull active high. |
+| D1 | P0.03 | GPS_RX | out | J2 pin 4. MCU UART TX to the GPS RX. |
 | D2 | P0.28 | BUZZ_A | out | PWM1 channel 0. (PWM0 is used by the XIAO's LED.) |
 | D3 | P0.29 | BUZZ_B | out | PWM1 channel 1, inverted, so the piezo sees twice the swing. |
 | D4 | P0.04 | I2C_SDA | io | Zephyr `i2c1`. BMP581 at 0x47 (SDO high), LSM6DSV16X at 0x6A (SDO low). |
 | D5 | P0.05 | I2C_SCL | out | Zephyr `i2c1`, 400 kHz. |
-| D6 | P1.11 | BTN | in | SW1 to GND, internal pull-up. Also wakes from System OFF. The board's default UART TX is disabled in firmware. |
+| D6 | P1.11 | EXP_INT | in | U4 TCA9534 INT, open drain, active low, R3 pull-up. Fires on any change of BTN or BARO_INT and wakes from System OFF. The board's default UART TX is disabled in firmware. |
 | D7 | P1.12 | GPS_TX | in | J2 pin 3. GPS TX into the MCU's UART RX. Logs go over USB CDC ACM. |
 | D8 | P1.13 | SCR_SCK | out | J3 pin 4. SPI clock to the Sharp memory LCD. |
 | D9 | P1.14 | SCR_CS | out | J3 pin 6. LCD chip select (active high on Sharp memory LCDs). |
 | D10 | P1.15 | SCR_MOSI | out | J3 pin 5. SPI data to the LCD. |
-| D11 | P0.15 | SCR_DISP | out | J3 pin 7. LCD display enable. XIAO Plus half-pitch pad. |
-| D12 | P0.19 | GPS_RX | out | J2 pin 4. MCU UART TX to the GPS RX. XIAO Plus half-pitch pad. |
-| D13, D17, D18, D19 | P1.01, P1.07, P1.05, P1.03 | spare | | Unused XIAO Plus pads. |
-| D14, D15 | P0.09, P0.10 | spare | | NFC1/NFC2. Unused; they sit inside the antenna keepout on the standard XIAO. |
+| NFC1 pad | P0.09 | unused | | Inside the antenna keepout. |
+| NFC2 pad | P0.10 | unused | | Inside the antenna keepout. |
+| U4 P0 | | BTN | in | SW1 to GND, R4 pull-up. Read over I2C after EXP_INT. |
+| U4 P1 | | BARO_INT | in | BMP581 INT, data-ready, push-pull active high. Read over I2C after EXP_INT. |
+| U4 P2 | | SCR_DISP | out | J3 pin 7. LCD display enable. |
+| U4 P3-P7 | | spare | | Configure as outputs so the inputs don't float. |
 | internal | P0.31 | VBAT_SENSE | in | AIN7 through the XIAO's divider. Enabled by P0.14. |
 | internal | P0.14 | VBAT_SENSE_EN | out | Drive LOW to read. Never drive HIGH: it can push P0.31 past 3.6 V. |
 | internal | P0.17 | CHG_STAT | in | LOW while charging. |
 | internal | P0.13 | CHG_ISET | out | Hi-Z for 50 mA, LOW for 100 mA charge current. |
 | BAT+ / BAT- pads | | BT1 | | LiPo. |
 | SWDIO / SWCLK pads | | SWD | | Bring to test pads on the carrier for J-Link debugging. |
-| D16 | P0.31 | VBAT_SENSE | | Same pin as the internal battery divider. Left unconnected on the carrier. |
 
 ## Layout notes for the schematic and PCB
 
