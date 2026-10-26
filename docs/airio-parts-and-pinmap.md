@@ -20,8 +20,8 @@ rechecked before ordering. "From" is LCSC's lowest tier, so qty 1 costs more.
 | U2 | Barometer | Bosch BMP581 | [C5362283](https://www.lcsc.com/product-detail/C5362283.html) | C$3.41 | 7,388 | live 2026-10-25 | LGA-10 2x2 mm. I2C. Back in stock. |
 | U2-alt | Barometer (likely drop-in) | Bosch BMP580 | [C22391138](https://www.lcsc.com/product-detail/C22391138.html) | C$1.70 | 14,944 | live | Same 2x2 mm LGA-10 package and specs per Bosch. Pinout not yet checked against the BMP580 datasheet. Zephyr's `bmp581` driver accepts chip IDs 0x50 and 0x51, so firmware should work unchanged. |
 | U3 | 6-axis IMU | ST LSM6DSV16XTR | [C5267406](https://www.lcsc.com/product-detail/C5267406.html) | C$4.75 | 6,395 | live | LGA-14 2.5x3 mm. I2C. On-chip sensor fusion (SFLP). |
-| J2 | GPS port | JST SM04B-SRSS-TB(LF)(SN), 4-pin SH side-entry SMD | [C160404](https://www.lcsc.com/product-detail/C160404.html) | from C$0.303 | 63,590 | live 2026-10-26 | 1 GND, 2 +3V3, 3 GPS TX (to D8), 4 GPS RX (from D7). For the SparkFun MAX-M10S breakout. |
-| J3 | Screen port | JST SM08B-SRSS-TB(LF)(SN), 8-pin SH side-entry SMD | [C160407](https://www.lcsc.com/product-detail/C160407.html) | from C$0.457 | 194,320 | live 2026-10-26 | 1 GND, 2 +3V3, 3 VBAT, 4 SCK (D1), 5 MOSI (D0), 6 CS (D2), 7 DISP (U4 P2), 8 EXTCOMIN reserved, not connected. For the Adafruit 2.7" Sharp memory LCD breakout. |
+| J2 | GPS port | JST SM04B-SRSS-TB(LF)(SN), 4-pin SH side-entry SMD | [C160404](https://www.lcsc.com/product-detail/C160404.html) | from C$0.303 | 63,590 | live 2026-10-26 | 1 GND, 2 +3V3, 3 GPS RX (from D10), 4 GPS TX (to D9). For the SparkFun MAX-M10S breakout. |
+| J3 | Screen port | JST SM08B-SRSS-TB(LF)(SN), 8-pin SH side-entry SMD | [C160407](https://www.lcsc.com/product-detail/C160407.html) | from C$0.457 | 194,320 | live 2026-10-26 | 1 GND, 2 +3V3, 3 VBAT, 4 DISP (U4 P2), 5 CS (D2), 6 CLK (D1), 7 MOSI (D0), 8 EXTCOMIN reserved, not connected. For the Adafruit 2.7" Sharp memory LCD breakout. |
 | J4 | Spare I2C port (Qwiic / STEMMA QT pinout) | JST SM04B-SRSS-TB(LF)(SN), 4-pin SH side-entry SMD | [C160404](https://www.lcsc.com/product-detail/C160404.html) | from C$0.303 | 63,590 | live 2026-10-26 | 1 GND, 2 +3V3, 3 SDA, 4 SCL. Shares R1/R2 pull-ups; no pull-ups at the port. |
 | J5 | Buzzer port | JST SM02B-SRSS-TB(LF)(SN), 2-pin SH side-entry SMD | [C160402](https://www.lcsc.com/product-detail/C160402.html) | from C$0.187 | 73,300 | live 2026-10-26 | 1 BUZZ_A, 2 BUZZ_B. Off-board piezo, driven differentially. Replaces the onboard PKLCS1212E4001 (BZ1) on 2026-10-26. |
 | C1-C4 | Sensor decoupling, 100 nF 0603 X7R | Samsung CL10B104KB8NNNC | [C1591](https://www.lcsc.com/product-detail/C1591.html) | from C$0.01 | conflicting on page | page | One each on BMP581 VDD, BMP581 VDDIO, LSM6DSV16X VDD, LSM6DSV16X VDDIO. JLC basic part. |
@@ -41,23 +41,23 @@ revisit it for a bare-chip v1.
 
 | XIAO pin | nRF52840 | airio signal | Direction | Notes |
 |---|---|---|---|---|
-| D0 | P0.02 | SCR_MOSI | out | J3 pin 5. SPI data to the Sharp memory LCD. |
-| D1 | P0.03 | SCR_SCK | out | J3 pin 4. SPI clock to the LCD. |
-| D2 | P0.28 | SCR_CS | out | J3 pin 6. LCD chip select (active high on Sharp memory LCDs). |
+| D0 | P0.02 | SCR_MOSI | out | J3 pin 7. SPI data to the Sharp memory LCD. |
+| D1 | P0.03 | SCR_CLK | out | J3 pin 6. SPI clock to the LCD. |
+| D2 | P0.28 | SCR_CS | out | J3 pin 5. LCD chip select (active high on Sharp memory LCDs). |
 | D3 | P0.29 | I2C_SDA | io | Zephyr `i2c1`. BMP581 at 0x47, LSM6DSV16X at 0x6A, TCA9534 at 0x20; J4 is a Qwiic port on the same bus. |
 | D4 | P0.04 | I2C_SCL | out | Zephyr `i2c1`, 400 kHz. |
 | D5 | P0.05 | EXP_INT | in | U4 TCA9534 INT, open drain, active low, R3 pull-up. Fires on any expander input change and wakes from System OFF. |
-| D6 | P1.11 | spare | | Free. The board's default UART TX; disabled in firmware. |
-| D7 | P1.12 | GPS_RX | out | J2 pin 4. MCU UART TX to the GPS RX. |
-| D8 | P1.13 | GPS_TX | in | J2 pin 3. GPS TX into the MCU's UART RX. Logs go over USB CDC ACM. |
-| D9 | P1.14 | BUZZ_B | out | J5 pin 2. PWM1 channel 1, inverted, so the piezo sees twice the swing. |
-| D10 | P1.15 | BUZZ_A | out | J5 pin 1. PWM1 channel 0. (PWM0 is used by the XIAO's LED.) |
+| D6 | P1.11 | BUZZ_A | out | J5 pin 1. PWM1 channel 0. (PWM0 is used by the XIAO's LED.) |
+| D7 | P1.12 | BUZZ_B | out | J5 pin 2. PWM1 channel 1, inverted, so the piezo sees twice the swing. |
+| D8 | P1.13 | spare | | Free. |
+| D9 | P1.14 | GPS_TX | in | J2 pin 4. GPS TX into the MCU's UART RX. Logs go over USB CDC ACM. |
+| D10 | P1.15 | GPS_RX | out | J2 pin 3. MCU UART TX to the GPS RX. |
 | NFC1 pad | P0.09 | unused | | Inside the antenna keepout. |
 | NFC2 pad | P0.10 | unused | | Inside the antenna keepout. |
-| U4 P0 | | BTN | in | SW1 to GND, R4 pull-up. Read over I2C after EXP_INT. |
-| U4 P1 | | BARO_INT | in | BMP581 INT, data-ready, push-pull active high. Read over I2C after EXP_INT. |
-| U4 P2 | | SCR_DISP | out | J3 pin 7. LCD display enable. |
-| U4 P3 | | IMU_INT1 | in | LSM6DSV16X INT1. Use the FIFO watermark interrupt in latched mode so it fires a few times a second, not every sample. |
+| U4 P0 | | BARO_INT | in | BMP581 INT, data-ready, push-pull active high. Read over I2C after EXP_INT. |
+| U4 P1 | | IMU_INT1 | in | LSM6DSV16X INT1. Use the FIFO watermark interrupt in latched mode so it fires a few times a second. |
+| U4 P2 | | SCR_DISP | out | J3 pin 4. LCD display enable. |
+| U4 P3 | | BTN | in | SW1 to GND, R4 pull-up. Read over I2C after EXP_INT. |
 | U4 P4-P7 | | spare | | Configure as outputs so the inputs don't float. |
 | internal | P0.31 | VBAT_SENSE | in | AIN7 through the XIAO's divider. Enabled by P0.14. |
 | internal | P0.14 | VBAT_SENSE_EN | out | Drive LOW to read. Never drive HIGH: it can push P0.31 past 3.6 V. |

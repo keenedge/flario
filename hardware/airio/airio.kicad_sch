@@ -3606,8 +3606,8 @@
 		(uuid "c5591234-f75f-4bbd-bdfb-8cd67a324c1b")
 	)
 	(no_connect
-		(at 83.82 93.98)
-		(uuid "f3f633d1-24b3-4c83-9651-57bddd9c1602")
+		(at 119.38 91.44)
+		(uuid "e5903c0f-ce59-44ea-a3ed-4fda3af15d0a")
 	)
 	(wire
 		(pts
@@ -3921,6 +3921,16 @@
 	)
 	(wire
 		(pts
+			(xy 78.74 93.98) (xy 83.82 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "498987d7-3ffd-41b5-83a9-5b66da80763e")
+	)
+	(wire
+		(pts
 			(xy 218.44 66.04) (xy 223.52 66.04)
 		)
 		(stroke
@@ -3941,13 +3951,13 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 91.44) (xy 124.46 91.44)
+			(xy 260.35 162.56) (xy 265.43 162.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "51e0189f-8f80-43b9-919f-59a4249bf505")
+		(uuid "520dff80-6faa-400d-a5cc-f766ed6f8d7a")
 	)
 	(wire
 		(pts
@@ -4058,6 +4068,16 @@
 			(type default)
 		)
 		(uuid "5f2ff07f-2d83-480c-b8df-acc78caf0f3d")
+	)
+	(wire
+		(pts
+			(xy 38.1 152.4) (xy 38.1 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5fbfb48b-135f-47ba-9f43-9abdf34845a8")
 	)
 	(wire
 		(pts
@@ -4181,13 +4201,13 @@
 	)
 	(wire
 		(pts
-			(xy 260.35 162.56) (xy 265.43 162.56)
+			(xy 119.38 86.36) (xy 124.46 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8283329a-e0eb-4f50-b623-8dc37843fd15")
+		(uuid "819ca7cb-11c4-45a4-86d1-97619944f2e9")
 	)
 	(wire
 		(pts
@@ -4381,16 +4401,6 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 152.4) (xy 38.1 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b72ec3e4-af8d-478a-9d0b-6ea43e45f4ea")
-	)
-	(wire
-		(pts
 			(xy 152.4 52.07) (xy 152.4 49.53)
 		)
 		(stroke
@@ -4561,16 +4571,6 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 86.36) (xy 124.46 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "efdbd7dd-5c88-4312-a711-4a13ee4ead14")
-	)
-	(wire
-		(pts
 			(xy 83.82 106.68) (xy 78.74 106.68)
 		)
 		(stroke
@@ -4629,7 +4629,7 @@
 		)
 		(uuid "fe63fe07-8cd5-4bda-b82a-27ee16790774")
 	)
-	(label "BARO_INT"
+	(label "IMU_INT1"
 		(at 265.43 157.48 0)
 		(effects
 			(font
@@ -4658,16 +4658,6 @@
 			(justify left bottom)
 		)
 		(uuid "1a830cd4-cbcd-4e24-810a-b175cac07ad0")
-	)
-	(label "IMU_INT1"
-		(at 265.43 162.56 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1d59d76e-15f0-4125-ac78-2344a19b5907")
 	)
 	(label "I2C_SDA"
 		(at 78.74 86.36 180)
@@ -4709,26 +4699,6 @@
 		)
 		(uuid "37ce3ffd-6200-4649-9b10-5d46efdad1d9")
 	)
-	(label "GPS_TX"
-		(at 124.46 91.44 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "389fc32d-c692-42d9-a89e-fd6ca9f2ec8e")
-	)
-	(label "BUZZ_A"
-		(at 124.46 86.36 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3ce07a46-6fb5-4a76-8d5f-940e4a886a11")
-	)
 	(label "I2C_SCL"
 		(at 234.95 154.94 180)
 		(effects
@@ -4739,7 +4709,17 @@
 		)
 		(uuid "3e480234-90ed-46a9-8dfb-a2e9c0173f26")
 	)
-	(label "BUZZ_B"
+	(label "BUZZ_A"
+		(at 78.74 93.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "44f2e5b3-0ca0-4b6f-9213-c613c1ef813a")
+	)
+	(label "GPS_TX"
 		(at 124.46 88.9 0)
 		(effects
 			(font
@@ -4749,7 +4729,7 @@
 		)
 		(uuid "489d9053-dd10-4af7-9ee6-bc4cf5498e98")
 	)
-	(label "SCR_MOSI"
+	(label "SCR_CS"
 		(at 243.84 121.92 180)
 		(effects
 			(font
@@ -4809,7 +4789,7 @@
 		)
 		(uuid "715655cd-289d-4640-8a1d-f699776c9ff7")
 	)
-	(label "SCR_DISP"
+	(label "SCR_MOSI"
 		(at 243.84 127 180)
 		(effects
 			(font
@@ -4909,7 +4889,7 @@
 		)
 		(uuid "a60f1989-d561-4092-8c3d-e1b467e920ae")
 	)
-	(label "SCR_SCK"
+	(label "SCR_DISP"
 		(at 243.84 119.38 180)
 		(effects
 			(font
@@ -4959,7 +4939,7 @@
 		)
 		(uuid "b3183166-07f7-47bd-822a-bef68b23a1fd")
 	)
-	(label "SCR_SCK"
+	(label "SCR_CLK"
 		(at 78.74 81.28 180)
 		(effects
 			(font
@@ -4978,6 +4958,16 @@
 			(justify left bottom)
 		)
 		(uuid "bc8be636-dde2-4ada-8f1d-a55ef10f23cd")
+	)
+	(label "GPS_RX"
+		(at 124.46 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bdb42d65-3f5f-4312-ba7d-45df4a1358e4")
 	)
 	(label "SCR_DISP"
 		(at 265.43 160.02 0)
@@ -5009,7 +4999,7 @@
 		)
 		(uuid "c3794e86-bac7-4417-beb6-cd4aba9ddfa6")
 	)
-	(label "BTN"
+	(label "BARO_INT"
 		(at 265.43 154.94 0)
 		(effects
 			(font
@@ -5039,7 +5029,7 @@
 		)
 		(uuid "ca43d060-484b-4d35-b93d-4eae0c44be9c")
 	)
-	(label "SCR_CS"
+	(label "SCR_CLK"
 		(at 243.84 124.46 180)
 		(effects
 			(font
@@ -5059,7 +5049,17 @@
 		)
 		(uuid "ce939cff-5b77-4d84-9eb8-f28076562372")
 	)
-	(label "GPS_TX"
+	(label "BTN"
+		(at 265.43 162.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d3ee9b78-e8d6-4278-ba1b-0b7e4a066502")
+	)
+	(label "GPS_RX"
 		(at 243.84 68.58 180)
 		(effects
 			(font
@@ -5069,7 +5069,7 @@
 		)
 		(uuid "dd15225f-ba49-47bc-83a3-b7d01d285218")
 	)
-	(label "GPS_RX"
+	(label "GPS_TX"
 		(at 243.84 71.12 180)
 		(effects
 			(font
@@ -5079,7 +5079,7 @@
 		)
 		(uuid "dffac2e8-5d68-4f76-ae87-eb3386a1283d")
 	)
-	(label "GPS_RX"
+	(label "BUZZ_B"
 		(at 124.46 93.98 0)
 		(effects
 			(font
@@ -8833,7 +8833,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal"
+		(property "Footprint" "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal"
 			(at 40.64 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -8865,7 +8865,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C295747"
+		(property "LCSC" "C173752"
 			(at 40.64 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -8876,7 +8876,7 @@
 				)
 			)
 		)
-		(property "MPN" "JST S2B-PH-SM4-TB(LF)(SN)"
+		(property "MPN" "JST S2B-PH-K-S(LF)(SN)"
 			(at 40.64 180.34 0)
 			(hide yes)
 			(show_name no)

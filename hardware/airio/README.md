@@ -78,7 +78,7 @@ excluding shipping and duty. Stock was read from LCSC's product API on
 | U2 | Bosch BMP581 | [C5362283](https://www.lcsc.com/product-detail/C5362283.html) | 1 | C$3.41 | 1 | 7,388 |
 | U2 alt | Bosch BMP580 | [C22391138](https://www.lcsc.com/product-detail/C22391138.html) | 1 | C$1.70 | 1 | 14,944 |
 | U3 | ST LSM6DSV16XTR | [C5267406](https://www.lcsc.com/product-detail/C5267406.html) | 1 | C$4.75 | 1 | 6,395 |
-| J1 | JST S2B-PH-SM4-TB(LF)(SN) | [C295747](https://www.lcsc.com/product-detail/C295747.html) | 1 | C$0.31 | 5 | 27,250 |
+| J1 | JST S2B-PH-K-S(LF)(SN), 2-pin PH side-entry THT, on the back | [C173752](https://www.lcsc.com/product-detail/C173752.html) | 1 | C$0.056 | 20 | 202,040 |
 | J2, J4 | JST SM04B-SRSS-TB(LF)(SN), 4-pin SH side-entry SMD | [C160404](https://www.lcsc.com/product-detail/C160404.html) | 2 | C$0.303 | 5 | 63,590 |
 | J3 | JST SM08B-SRSS-TB(LF)(SN), 8-pin SH side-entry SMD | [C160407](https://www.lcsc.com/product-detail/C160407.html) | 1 | C$0.457 | 5 | 194,320 |
 | J5 | JST SM02B-SRSS-TB(LF)(SN), 2-pin SH side-entry SMD (buzzer) | [C160402](https://www.lcsc.com/product-detail/C160402.html) | 1 | C$0.187 | 5 | 73,300 |
@@ -94,19 +94,18 @@ all of them. J2-J5 are JST SH (1.0 mm) side-entry SMD, so JLC can reflow them; t
 need to sit at the board edge, and SH leads are best bought pre-crimped. J4 matches the
 Qwiic / STEMMA QT pinout. The buzzer is off-board on J5. The NFC pads sit inside the
 antenna keepout, so they are unused. U4, a TCA9534 I2C expander at 0x20, carries BTN
-(P0), BARO_INT (P1), SCR_DISP (P2) and IMU_INT1 (P3); its INT output on D5 wakes the
+(P3), BARO_INT (P0), SCR_DISP (P2) and IMU_INT1 (P1); its INT output on D5 wakes the
 XIAO from System OFF. See the pin map for the XIAO pin assignment.
 
 C1-C4 were changed from C1591 to C66501 because C1591 shows 0 stock at LCSC.
 The BMP581 is back in stock at LCSC (2026-10-25); the BMP580 still fits the same footprint as a fallback.
 
-## 3D models
+## J1 on the back
 
-J1 (JST S2B-PH-SM4-TB) has no 3D model in KiCad's library. Its footprint points to
-`3d/S2B-PH-SM4-TB.STEP`, rotated -90 deg about X and offset (-7.9, 12.7, 0) mm.
-JST's file isn't committed because this repo is public: download the STEP for
-S2B-PH-SM4-TB from the [JST PH series page](https://www.jst-mfg.com/product/detail_e.php?series=199),
-unzip it into `hardware/airio/3d/`, and the 3D viewer picks it up.
+J1 is a through-hole JST PH (S2B-PH-K-S) mounted on the bottom side, so the
+battery lead runs along the back. Hand solder it from the top after JLC's
+single-sided assembly, and mark it "do not place" in the JLC BOM. Its pins
+poke about 1.5 mm through the top side, so keep those spots clear.
 
 ## Still to do before ordering
 
