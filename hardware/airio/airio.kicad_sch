@@ -3594,10 +3594,6 @@
 		(uuid "ad8f7fed-b4f0-4b7b-ab49-bc2f65a197b1")
 	)
 	(no_connect
-		(at 260.35 162.56)
-		(uuid "b142910d-fe30-43bd-824d-7a11dca528c4")
-	)
-	(no_connect
 		(at 83.82 101.6)
 		(uuid "b5f4e863-75b4-4acf-a5ef-ed37be1e6b53")
 	)
@@ -3608,6 +3604,10 @@
 	(no_connect
 		(at 260.35 167.64)
 		(uuid "c5591234-f75f-4bbd-bdfb-8cd67a324c1b")
+	)
+	(no_connect
+		(at 83.82 93.98)
+		(uuid "f3f633d1-24b3-4c83-9651-57bddd9c1602")
 	)
 	(wire
 		(pts
@@ -3931,16 +3931,6 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 93.98) (xy 78.74 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4bc85048-3610-47a9-b8ce-d7754750db7a")
-	)
-	(wire
-		(pts
 			(xy 119.38 78.74) (xy 124.46 78.74)
 		)
 		(stroke
@@ -4191,6 +4181,16 @@
 	)
 	(wire
 		(pts
+			(xy 260.35 162.56) (xy 265.43 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8283329a-e0eb-4f50-b623-8dc37843fd15")
+	)
+	(wire
+		(pts
 			(xy 33.02 182.88) (xy 33.02 187.96)
 		)
 		(stroke
@@ -4378,6 +4378,16 @@
 			(type default)
 		)
 		(uuid "b5087224-159e-44a6-88cf-d7c04bd73ca2")
+	)
+	(wire
+		(pts
+			(xy 38.1 152.4) (xy 38.1 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b72ec3e4-af8d-478a-9d0b-6ea43e45f4ea")
 	)
 	(wire
 		(pts
@@ -4619,16 +4629,6 @@
 		)
 		(uuid "fe63fe07-8cd5-4bda-b82a-27ee16790774")
 	)
-	(label "EXP_INT"
-		(at 78.74 93.98 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "01a5c59e-5aae-44e5-97a5-fd3150d83ba6")
-	)
 	(label "BARO_INT"
 		(at 265.43 157.48 0)
 		(effects
@@ -4659,7 +4659,17 @@
 		)
 		(uuid "1a830cd4-cbcd-4e24-810a-b175cac07ad0")
 	)
-	(label "BUZZ_B"
+	(label "IMU_INT1"
+		(at 265.43 162.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1d59d76e-15f0-4125-ac78-2344a19b5907")
+	)
+	(label "I2C_SDA"
 		(at 78.74 86.36 180)
 		(effects
 			(font
@@ -4699,7 +4709,7 @@
 		)
 		(uuid "37ce3ffd-6200-4649-9b10-5d46efdad1d9")
 	)
-	(label "SCR_SCK"
+	(label "GPS_TX"
 		(at 124.46 91.44 0)
 		(effects
 			(font
@@ -4709,7 +4719,7 @@
 		)
 		(uuid "389fc32d-c692-42d9-a89e-fd6ca9f2ec8e")
 	)
-	(label "SCR_MOSI"
+	(label "BUZZ_A"
 		(at 124.46 86.36 0)
 		(effects
 			(font
@@ -4729,7 +4739,7 @@
 		)
 		(uuid "3e480234-90ed-46a9-8dfb-a2e9c0173f26")
 	)
-	(label "SCR_CS"
+	(label "BUZZ_B"
 		(at 124.46 88.9 0)
 		(effects
 			(font
@@ -4819,7 +4829,7 @@
 		)
 		(uuid "78ba3aba-d3c3-49e9-9971-4719b14a17e5")
 	)
-	(label "I2C_SDA"
+	(label "I2C_SCL"
 		(at 78.74 88.9 180)
 		(effects
 			(font
@@ -4849,7 +4859,7 @@
 		)
 		(uuid "81dab5a0-09a1-4b56-9d3a-555f52c302a8")
 	)
-	(label "I2C_SCL"
+	(label "EXP_INT"
 		(at 78.74 91.44 180)
 		(effects
 			(font
@@ -4919,7 +4929,7 @@
 		)
 		(uuid "ae09ef3d-b729-47b6-a5e3-966921717be8")
 	)
-	(label "IMU_INT1"
+	(label "SCR_MOSI"
 		(at 78.74 78.74 180)
 		(effects
 			(font
@@ -4929,7 +4939,7 @@
 		)
 		(uuid "b12ec802-7d2f-4167-9ec7-785741aabf4c")
 	)
-	(label "BUZZ_A"
+	(label "SCR_CS"
 		(at 78.74 83.82 180)
 		(effects
 			(font
@@ -4949,7 +4959,7 @@
 		)
 		(uuid "b3183166-07f7-47bd-822a-bef68b23a1fd")
 	)
-	(label "GPS_RX"
+	(label "SCR_SCK"
 		(at 78.74 81.28 180)
 		(effects
 			(font
@@ -5069,7 +5079,7 @@
 		)
 		(uuid "dffac2e8-5d68-4f76-ae87-eb3386a1283d")
 	)
-	(label "GPS_TX"
+	(label "GPS_RX"
 		(at 124.46 93.98 0)
 		(effects
 			(font
@@ -7368,7 +7378,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_SH_SM08B-SRSS-TB_1x08-1MP_P1.00mm_Horizontal"
 			(at 256.54 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -7401,7 +7411,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C157974"
+		(property "LCSC" "C160407"
 			(at 256.54 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -7412,7 +7422,7 @@
 				)
 			)
 		)
-		(property "MPN" "JST B8B-PH-K-S(LF)(SN)"
+		(property "MPN" "JST SM08B-SRSS-TB(LF)(SN)"
 			(at 256.54 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -7794,7 +7804,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal"
 			(at 256.54 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -7827,7 +7837,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C131334"
+		(property "LCSC" "C160404"
 			(at 256.54 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -7838,7 +7848,7 @@
 				)
 			)
 		)
-		(property "MPN" "JST B4B-PH-K-S(LF)(SN)"
+		(property "MPN" "JST SM04B-SRSS-TB(LF)(SN)"
 			(at 256.54 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -9226,8 +9236,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Buzzer")
-		(at 40.64 152.4 0)
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 43.18 149.86 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9236,8 +9246,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "961471a8-c70b-4db6-965d-398fe33cdda7")
-		(property "Reference" "BZ1"
-			(at 44.45 151.13 0)
+		(property "Reference" "J5"
+			(at 41.91 146.05 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9247,8 +9257,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "PKLCS1212E4001"
-			(at 44.45 153.67 0)
+		(property "Value" "Buzzer"
+			(at 41.91 156.21 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9258,8 +9268,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Buzzer_Beeper:Buzzer_Murata_PKLCS1212E"
-			(at 40.64 152.4 0)
+		(property "Footprint" "Connector_JST:JST_SH_SM02B-SRSS-TB_1x02-1MP_P1.00mm_Horizontal"
+			(at 43.18 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9270,7 +9280,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 40.64 152.4 0)
+			(at 43.18 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9281,7 +9291,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 40.64 152.4 0)
+			(at 43.18 149.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9290,8 +9300,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C113159"
-			(at 40.64 152.4 0)
+		(property "LCSC" "C160402"
+			(at 43.18 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9301,8 +9311,8 @@
 				)
 			)
 		)
-		(property "MPN" "Murata PKLCS1212E4001-R1"
-			(at 40.64 152.4 0)
+		(property "MPN" "JST SM02B-SRSS-TB(LF)(SN)"
+			(at 43.18 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9321,7 +9331,7 @@
 		(instances
 			(project "airio"
 				(path "/4be64db2-d0eb-44ab-9167-6be2786d9585"
-					(reference "BZ1")
+					(reference "J5")
 					(unit 1)
 				)
 			)
@@ -10305,7 +10315,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal"
 			(at 256.54 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -10338,7 +10348,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C131334"
+		(property "LCSC" "C160404"
 			(at 256.54 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -10349,7 +10359,7 @@
 				)
 			)
 		)
-		(property "MPN" "JST B4B-PH-K-S(LF)(SN)"
+		(property "MPN" "JST SM04B-SRSS-TB(LF)(SN)"
 			(at 256.54 66.04 0)
 			(hide yes)
 			(show_name no)
