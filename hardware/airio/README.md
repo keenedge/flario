@@ -100,6 +100,14 @@ XIAO from System OFF. See the pin map for the XIAO pin assignment.
 C1-C4 were changed from C1591 to C66501 because C1591 shows 0 stock at LCSC.
 The BMP581 is back in stock at LCSC (2026-10-25); the BMP580 still fits the same footprint as a fallback.
 
+## 3D models
+
+J1 (JST S2B-PH-SM4-TB) has no 3D model in KiCad's library. Its footprint points to
+`3d/S2B-PH-SM4-TB.STEP`, rotated -90 deg about X and offset (-7.9, 12.7, 0) mm.
+JST's file isn't committed because this repo is public: download the STEP for
+S2B-PH-SM4-TB from the [JST PH series page](https://www.jst-mfg.com/product/detail_e.php?series=199),
+unzip it into `hardware/airio/3d/`, and the 3D viewer picks it up.
+
 ## Still to do before ordering
 
 - Check J1's polarity against the LiPo you'll use. Pin 1 is VBAT. JST PH
