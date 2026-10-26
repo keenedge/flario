@@ -48,6 +48,19 @@ Exclude them in the ERC window (right-click, Exclude) if you want a clean run.
 Every symbol pin has a matching footprint pad (checked with KiCad's pcbnew
 Python against the netlist).
 
+## Display options
+
+J3 is a cable port for a display breakout (Sharp memory LCD, or an ST7305
+adapter). J6 is an on-board 24-pin 0.5 mm FPC for a bare 2.9" 168x384 ST7305
+reflective panel (Osptek YDP290H001-V3, Good Display GDTL029T51), with its
+seven 1 µF capacitors C6-C12. Both share SCR_CLK, SCR_MOSI, SCR_CS, SCR_DISP
+(ST7305 RES) and SCR_DC (D8). Fit one display at a time.
+
+J6's footprint is a placeholder (`Hirose_FH12-24S-0.5SH`): check the pads
+against the HCTL HC-FPC-05-09-24RLTAG drawing before layout. The J6 pinout and
+capacitor values come from search extracts of the panel spec, not the PDF
+itself; confirm them too. `airio.pdf` has not been re-plotted for J6.
+
 ## PCB
 
 ![Top side](airio-top.png)
